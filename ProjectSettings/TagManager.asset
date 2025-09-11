@@ -8,6 +8,10 @@ TagManager:
   - Femur
   - Radius
   - Ulna
+  - Wrist
+  - Vertaebrae002
+  - Humerus
+  - Vertaebrae003
   layers:
   - Default
   - TransparentFX
