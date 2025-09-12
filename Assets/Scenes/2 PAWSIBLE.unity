@@ -290,7 +290,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Description
+  m_text: Welcome to PAWSIBLE! This is the skeletal system of the dog. The skeleton
+    provides structure, protects vital organs, and supports movement. Explore each
+    bone to learn its name, location, and function
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -317,8 +319,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 68
+  m_fontSizeBase: 68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -329,7 +331,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 2
+  m_lineSpacing: 3
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -554,7 +556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: 'skeletal structure '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d96efdb64f2fd2a4f82d4ebf9a50f1bf, type: 2}
   m_sharedMaterial: {fileID: 330659742904912885, guid: d96efdb64f2fd2a4f82d4ebf9a50f1bf, type: 2}
@@ -581,8 +583,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 88
+  m_fontSizeBase: 88
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -619,7 +621,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -406.4041, y: -153.22716, z: -559.5614, w: 28.734997}
+  m_margin: {x: -469.27496, y: -153.22716, z: -559.5614, w: 28.734997}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7466,7 +7468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -67.5
+      value: -67.472
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7474,23 +7476,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.16
+      value: 17.542147
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9295077
+      value: 0.88463414
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.039337676
+      value: -0.040131234
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3665758
+      value: -0.46452656
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009493452
+      value: 0.0052027055
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7498,7 +7500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 316.865
+      value: -55.497
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -11088,6 +11090,7 @@ GameObject:
   - component: {fileID: 8853345008703198914}
   - component: {fileID: 8853345008703198913}
   - component: {fileID: 8853345008703198912}
+  - component: {fileID: 8853345008703198915}
   m_Layer: 0
   m_Name: vertaebrae.002
   m_TagString: Vertaebrae002
@@ -14475,6 +14478,7 @@ GameObject:
   - component: {fileID: 6085665186432922957}
   - component: {fileID: 6085665186432922956}
   - component: {fileID: 6085665186432922955}
+  - component: {fileID: 6085665186432922958}
   m_Layer: 0
   m_Name: vertaebrae.003
   m_TagString: Vertaebrae003
@@ -14653,6 +14657,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6085665186432922958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085665186432922954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Thoracic Skeleton
+  boneInfo: The thoracic skeleton is made up of the ribs, thoracic vertebrae, and
+    sternum. It forms the rib cage, which protects vital organs like the heart and
+    lungs. Each rib connects to a thoracic vertebra at the back and most connect
+    to the sternum at the front.
+  titleText: {fileID: 81113650}
+  descriptionText: {fileID: 30516760}
 --- !u!33 &6143020199690211365
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15984,10 +16007,10 @@ GameObject:
   - component: {fileID: 3844415369390695940}
   - component: {fileID: 34926838607300545}
   - component: {fileID: 398324693}
-  - component: {fileID: 7765228423524742807}
-  - component: {fileID: 7765228423524742806}
-  - component: {fileID: 7765228423524742805}
   - component: {fileID: 7765228423524742808}
+  - component: {fileID: 7765228423524742811}
+  - component: {fileID: 7765228423524742810}
+  - component: {fileID: 7765228423524742809}
   m_Layer: 0
   m_Name: radius
   m_TagString: Radius
@@ -15995,7 +16018,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &7765228423524742805
+--- !u!114 &7765228423524742808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765228423524742804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Radius
+  boneInfo: "The radius is the main weight-bearing bone of the dog\u2019s forelimb,
+    running from the elbow to the carpus (wrist). It works with the ulna to allow
+    movement and stability of the foreleg."
+  titleText: {fileID: 81113650}
+  descriptionText: {fileID: 30516760}
+--- !u!65 &7765228423524742809
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16016,7 +16057,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00032429726, y: 0.0005172052, z: 0.0033119137}
   m_Center: {x: -0.0000020941739, y: 0.00005306495, z: -0.00033163623}
---- !u!114 &7765228423524742806
+--- !u!114 &7765228423524742810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16138,7 +16179,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!54 &7765228423524742807
+--- !u!54 &7765228423524742811
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16162,27 +16203,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &7765228423524742808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765228423524742804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneTitle: Radius
-  boneInfo: "The radius is the main weight-bearing bone of the dog\u2019s forelimb,
-    running from the elbow to the carpus (wrist). It works with the ulna to allow
-    movement and stability of the foreleg."
-  titleText: {fileID: 81113650}
-  descriptionText: {fileID: 30516760}
+  m_CollisionDetection: 1
 --- !u!1 &7789807141660131809
 GameObject:
   m_ObjectHideFlags: 0
@@ -17032,6 +17055,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8853345008703198915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989078264373936471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Thoracic Skeleton
+  boneInfo: The thoracic skeleton is made up of the ribs, thoracic vertebrae, and
+    sternum. It forms the rib cage, which protects vital organs like the heart and
+    lungs. Each rib connects to a thoracic vertebra at the back and most connect
+    to the sternum at the front.
+  titleText: {fileID: 81113650}
+  descriptionText: {fileID: 30516760}
 --- !u!1 &8992189612092618090
 GameObject:
   m_ObjectHideFlags: 0
