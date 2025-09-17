@@ -74,7 +74,7 @@ public class BoneDescription : MonoBehaviour
 
     private void ClearText()
     {
-        if (titleText != null) titleText.text = "";
-        if (descriptionText != null) descriptionText.text = "";
+        if (titleText != null) titleText.text = "skeletal structure ";
+        if (descriptionText != null) descriptionText.text = "Welcome to PAWSIBLE! This is the skeletal system of the dog. The skeleton provides structure, protects vital organs, and supports movement. Explore each bone to learn its name, location, and function";
     }
 }
