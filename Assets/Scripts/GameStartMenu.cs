@@ -12,6 +12,8 @@ public class GameStartMenu : MonoBehaviour
 
     [Header("Main Menu Buttons")]
     public Button startButton;
+
+    public Button storyModeButton;
     public Button optionButton;
     public Button aboutButton;
     public Button quitButton;
@@ -25,6 +27,7 @@ public class GameStartMenu : MonoBehaviour
 
         //Hook events
         startButton.onClick.AddListener(StartGame);
+        storyModeButton.onClick.AddListener(StoryMode);
         optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
         quitButton.onClick.AddListener(QuitGame);
@@ -45,6 +48,13 @@ public class GameStartMenu : MonoBehaviour
         HideAll();
         SceneTransitionManager.singleton.GoToSceneAsync(1);
     }
+
+       public void StoryMode()
+    {
+        HideAll();
+        SceneTransitionManager.singleton.GoToSceneAsync(2);
+    }
+
 
     public void HideAll()
     {
