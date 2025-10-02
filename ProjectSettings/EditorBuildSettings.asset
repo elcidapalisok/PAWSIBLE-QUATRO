@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PAWSIBLE SCENES/2 HowToPlay.unity
     guid: 12974378b0da00b4781ac5d380905b4d
   - enabled: 1
+    path: Assets/Patio_table/Scene/Sample_scene.unity
+    guid: ce2f87470a45f084a9037f67573a6650
+  - enabled: 1
     path: Assets/Scenes/PAWSIBLE SCENES/3 StoryMode.unity
     guid: 9726d40c2b6e1fc43ba23c4d798b400f
   m_configObjects:

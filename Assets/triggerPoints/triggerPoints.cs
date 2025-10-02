@@ -7,8 +7,8 @@ public class triggerPoints : MonoBehaviour
 {
     public PlayableDirector director;
     public List<Step> steps;
+    public Checklist checklist; // Reference to Checklist script
 
-    // Prevent auto-trigger at scene start
     private bool gameStarted = false;
 
     void Start()
@@ -16,39 +16,50 @@ public class triggerPoints : MonoBehaviour
         if (director == null)
             director = GetComponent<PlayableDirector>();
 
-        // Delay enabling gameplay by one frame to avoid Timeline auto-evaluation
         StartCoroutine(EnableNextFrame());
+
+        
     }
 
     IEnumerator EnableNextFrame()
     {
-        yield return null; // wait one frame
+        yield return null;
         gameStarted = true;
     }
 
     [System.Serializable]
     public class Step
     {
-        public string name;
-        public float time;
+        public string name;     // Example: "Wear Lab Coat"
+        public float time;      // Timeline time
         public bool hasPlayed = false;
     }
 
-    // Core timeline triggering method
-    public void PlayStepIndex(int index)
+    // Call this when player interacts with an object
+    public void TryPlayStep(int index)
     {
-        if (!gameStarted) return; // ignore calls before gameplay starts
+        if (!gameStarted) return;
         if (index < 0 || index >= steps.Count) return;
 
         Step step = steps[index];
 
-        if (!step.hasPlayed)
+        // Check checklist first
+        if (checklist.TryDoTask(step.name))
         {
-            step.hasPlayed = true;
-            director.Stop();
-            director.time = step.time;
-            director.Play();
-            Debug.Log($"Playing step {index}: {step.name}");
+            if (!step.hasPlayed)
+            {
+               
+                step.hasPlayed = true;
+                director.Stop();
+                director.time = step.time;
+                director.Play();
+
+                Debug.Log($"🎬 Playing step {index}: {step.name}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"⛔ Cannot do {step.name} yet! Next required: {checklist.GetNextTask()}");
         }
     }
 }

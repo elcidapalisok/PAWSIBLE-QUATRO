@@ -52,7 +52,7 @@ public class GameStartMenu : MonoBehaviour
        public void StoryMode()
     {
         HideAll();
-        SceneTransitionManager.singleton.GoToSceneAsync(2);
+        SceneTransitionManager.singleton.GoToSceneAsync(3);
     }
 
 

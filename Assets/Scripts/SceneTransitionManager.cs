@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,5 +51,10 @@ public class SceneTransitionManager : MonoBehaviour
         }
 
         operation.allowSceneActivation = true;
+    }
+
+    internal void GoToSceneAsync(string v)
+    {
+        throw new NotImplementedException();
     }
 }
