@@ -12969,12 +12969,12 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8715765122711247906}
           m_TargetAssemblyTypeName: Checklist, Assembly-CSharp
-          m_MethodName: CompleteCurrentTaskFromTimeline
-          m_Mode: 1
+          m_MethodName: CompleteTaskAtIndex
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -32222,7 +32222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.83, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.8, y: -0}
+  m_AnchoredPosition: {x: 74.5, y: 0}
   m_SizeDelta: {x: 113.43, y: 19.376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953407243
@@ -42323,6 +42323,7 @@ MonoBehaviour:
   - {fileID: 949219237}
   - {fileID: 586208425}
   - {fileID: 387991308}
+  - {fileID: 91515621}
 --- !u!4 &8760064140733991946
 Transform:
   m_ObjectHideFlags: 0

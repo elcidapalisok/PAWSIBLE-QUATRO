@@ -10,6 +10,7 @@ public class Checklist : MonoBehaviour
     {
         if (currentTask < tasks.Length && tasks[currentTask] == taskName)
         {
+            Debug.Log("✅ Completed number: " + currentTask);
             Debug.Log("✅ Completed: " + taskName);
             currentTask++; // Move to next task
             return true;   // Allowed
@@ -28,15 +29,19 @@ void Start()
         toggle.isOn = false;
     }
 }
-    public void CompleteCurrentTaskFromTimeline()
+public void CompleteTaskAtIndex(int index)
 {
-    if (currentTask < toggles.Length)
+    if (index >= 0 && index < toggles.Length)
     {
-        toggles[currentTask].isOn = true;
-        Debug.Log("✅ Timeline marked task: " + tasks[currentTask]);
-    
+        toggles[index].isOn = true;
+        Debug.Log("✅ Timeline marked task: " + tasks[index]);
+    }
+    else
+    {
+        Debug.LogWarning("⚠️ Invalid task index: " + index);
     }
 }
+
 
     // Optional: check if all done
     public bool AllTasksDone()
