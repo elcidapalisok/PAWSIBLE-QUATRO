@@ -73,6 +73,18 @@ public class SubtitleSignalTrigger : MonoBehaviour
         subtitleCanvas.SetActive(true); // show canvas again
         StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
+                  public void StartOfCheckList3()
+    {
+        string[] lines = new string[]
+        {
+            "Good job! Only three more to go. Keep it up, you’re almost there!",
+            "Now, in the same freezer, place the stomach gently along with the liver.",
+
+        };
+
+        subtitleCanvas.SetActive(true); // show canvas again
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
+    }
 
 
 
@@ -85,7 +97,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); 
+        StartCoroutine(ShowLinesSequentially(lines, true));
     }
 
               public void StartOfSurgeryRoom()
