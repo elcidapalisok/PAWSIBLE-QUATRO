@@ -1697,7 +1697,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1626640094}
-        m_TargetAssemblyTypeName: triggerPoints, Assembly-CSharp
+        m_TargetAssemblyTypeName: HTU_triggerPoints, Assembly-CSharp
         m_MethodName: PlayStepIndex
         m_Mode: 3
         m_Arguments:
@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1626640090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21626f869b71a634b8fc2d88d3ca3071, type: 3}
+  m_Script: {fileID: 11500000, guid: a50842da265a12446989b2ef188d3878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1626640091}

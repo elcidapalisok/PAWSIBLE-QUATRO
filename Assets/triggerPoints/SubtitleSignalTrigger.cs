@@ -32,7 +32,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
         public void ShowGrabBone()
@@ -41,23 +41,40 @@ public class SubtitleSignalTrigger : MonoBehaviour
         {
             "Good job, assistant! Head over to the canine skeleton and pick up the femur bone.",
              "Watch closely, the bone description will appear as soon as you hold it!",
+             "Now, carefully put the femur on the trolley located on the freezer’s left side.",
     
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
-
-           public void ShowVisceral()
+ 
+               public void ShowGrabBone_3()
     {
         string[] lines = new string[]
         {
-            "Well done! Now, move on to the visceral system and pick up the liver to examine it.",
+            "Excellent work! Next, pick up the humerus and put it carefully on the trolley",
+
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
+
+                public void EndOfCL2()
+    {
+        string[] lines = new string[]
+        {
+            "Awesome! Now, let’s look at your checklist and see what’s next.",
+            "Place the Liver in the freezer.",
+
+        };
+
+        subtitleCanvas.SetActive(true); // show canvas again
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
+    }
+
+
 
           public void EndOfAnatomyRoom()
     {
@@ -68,7 +85,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
               public void StartOfSurgeryRoom()
@@ -80,7 +97,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
              public void StartOfLibraryRoom()
@@ -92,7 +109,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
-        StartCoroutine(ShowLinesSequentially(lines, true)); // keep visible after door lines
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
     private IEnumerator ShowLinesSequentially(string[] lines, bool hideAfter)

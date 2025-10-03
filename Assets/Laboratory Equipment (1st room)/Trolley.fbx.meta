@@ -3,7 +3,12 @@ guid: 44fb697a58d39364682b8630d22758f3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trolley
+    second: {fileID: 2100000, guid: d8628b443656709469e73980f50b2160, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
