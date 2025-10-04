@@ -57,9 +57,6 @@ public class triggerPoints : MonoBehaviour
                 Debug.Log($"🎬 Playing step {index}: {step.name}");
             }
         }
-        else
-        {
-            Debug.LogWarning($"⛔ Cannot do {step.name} yet! Next required: {checklist.GetNextTask()}");
-        }
+      
     }
 }

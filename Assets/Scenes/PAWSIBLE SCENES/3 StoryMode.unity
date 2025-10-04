@@ -2022,7 +2022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100009217}
   m_Layer: 0
-  m_Name: Icosphere_Post
+  m_Name: Stomach_Post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3197,7 +3197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.14557111
+      value: 0.1270501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.z
@@ -3209,7 +3209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.188
+      value: 2.198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3285,7 +3285,7 @@ GameObject:
   - component: {fileID: 153990164}
   - component: {fileID: 153990163}
   m_Layer: 0
-  m_Name: Icosphere_Socket
+  m_Name: Stomach_Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3352,7 +3352,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: Icosphere
+  targetTag: Stomach
 --- !u!135 &153990164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3803,7 +3803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 202c20bc03f4ec54cba60739d0442ce8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.284
+      value: -58.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 202c20bc03f4ec54cba60739d0442ce8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4175,6 +4175,7 @@ GameObject:
   - component: {fileID: 180716989}
   - component: {fileID: 180716991}
   - component: {fileID: 180716990}
+  - component: {fileID: 180716992}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -4246,6 +4247,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.691372, y: 1.2069818, z: 6.2487674}
   m_Center: {x: 0.27593243, y: 0.58410245, z: 1.1085167}
+--- !u!114 &180716992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180716988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56660f997c6ed87429637f54c2bdd551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetTag: Stomach
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 518937129}
+        m_TargetAssemblyTypeName: triggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &180796829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9702,6 +9731,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8715765122711247906}
+        m_TargetAssemblyTypeName: Checklist, Assembly-CSharp
+        m_MethodName: DoTaskFromEvent
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -9741,27 +9782,12 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 3a6262114e8acd940b375bfbd1f65695, type: 2}
-    - {fileID: 11400000, guid: 2583d8657c9770f4fa9972a1a8dffbd8, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 784372371}
           m_TargetAssemblyTypeName: SubtitleSignalTrigger, Assembly-CSharp
           m_MethodName: ShowDoorMessage
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8715765122711247906}
-          m_TargetAssemblyTypeName: Checklist, Assembly-CSharp
-          m_MethodName: CompleteCurrentTaskFromTimeline
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10694,6 +10720,8 @@ PlayableDirector:
     value: {fileID: 754130800}
   - key: {fileID: 6060220657872320907, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
     value: {fileID: 518937127}
+  - key: {fileID: -8016569285719046124, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
+    value: {fileID: 6652253182377217735}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &518937126
@@ -10756,7 +10784,6 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 9f677aa843826374c8fab1af4342b33d, type: 2}
-    - {fileID: 11400000, guid: bbdf122fcdb5467449f50ff63ec50c20, type: 2}
     - {fileID: 11400000, guid: 8349e9656b605d844894fde4be3ed199, type: 2}
     - {fileID: 11400000, guid: b4614193a89466049985f9f27d8f43c8, type: 2}
     m_Events:
@@ -10765,20 +10792,6 @@ MonoBehaviour:
         - m_Target: {fileID: 518937125}
           m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
           m_MethodName: Pause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 784372371}
-          m_TargetAssemblyTypeName: SubtitleSignalTrigger, Assembly-CSharp
-          m_MethodName: ShowVisceral
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10842,8 +10855,11 @@ MonoBehaviour:
   - name: CheckList_Checking
     time: 90
     hasPlayed: 0
-  - name: CheckList_Checking3
+  - name: CheckList_Liver
     time: 98.11667
+    hasPlayed: 0
+  - name: CheckList_Checking
+    time: 109.6333
     hasPlayed: 0
   checklist: {fileID: 8715765122711247906}
 --- !u!1 &527213296
@@ -11087,7 +11103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.14557111
+      value: 0.1270501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.z
@@ -11099,7 +11115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.188
+      value: 2.198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14009,7 +14025,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 511d4402d2a8d434482bc341dd7039b8, type: 2}
     - {fileID: 11400000, guid: 5912d70bbfa867c4aae11f2b34132277, type: 2}
     - {fileID: 11400000, guid: 527006cffb7597d40830126d0f09dcae, type: 2}
-    - {fileID: 11400000, guid: c7e88cd8293fad946b9c3347919e2c56, type: 2}
     - {fileID: 11400000, guid: 2d7cb958a36f19a45a01b15a3657161a, type: 2}
     m_Events:
     - m_PersistentCalls:
@@ -14050,20 +14065,6 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8715765122711247906}
-          m_TargetAssemblyTypeName: Checklist, Assembly-CSharp
-          m_MethodName: CompleteTaskAtIndex
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -14944,7 +14945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.14557111
+      value: 0.1270501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalScale.z
@@ -14956,7 +14957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.188
+      value: 2.198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6139a68653f2edf4ba58df0b5829dc9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21717,7 +21718,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6652253182377217736}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -22145,6 +22158,127 @@ Transform:
   m_LocalRotation: {x: -0.0042538005, y: -0.70709395, z: -0.7070941, w: 0.0042537996}
   m_LocalPosition: {x: -69.5417, y: 3.162, z: 16.6901}
   m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1252369712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1252369715}
+  - component: {fileID: 1252369714}
+  - component: {fileID: 1252369713}
+  m_Layer: 0
+  m_Name: Point Light (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1252369713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252369712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1252369714
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252369712}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.26
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &1252369715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252369712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -63.576, y: 2.716, z: 10.938}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -23916,6 +24050,127 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -177.235, z: 0}
+--- !u!1 &1345843899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345843902}
+  - component: {fileID: 1345843901}
+  - component: {fileID: 1345843900}
+  m_Layer: 0
+  m_Name: Point Light (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345843900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345843899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1345843901
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345843899}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &1345843902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345843899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60.77, y: 3.999, z: 11.227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348772204
 GameObject:
   m_ObjectHideFlags: 0
@@ -30258,7 +30513,6 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 39a393af06083954e96c98ca219d260e, type: 2}
     - {fileID: 11400000, guid: d987e9c900ecf4244b53abaebf5b0aa4, type: 2}
-    - {fileID: 11400000, guid: b4614193a89466049985f9f27d8f43c8, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -30283,20 +30537,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 784372363}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -36851,7 +37091,7 @@ GameObject:
   - component: {fileID: 4636069368189621166}
   - component: {fileID: 4636069368189621168}
   m_Layer: 0
-  m_Name: Icosphere.001
+  m_Name: Liver
   m_TagString: Liver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39506,9 +39746,11 @@ GameObject:
   - component: {fileID: 1210387646}
   - component: {fileID: 1210387645}
   - component: {fileID: 1210387644}
+  - component: {fileID: 6652253182377217736}
+  - component: {fileID: 6652253182377217735}
   m_Layer: 0
-  m_Name: Icosphere
-  m_TagString: Icosphere
+  m_Name: Stomach
+  m_TagString: Stomach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41916,6 +42158,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6652253182377217735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105671970812449494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: c5f21b6a9cce98b409d9a334dc4085d2, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6652253182377217736}
+          m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+          m_MethodName: EnableHighlight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6652253182377217736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105671970812449494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 6652253182377217734}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!33 &6666779640378227649
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43464,6 +43751,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8715765122711247906}
+        m_TargetAssemblyTypeName: Checklist, Assembly-CSharp
+        m_MethodName: CompleteTaskAtIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -44330,12 +44629,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6790877e622ee64dbc364f34a512607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks:
-  - Opening Anatomy Room
-  - Grabbing Lab Coat
-  - Put femur on the troly
-  - CheckList_Checking
-  - CheckList_Checking3
+  taskGroups:
+  - groupName: Opening Anatomy Room
+    tasks:
+    - Opening Anatomy Room
+  - groupName: Grabbing Lab Coat
+    tasks:
+    - Grabbing Lab Coat
+  - groupName: Skeletal
+    tasks:
+    - Put femur on the troly
+    - CheckList_Checking
   toggles:
   - {fileID: 1953407243}
   - {fileID: 743548550}
@@ -45536,6 +45840,8 @@ SceneRoots:
   - {fileID: 849042202}
   - {fileID: 513204051}
   - {fileID: 305569551}
+  - {fileID: 1252369715}
+  - {fileID: 1345843902}
   - {fileID: 699670213}
   - {fileID: 243336182}
   - {fileID: 140466266}

@@ -1,57 +1,96 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 public class Checklist : MonoBehaviour
 {
-    public string[] tasks;       // Example: {"Wear Lab Coat", "Grab Scalpel", "Pick Femur"}
-    private int currentTask = 0; // Keeps track of progress
-    public Toggle[] toggles;
-    // Call this when user tries a task
+    [System.Serializable]
+    public class TaskGroup
+    {
+        public string groupName;        // e.g. "Assemble Bones"
+        public string[] tasks;          // e.g. {"Place Humerus", "Place Tibia"}
+        [HideInInspector] public HashSet<string> completedTasks = new HashSet<string>();
+    }
+
+    public TaskGroup[] taskGroups;      // Multiple groups of tasks
+    public Toggle[] toggles;            // One toggle per group (optional)
+    private int currentGroup = 0;       // Tracks current progress group
+
+    void Start()
+    {
+        // Reset all toggles to unchecked
+        foreach (var toggle in toggles)
+        {
+            toggle.isOn = false;
+        }
+    }
+
+    // ✅ Call this when user tries a task
     public bool TryDoTask(string taskName)
     {
-        if (currentTask < tasks.Length && tasks[currentTask] == taskName)
+        if (currentGroup >= taskGroups.Length)
         {
-            Debug.Log("✅ Completed number: " + currentTask);
-            Debug.Log("✅ Completed: " + taskName);
-            currentTask++; // Move to next task
-            return true;   // Allowed
+            Debug.Log("🎉 All task groups completed!");
+            return false;
+        }
+
+        TaskGroup group = taskGroups[currentGroup];
+
+        // Check if task exists in current group
+        foreach (var t in group.tasks)
+        {
+            if (t == taskName)
+            {
+                group.completedTasks.Add(taskName);
+                Debug.Log("✅ Completed task: " + taskName + " (" + group.completedTasks.Count + "/" + group.tasks.Length + ")");
+
+                // Check if all tasks in this group are done
+                if (group.completedTasks.Count == group.tasks.Length)
+                {
+                    CompleteGroup(currentGroup);
+                }
+
+                return true;
+            }
+        }
+
+        Debug.Log("⛔ Task not allowed yet. Current group: " + group.groupName);
+        return false;
+    }
+
+    public void DoTaskFromEvent(string taskName)
+{
+    TryDoTask(taskName);
+}
+
+    void CompleteGroup(int index)
+    {
+        if (index < toggles.Length)
+        {
+            toggles[index].isOn = true;
+        }
+
+        Debug.Log("🎯 Group completed: " + taskGroups[index].groupName);
+        currentGroup++;
+
+        if (currentGroup >= taskGroups.Length)
+        {
+            Debug.Log("🏁 All checklist stages complete!");
         }
         else
         {
-            Debug.Log("⛔ Can't do " + taskName + " yet. Next required: " + tasks[currentTask]);
-            return false;  // Not allowed
+            Debug.Log("➡️ Next group: " + taskGroups[currentGroup].groupName);
         }
     }
-void Start()
-{
-    // Reset all toggles to unchecked
-    foreach (var toggle in toggles)
-    {
-        toggle.isOn = false;
-    }
-}
-public void CompleteTaskAtIndex(int index)
-{
-    if (index >= 0 && index < toggles.Length)
-    {
-        toggles[index].isOn = true;
-        Debug.Log("✅ Timeline marked task: " + tasks[index]);
-    }
-    else
-    {
-        Debug.LogWarning("⚠️ Invalid task index: " + index);
-    }
-}
 
-
-    // Optional: check if all done
-    public bool AllTasksDone()
+    // Optional helpers
+    public bool AllGroupsDone()
     {
-        return currentTask >= tasks.Length;
+        return currentGroup >= taskGroups.Length;
     }
 
-    // Get the next required task
-    public string GetNextTask()
+    public string GetNextGroupName()
     {
-        return currentTask < tasks.Length ? tasks[currentTask] : "All tasks complete!";
+        return currentGroup < taskGroups.Length ? taskGroups[currentGroup].groupName : "All tasks complete!";
     }
 }

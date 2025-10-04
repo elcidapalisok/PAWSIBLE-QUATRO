@@ -86,6 +86,19 @@ public class SubtitleSignalTrigger : MonoBehaviour
         StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
+                  public void StartOfCheckList4()
+    {
+        string[] lines = new string[]
+        {
+            "Good job! Only three more to go. Keep it up, you’re almost there!",
+            "Now, in the same freezer, place the stomach gently along with the liver.",
+
+        };
+
+        subtitleCanvas.SetActive(true); // show canvas again
+        StartCoroutine(ShowLinesSequentially(lines, true)); 
+    }
+
 
 
           public void EndOfAnatomyRoom()

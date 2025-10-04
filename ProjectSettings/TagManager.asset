@@ -13,10 +13,10 @@ TagManager:
   - Humerus
   - Vertaebrae003
   - Liver
-  - Icosphere
   - Hand
   - SmallCube
   - HTU_Player
+  - Stomach
   layers:
   - Default
   - TransparentFX
