@@ -5,7 +5,7 @@ using System.Collections;
 public class typingSubtitleManager : MonoBehaviour
 {
     public TextMeshProUGUI subtitleText;  // Assign in inspector
-    public float typingSpeed = 0.01f;     // Speed of typing
+    public float typingSpeed = 0.02f;     // Speed of typing
 
     private Coroutine typingCoroutine;
 

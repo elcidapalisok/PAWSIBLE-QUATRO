@@ -27,8 +27,10 @@ public class SubtitleSignalTrigger : MonoBehaviour
             "Great job opening the door! Let’s move forward and see what’s inside.",
              "This is the Anatomy Room, where you’ll study the skeletal, muscular, and visceral systems",
              "of animals. Look around, and you’ll see models and specimens ready for you to interact with.",
-             "Check your left side, there’s a lab coat waiting for you. Grab it, put it on,",
-            "and get ready to step into the role of Dr. Paws’ assistant!"
+             "Here’s your checklist for the anatomy room! Once you finish everything,",
+             "we’ll have a short quiz to test what you’ve learned.",
+             "Check your left side, you’ll see a lab coat and gloves. Wear them both,",
+            "and get ready to step into your role as Dr. Paws’ assistant!"
         };
 
         subtitleCanvas.SetActive(true); // show canvas again
@@ -144,7 +146,7 @@ public class SubtitleSignalTrigger : MonoBehaviour
             typingSubtitle.ShowSubtitle(line);
 
             // Wait for typing + 2s before next line
-            yield return new WaitForSeconds(line.Length * typingSubtitle.typingSpeed + 3f);
+            yield return new WaitForSeconds(line.Length * typingSubtitle.typingSpeed + 2f);
         }
 
         if (hideAfter)
