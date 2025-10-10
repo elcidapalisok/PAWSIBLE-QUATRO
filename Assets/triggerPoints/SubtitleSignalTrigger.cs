@@ -90,8 +90,8 @@ public class SubtitleSignalTrigger : MonoBehaviour
     {
         string[] lines = new string[]
         {
-            "Good job! Only three more to go. Keep it up, you’re almost there!",
-            "Now, in the same freezer, place the stomach gently along with the liver.",
+            "Task complete. The stomach has been properly stored. Now, we will proceed to the muscular system.",
+            "Insert the triceps muscle into the second freezer to keep it preserved."
 
         };
 

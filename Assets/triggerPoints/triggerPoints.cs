@@ -11,6 +11,7 @@ public class triggerPoints : MonoBehaviour
 
     private bool gameStarted = false;
 
+
     void Start()
     {
         if (director == null)
@@ -18,7 +19,7 @@ public class triggerPoints : MonoBehaviour
 
         StartCoroutine(EnableNextFrame());
 
-        
+
     }
 
     IEnumerator EnableNextFrame()

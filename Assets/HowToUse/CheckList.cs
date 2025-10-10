@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class Checklist : MonoBehaviour
+  public class Checklist : MonoBehaviour
 {
     [System.Serializable]
     public class TaskGroup
