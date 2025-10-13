@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Patio_table/Scene/Sample_scene.unity
     guid: ce2f87470a45f084a9037f67573a6650
   - enabled: 1
-    path: Assets/Scenes/PAWSIBLE SCENES/3 StoryMode.unity
+    path: Assets/Scenes/PAWSIBLE SCENES/3 Story Mode/StoryMode_Anatomy.unity
     guid: 9726d40c2b6e1fc43ba23c4d798b400f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
