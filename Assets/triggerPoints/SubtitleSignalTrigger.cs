@@ -6,14 +6,13 @@ public class SubtitleSignalTrigger : MonoBehaviour
     public typingSubtitleManager typingSubtitle; //
     public GameObject subtitleCanvas; // assign your Canvas or Panel here
 
-    public void ShowAllMessagesLineByLine()
+    public void AnatomyStart()
     {
         string[] lines = new string[]
         {
-            "Welcome to Pawsible, your virtual companion in learning veterinary anatomy and surgery.",
-            "I’ll be your guide, Dr. Paws! \nTogether, we’ll explore the different rooms.",
-            "Follow along, and don’t worry, I’ll help you every step of the way.",
-            "Now, let’s start! \nHead to the first door on your right and open it."
+
+            "Now that you’re ready, let’s begin!",
+            "Head to the first door on your right and open it to start your anatomy journey."
         };
 
         subtitleCanvas.SetActive(true); // make sure canvas is visible
@@ -25,8 +24,6 @@ public class SubtitleSignalTrigger : MonoBehaviour
         string[] lines = new string[]
         {
             "Great job opening the door! Let’s move forward and see what’s inside.",
-             "This is the Anatomy Room, where you’ll study the skeletal, muscular, and visceral systems",
-             "of animals. Look around, and you’ll see models and specimens ready for you to interact with.",
              "Here’s your checklist for the anatomy room! Once you finish everything,",
              "we’ll have a short quiz to test what you’ve learned.",
              "Check your left side, you’ll see a lab coat and gloves. Wear them both,",
