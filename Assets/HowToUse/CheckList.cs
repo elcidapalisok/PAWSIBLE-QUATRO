@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class Checklist : MonoBehaviour
 {
@@ -9,23 +10,29 @@ public class Checklist : MonoBehaviour
     {
         public string groupName;
         public string[] tasks;
-        [HideInInspector] public HashSet<string> completedTasks = new HashSet<string>();
-        [HideInInspector] public int nextTaskIndex = 0; // Track the next allowed task in order
+       public HashSet<string> completedTasks = new HashSet<string>();
+       public int nextTaskIndex = 0;
+        public float completionTime = 0f; // ⏱ save total time spent
     }
 
     public TaskGroup[] taskGroups;
     public Toggle[] toggles;
     private int currentGroup = 0;
 
+    [Header("Timer Reference")]
+    public AssessmentTimer assessmentTimer; // 👈 connect this in Inspector
+    [Header("UI Result Summary")]
+    public GameObject resultPanel;
+    public TextMeshProUGUI resultText;
     void Start()
     {
         foreach (var toggle in toggles)
-        {
             toggle.isOn = false;
-        }
+
+        if (assessmentTimer != null)
+            assessmentTimer.StartTimer(); // start immediately or on first group
     }
 
-    // ✅ Call this when user tries a task
     public bool TryDoTask(string taskName)
     {
         if (currentGroup >= taskGroups.Length)
@@ -36,7 +43,6 @@ public class Checklist : MonoBehaviour
 
         TaskGroup group = taskGroups[currentGroup];
 
-        // Restrict task to the next one in order
         if (group.nextTaskIndex >= group.tasks.Length)
         {
             Debug.Log("✅ All tasks in this group already done.");
@@ -50,12 +56,10 @@ public class Checklist : MonoBehaviour
             group.nextTaskIndex++;
             Debug.Log("✅ Completed task: " + taskName + " (" + group.completedTasks.Count + "/" + group.tasks.Length + ")");
 
-            // Check if all tasks in this group are done
             if (group.completedTasks.Count == group.tasks.Length)
             {
                 CompleteGroup(currentGroup);
             }
-
             return true;
         }
         else
@@ -65,16 +69,20 @@ public class Checklist : MonoBehaviour
         }
     }
 
-    public void DoTaskFromEvent(string taskName)
-    {
-        TryDoTask(taskName);
-    }
-
     void CompleteGroup(int index)
     {
         if (index < toggles.Length)
-        {
             toggles[index].isOn = true;
+
+        // ⏱ Save time taken for this group
+        if (assessmentTimer != null)
+        {
+            taskGroups[index].completionTime = assessmentTimer.GetElapsedTime();
+            Debug.Log($"⏱ Time taken for {taskGroups[index].groupName}: {taskGroups[index].completionTime:F2} seconds");
+
+            // Reset timer for next group
+            assessmentTimer.ResetTimer();
+            assessmentTimer.StartTimer();
         }
 
         Debug.Log("🎯 Group completed: " + taskGroups[index].groupName);
@@ -83,6 +91,9 @@ public class Checklist : MonoBehaviour
         if (currentGroup >= taskGroups.Length)
         {
             Debug.Log("🏁 All checklist stages complete!");
+            if (assessmentTimer != null)
+                assessmentTimer.StopTimer();
+                ShowResults();
         }
         else
         {
@@ -90,31 +101,45 @@ public class Checklist : MonoBehaviour
         }
     }
 
-    // Optional helpers
-    public bool AllGroupsDone()
-    {
-        return currentGroup >= taskGroups.Length;
-    }
-
-    public string GetNextGroupName()
-    {
-        return currentGroup < taskGroups.Length ? taskGroups[currentGroup].groupName : "All tasks complete!";
-    }
-
-    public int GetCurrentGroupIndex()
-    {
-        return currentGroup;
-    }
-
+    // Helper functions
+    public bool AllGroupsDone() => currentGroup >= taskGroups.Length;
+    public string GetNextGroupName() => currentGroup < taskGroups.Length ? taskGroups[currentGroup].groupName : "All tasks complete!";
+    public int GetCurrentGroupIndex() => currentGroup;
     public bool HasGroupBeenCompleted(string groupName)
     {
         foreach (var group in taskGroups)
-        {
             if (group.groupName == groupName)
-            {
                 return group.completedTasks.Count == group.tasks.Length;
-            }
-        }
         return false;
+    }
+    void ShowResults()
+    {
+        if (resultPanel == null || resultText == null)
+        {
+            Debug.LogWarning("⚠ Result UI not assigned!");
+            return;
+        }
+
+        resultPanel.SetActive(true);
+
+        float totalTime = 0f;
+        string summary = "<align=\"center\"><b>*Assessment Summary*</b>\n\n</align>";
+
+        foreach (var group in taskGroups)
+        {
+            summary += $"{group.groupName}:    {FormatTime(group.completionTime)}\n \n";
+            totalTime += group.completionTime;
+        }
+
+        summary += $"\n<b>Total Time:</b> {FormatTime(totalTime)}";
+
+        resultText.text = summary;
+    }
+
+    string FormatTime(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        return $"{minutes:00}:{seconds:00}";
     }
 }
