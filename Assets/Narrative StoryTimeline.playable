@@ -953,10 +953,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CheckingCL
   - m_Version: 1
-    m_Start: 92.38333333333324
-    m_ClipIn: 0
+    m_Start: 93.85
+    m_ClipIn: 1.4666666666667538
     m_Asset: {fileID: 6536425160188183167}
-    m_Duration: 4.968
+    m_Duration: 3.501333333333246
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3482372515744429320}
     m_EaseInDuration: 0
