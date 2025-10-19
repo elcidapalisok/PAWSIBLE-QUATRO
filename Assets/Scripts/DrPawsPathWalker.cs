@@ -13,7 +13,9 @@ public class DrPawsPathWalker : MonoBehaviour
 
     private int currentPoint = 1;
     private bool isMoving = false;
-    private bool canMove = false;   // ✅ Controlled by Timeline trigger
+    private bool canMove = false;
+    private bool hasGrabbedStick = false; 
+    private bool hasPutBone = false;
 
     void Start()
     {
@@ -35,7 +37,8 @@ public class DrPawsPathWalker : MonoBehaviour
 
     void Update()
     {
-        if (!canMove) return; // ✅ Only move when Timeline enables it
+        if (!canMove) return;
+
         if (pathPoints.Length == 0 || currentPoint >= pathPoints.Length)
         {
             if (isMoving)
@@ -56,14 +59,12 @@ public class DrPawsPathWalker : MonoBehaviour
             Vector3 moveDirection = direction.normalized;
             transform.position += moveDirection * speed * Time.deltaTime;
 
-            // Smooth rotation
             if (moveDirection != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
 
-            // Start walk animation
             if (!isMoving)
             {
                 isMoving = true;
@@ -80,7 +81,9 @@ public class DrPawsPathWalker : MonoBehaviour
         }
     }
 
-    // ✅ These methods can be called from Timeline Signals or Animation Events
+    // ✅ Triggered by Timeline or other event
+   
+
     public void StartWalkingFromTimeline()
     {
         canMove = true;
@@ -95,7 +98,6 @@ public class DrPawsPathWalker : MonoBehaviour
         Debug.Log("⏸️ Timeline Trigger: Dr. Paws stops moving!");
     }
 
-    // ✅ Optional: Draw visible path
     void OnDrawGizmos()
     {
         if (pathPoints == null || pathPoints.Length < 2) return;
