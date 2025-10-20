@@ -29,7 +29,11 @@ public class CutScene_Subtitle : MonoBehaviour
             "Before diving into the lessons, make sure to follow all laboratory safety measures,",
             "wear your lab coat and medical gloves. Safety first in every experiment.",
             "We even have a freezer, used to preserve the visceral and muscular specimens of canines,",
-            "and a trolley specially prepared for organizing and transporting the bones."
+            "and a trolley specially prepared for organizing and transporting the bones.", 
+            "You’ll also notice this timer, it keeps track of your performance in each section,",
+            "such as the skeletal, muscular, and visceral modules.",
+            "Think of it as your personal progress clock, measuring how efficiently you complete every task."
+
 
 
 
