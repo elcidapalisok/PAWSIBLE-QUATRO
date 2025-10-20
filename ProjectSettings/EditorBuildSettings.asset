@@ -18,6 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PAWSIBLE SCENES/3 Story Mode/StoryMode_Anatomy.unity
     guid: 9726d40c2b6e1fc43ba23c4d798b400f
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: baef526c7f713924abde6e67631d66dd, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: eb6fc542030f730479cf08e6338c4fd9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: dd3fbca5b1c9fc44c80f16a908691cc2, type: 2}
