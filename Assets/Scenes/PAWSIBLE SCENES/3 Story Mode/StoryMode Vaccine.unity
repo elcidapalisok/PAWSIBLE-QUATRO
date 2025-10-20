@@ -2545,40 +2545,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 50513755}
   m_SourcePrefab: {fileID: 100100000, guid: 687b0d87397604942847a2d377f01545, type: 3}
---- !u!4 &50513753
+--- !u!4 &50513753 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 50513752}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50513754}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.007209397, z: -0, w: 0.999974}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.19}
-  m_LocalScale: {x: 0.9839516, y: 0.945141, z: 1.0158863}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 448458322}
-  m_LocalEulerAnglesHint: {x: 0, y: -0.826, z: 0}
---- !u!1 &50513754
+--- !u!1 &50513754 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 50513752}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50513753}
-  - component: {fileID: 50513757}
-  - component: {fileID: 50513756}
-  - component: {fileID: 50513755}
-  m_Layer: 0
-  m_Name: 'stool (Missing Prefab with guid: 687b0d87397604942847a2d377f01545)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &50513755
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5901,40 +5877,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 139679133}
   m_SourcePrefab: {fileID: 100100000, guid: 687b0d87397604942847a2d377f01545, type: 3}
---- !u!4 &139679131
+--- !u!4 &139679131 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 139679130}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139679132}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.007209397, z: -0, w: 0.999974}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.19}
-  m_LocalScale: {x: 0.9839516, y: 0.945141, z: 1.0158863}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 303077428}
-  m_LocalEulerAnglesHint: {x: 0, y: -0.826, z: 0}
---- !u!1 &139679132
+--- !u!1 &139679132 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 139679130}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 139679131}
-  - component: {fileID: 139679135}
-  - component: {fileID: 139679134}
-  - component: {fileID: 139679133}
-  m_Layer: 0
-  m_Name: 'stool (Missing Prefab with guid: 687b0d87397604942847a2d377f01545)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &139679133
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21038,40 +20990,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 433097036}
   m_SourcePrefab: {fileID: 100100000, guid: 687b0d87397604942847a2d377f01545, type: 3}
---- !u!4 &433097034
+--- !u!4 &433097034 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 433097033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433097035}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.007209397, z: -0, w: 0.999974}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.04}
-  m_LocalScale: {x: 0.9839516, y: 0.945141, z: 1.0158863}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 253215322}
-  m_LocalEulerAnglesHint: {x: 0, y: -0.826, z: 0}
---- !u!1 &433097035
+--- !u!1 &433097035 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 433097033}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 433097034}
-  - component: {fileID: 433097038}
-  - component: {fileID: 433097037}
-  - component: {fileID: 433097036}
-  m_Layer: 0
-  m_Name: 'stool (Missing Prefab with guid: 687b0d87397604942847a2d377f01545)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &433097036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41253,25 +41181,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 941118909}
   m_SourcePrefab: {fileID: 100100000, guid: 687b0d87397604942847a2d377f01545, type: 3}
---- !u!1 &941118908
+--- !u!1 &941118908 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 941118907}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 941118912}
-  - component: {fileID: 941118911}
-  - component: {fileID: 941118910}
-  - component: {fileID: 941118909}
-  m_Layer: 0
-  m_Name: 'stool (Missing Prefab with guid: 687b0d87397604942847a2d377f01545)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &941118909
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41443,21 +41357,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &941118912
+--- !u!4 &941118912 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 687b0d87397604942847a2d377f01545, type: 3}
   m_PrefabInstance: {fileID: 941118907}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941118908}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.007209397, z: -0, w: 0.999974}
-  m_LocalPosition: {x: 0, y: -0.5, z: 20.6}
-  m_LocalScale: {x: 0.9839516, y: 0.945141, z: 1.0158863}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8253553}
-  m_LocalEulerAnglesHint: {x: 0, y: -0.826, z: 0}
 --- !u!1 &942301433
 GameObject:
   m_ObjectHideFlags: 0
@@ -45183,7 +45087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77010,7 +76914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
