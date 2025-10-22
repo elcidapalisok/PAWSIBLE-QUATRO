@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class doorDetector : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class doorDetector : MonoBehaviour
     public float closeDelay = 2f;
     private bool doorOpened = false;
 
+    public DrPawsPathWalker drPawsPathWalker;
+
     private Renderer rend;
 
     private void Start()
     {
-        // Optional color indicator (add a simple cube mesh if needed)
         rend = GetComponent<Renderer>();
         if (rend != null) rend.material.color = Color.red;
     }
@@ -25,10 +27,27 @@ public class doorDetector : MonoBehaviour
             {
                 Debug.Log("🚪 Door Open Triggered");
                 doorScript.ToggleDoor();
+
+                // ✅ Trigger the door opening animation
+                StartCoroutine(PlayDoorAnimation());
+
                 doorOpened = true;
                 if (rend != null) rend.material.color = Color.green;
             }
         }
+    }
+
+    private IEnumerator PlayDoorAnimation()
+    {
+        drPawsPathWalker.OpeningDoor();
+        Debug.Log("🎬 Door opening animation started!");
+
+        // Wait for a short time (adjust as needed)
+        yield return new WaitForSeconds(1f);
+
+        // Stop the animation after the delay
+        drPawsPathWalker.animator?.SetBool("isOpeningDoor", false);
+        Debug.Log("⏹️ Door opening animation stopped!");
     }
 
     private void OnTriggerExit(Collider other)

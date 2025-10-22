@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections;
 
 public class DrPawsPathWalker : MonoBehaviour
 {
+    [Header("XR Socket Settings")]
+    // (Future XR socket settings here)
+
     [Header("Path Settings")]
     public Transform[] pathPoints;
-    [Range(0.1f, 5f)] public float speed = 1.2f; 
+    [Range(0.1f, 5f)] public float speed = 1.2f;
     public float reachDistance = 0.2f;
     public float rotationSpeed = 2f;
 
@@ -14,8 +18,7 @@ public class DrPawsPathWalker : MonoBehaviour
     private int currentPoint = 1;
     private bool isMoving = false;
     private bool canMove = false;
-    private bool hasGrabbedStick = false; 
-    private bool hasPutBone = false;
+    private bool isPaused = false;
 
     void Start()
     {
@@ -37,7 +40,7 @@ public class DrPawsPathWalker : MonoBehaviour
 
     void Update()
     {
-        if (!canMove) return;
+        if (!canMove || isPaused) return;
 
         if (pathPoints.Length == 0 || currentPoint >= pathPoints.Length)
         {
@@ -56,6 +59,7 @@ public class DrPawsPathWalker : MonoBehaviour
 
         if (distance > reachDistance)
         {
+            // Move and rotate
             Vector3 moveDirection = direction.normalized;
             transform.position += moveDirection * speed * Time.deltaTime;
 
@@ -75,21 +79,59 @@ public class DrPawsPathWalker : MonoBehaviour
         else
         {
             Debug.Log($"✅ Reached {targetPoint.name}");
+            StartCoroutine(HandlePointReachedWithDelay(currentPoint));
             currentPoint++;
-            isMoving = false;
-            animator?.SetBool("isWalking", false);
         }
     }
 
-    // ✅ Triggered by Timeline or other event
-   
+    private IEnumerator HandlePointReachedWithDelay(int pointIndex)
+    {
+        isPaused = true;
+        isMoving = false;
+        animator?.SetBool("isWalking", false);
 
+        // Add small delay to simulate brief pause (optional)
+        yield return new WaitForSeconds(0);
+
+        // Resume walking if not finished
+        if (currentPoint < pathPoints.Length - 1)
+        {
+            isPaused = false;
+            animator?.SetBool("isWalking", true);
+            Debug.Log($"▶️ Resuming from point {pointIndex}");
+        }
+        else
+        {
+            animator?.SetBool("isWalking", false);
+            canMove = false; // stop permanently
+            Debug.Log("🏁 Finished all points!");
+        }
+    }
+
+    // ✅ Timeline triggers
     public void StartWalkingFromTimeline()
     {
         canMove = true;
+        animator?.SetBool("isWalking", true);
+        animator?.SetBool("isGrabBone", false);
+        animator?.SetBool("isGreetings", false);
+      
         Debug.Log("🎬 Timeline Trigger: Dr. Paws starts moving!");
     }
 
+    public void Greetings()
+    {
+
+        animator?.SetBool("isGreetings", true);
+
+
+    }
+      public void OpeningDoor()
+    {
+
+        animator?.SetBool("isOpeningDoor", true);
+
+    }
     public void StopWalkingFromTimeline()
     {
         canMove = false;
@@ -101,6 +143,7 @@ public class DrPawsPathWalker : MonoBehaviour
     void OnDrawGizmos()
     {
         if (pathPoints == null || pathPoints.Length < 2) return;
+
         Gizmos.color = Color.cyan;
         for (int i = 0; i < pathPoints.Length - 1; i++)
         {
