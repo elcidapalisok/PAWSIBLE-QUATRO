@@ -38075,6 +38075,146 @@ Transform:
   - {fileID: 100009217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!1001 &856730512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.2168317
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.3238044
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.297806
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60.837
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.41723
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0011279357
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70737904
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.015942076
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70665383
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -181.382
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -270.073
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.2009888
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      propertyPath: m_Name
+      value: bio_hazard (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 856730514}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 856730515}
+  m_SourcePrefab: {fileID: 100100000, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+--- !u!1 &856730513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+  m_PrefabInstance: {fileID: 856730512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &856730514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856730513}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -421575930607184718, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+--- !u!54 &856730515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856730513}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!4 &856730516 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6eff0034c3b6baf4c8ecb08fee5bd322, type: 3}
+  m_PrefabInstance: {fileID: 856730512}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &856775439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98703,6 +98843,7 @@ SceneRoots:
   - {fileID: 194544902}
   - {fileID: 204720385}
   - {fileID: 1618065703}
+<<<<<<< Updated upstream
   - {fileID: 1319890668}
   - {fileID: 1929260315}
   - {fileID: 153714887}
@@ -98710,3 +98851,28 @@ SceneRoots:
   - {fileID: 978365140}
   - {fileID: 1796913371}
   - {fileID: 1056294978}
+=======
+  - {fileID: 85317967}
+  - {fileID: 768581453}
+  - {fileID: 1132361678}
+  - {fileID: 80492971}
+  - {fileID: 2147148042}
+  - {fileID: 1675732947}
+  - {fileID: 1005552455}
+  - {fileID: 111127124}
+  - {fileID: 2028768616}
+  - {fileID: 217748892}
+  - {fileID: 2137539748}
+  - {fileID: 1981879700}
+  - {fileID: 658139904}
+  - {fileID: 605745002}
+  - {fileID: 1400592251}
+  - {fileID: 344504403}
+  - {fileID: 1748857802}
+  - {fileID: 1957721306}
+  - {fileID: 494623200}
+  - {fileID: 1358268305}
+  - {fileID: 39525198}
+  - {fileID: 215786524}
+  - {fileID: 814781349}
+>>>>>>> Stashed changes
