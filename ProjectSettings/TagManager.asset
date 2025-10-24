@@ -17,6 +17,8 @@ TagManager:
   - SmallCube
   - HTU_Player
   - Stomach
+  - DAPVial
+  - DiluentVial
   layers:
   - Default
   - TransparentFX
@@ -49,7 +51,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - OVROverlayCanvas Rendering
   m_SortingLayers:
   - name: Default
     uniqueID: 0
