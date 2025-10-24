@@ -17,6 +17,8 @@ TagManager:
   - SmallCube
   - HTU_Player
   - Stomach
+  - DAPVial
+  - DiluentVial
   layers:
   - Default
   - TransparentFX

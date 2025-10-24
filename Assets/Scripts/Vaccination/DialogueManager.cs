@@ -60,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         // Vaccine Prep
         triggerRequiredLines.Add(("vaccine prep", 2));
         triggerRequiredLines.Add(("vaccine prep", 3));
+        triggerRequiredLines.Add(("vaccine prep", 4));
 
         // Injection
         triggerRequiredLines.Add(("injection", 1));
