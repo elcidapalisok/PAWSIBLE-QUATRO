@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 59573b088aaea0442bf29e0a0e9d1339, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: aeab33f69c199e54794f516d31450ec4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -45590,7 +45590,7 @@ Camera:
     height: 1
   near clip plane: 0.06
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 57.05
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -45616,8 +45616,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233114180}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.005235041, y: -0.9991655, z: 0.03990069, w: 0.0069977934}
-  m_LocalPosition: {x: -55.462, y: 4.4009523, z: 15.332}
+  m_LocalRotation: {x: 0.0553189, y: 0.033314556, z: -0.0018467822, w: 0.9979111}
+  m_LocalPosition: {x: -54.47755, y: 4.744, z: 7.6998787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59895,6 +59895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca258c4ace5625540853f691050a96ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xrSocket: {fileID: 0}
   pathPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -70317,6 +70318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6790877e622ee64dbc364f34a512607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drPawsPathWalker: {fileID: 0}
   taskGroups:
   - groupName: Opening Anatomy Room
     tasks:

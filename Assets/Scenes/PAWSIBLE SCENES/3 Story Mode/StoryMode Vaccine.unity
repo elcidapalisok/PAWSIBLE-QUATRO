@@ -18415,9 +18415,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 388559161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6823e7759e9193141be1dc27b551e8cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f57d5b8f6699a41ac5e26f2fdbd6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  targetSegmentName: injection
+  targetLineIndex: 1
+  triggerZoneTag: DogAnalZone
+  canTriggerOnce: 1
 --- !u!1 &389535224
 GameObject:
   m_ObjectHideFlags: 0
@@ -23226,9 +23231,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 451780127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6823e7759e9193141be1dc27b551e8cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f57d5b8f6699a41ac5e26f2fdbd6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  targetSegmentName: injection
+  targetLineIndex: 1
+  triggerZoneTag: DogAnalZone
+  canTriggerOnce: 1
 --- !u!1 &453820052
 GameObject:
   m_ObjectHideFlags: 0
@@ -26953,7 +26963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.57
+      value: 23.428
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26961,23 +26971,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.29
+      value: 5.465
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.70082885
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: -0.7133295
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26985,7 +26995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: -268.987
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -45459,6 +45469,7 @@ GameObject:
   - component: {fileID: 1047882374}
   - component: {fileID: 1047882376}
   - component: {fileID: 1047882375}
+  - component: {fileID: 1047882377}
   m_Layer: 0
   m_Name: DAPInjectionZone
   m_TagString: DAPInjectionZone
@@ -45488,11 +45499,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047882373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ecbae5bef9e8449a2079f5d40f70e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7091fff5de590384987f4cf1a11754d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  syringeCap: {fileID: 0}
+  targetSegmentName: vaccine prep
+  targetLineIndex: 3
+  vialTag: DiluentVial
+  canTriggerOnce: 1
 --- !u!65 &1047882376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45514,6 +45531,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1047882377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047882373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb13e9bdcfb83cb4181f2969eb55d3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSegmentName: Injection
+  targetLineIndex: 3
 --- !u!1 &1053778352
 GameObject:
   m_ObjectHideFlags: 0
@@ -78627,7 +78658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1769373266
 Transform:
   m_ObjectHideFlags: 0
@@ -94177,9 +94208,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2126989223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ecbae5bef9e8449a2079f5d40f70e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7091fff5de590384987f4cf1a11754d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  syringeCap: {fileID: 0}
+  targetSegmentName: vaccine prep
+  targetLineIndex: 3
+  vialTag: DiluentVial
+  canTriggerOnce: 1
 --- !u!1 &2127067689
 GameObject:
   m_ObjectHideFlags: 0

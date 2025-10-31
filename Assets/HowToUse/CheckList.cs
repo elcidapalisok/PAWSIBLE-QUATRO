@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 
 public class Checklist : MonoBehaviour
+
 {
+
     [System.Serializable]
+ 
+    
     public class TaskGroup
     {
         public string groupName;
@@ -14,16 +18,18 @@ public class Checklist : MonoBehaviour
        public int nextTaskIndex = 0;
         public float completionTime = 0f; // ⏱ save total time spent
     }
-
+    public DrPawsPathWalker drPawsPathWalker;
     public TaskGroup[] taskGroups;
     public Toggle[] toggles;
+    public Animator animator;
     private int currentGroup = 0;
 
     [Header("Timer Reference")]
     public AssessmentTimer assessmentTimer; // 👈 connect this in Inspector
-    [Header("UI Result Summary")]
+   [Header("UI Result Summary")]
     public GameObject resultPanel;
-    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI resultText;     // ✅ Summary only
+    public TextMeshProUGUI totalTimeText;
     void Start()
     {
         foreach (var toggle in toggles)
@@ -93,7 +99,8 @@ public class Checklist : MonoBehaviour
             Debug.Log("🏁 All checklist stages complete!");
             if (assessmentTimer != null)
                 assessmentTimer.StopTimer();
-                ShowResults();
+            ShowResults();
+                 
         }
         else
         {
@@ -112,9 +119,9 @@ public class Checklist : MonoBehaviour
                 return group.completedTasks.Count == group.tasks.Length;
         return false;
     }
-    void ShowResults()
+  void ShowResults()
     {
-        if (resultPanel == null || resultText == null)
+        if (resultPanel == null || resultText == null || totalTimeText == null)
         {
             Debug.LogWarning("⚠ Result UI not assigned!");
             return;
@@ -127,13 +134,17 @@ public class Checklist : MonoBehaviour
 
         foreach (var group in taskGroups)
         {
-            summary += $"{group.groupName}:    {FormatTime(group.completionTime)}\n \n";
+            summary += $"<b>{group.groupName}:</b> <color=#FF0000>{FormatTime(group.completionTime)}</color>\n\n";
             totalTime += group.completionTime;
         }
 
-        summary += $"\n<b>Total Time:</b> {FormatTime(totalTime)}";
-
+        // ✅ Apply group summary only
         resultText.text = summary;
+
+        // ✅ Total Time on another UI Text (no alignment inside code)
+        totalTimeText.text =
+            $"<b>Total Time:</b>\n" +
+            $"<color=#FF0000>{FormatTime(totalTime)}</color>";
     }
 
     string FormatTime(float time)

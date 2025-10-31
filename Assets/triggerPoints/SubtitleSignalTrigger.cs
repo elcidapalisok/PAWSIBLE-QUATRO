@@ -85,12 +85,15 @@ public class SubtitleSignalTrigger : MonoBehaviour
         StartCoroutine(ShowLinesSequentially(lines, true)); 
     }
 
-                  public void StartOfCheckList4()
+                  public void Congratulations()
     {
         string[] lines = new string[]
         {
-            "Task complete. The stomach has been properly stored. Now, we will proceed to the muscular system.",
-            "Insert the triceps muscle into the second freezer to keep it preserved."
+            "Congratulations! ",
+            "You’ve successfully completed all the required tasks to help you get familiar with this module.",
+            "You can now freely explore the Anatomy Module at your own pace.",
+            "When you’re ready to move forward, just come and talk to me,",
+            "and we’ll begin the simulation together!"
 
         };
 

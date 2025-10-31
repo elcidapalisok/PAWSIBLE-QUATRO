@@ -4,7 +4,7 @@ using System.Collections;
 public class DrPawsPathWalker : MonoBehaviour
 {
     [Header("XR Socket Settings")]
-    // (Future XR socket settings here)
+    public GameObject xrSocket;      // Assign your XR socket here
 
     [Header("Path Settings")]
     public Transform[] pathPoints;
@@ -84,27 +84,82 @@ public class DrPawsPathWalker : MonoBehaviour
         }
     }
 
-    private IEnumerator HandlePointReachedWithDelay(int pointIndex)
+    private IEnumerator HandlePointReachedWithDelay(int index)
     {
         isPaused = true;
         isMoving = false;
         animator?.SetBool("isWalking", false);
 
-        // Add small delay to simulate brief pause (optional)
-        yield return new WaitForSeconds(0);
+        // Make Dr. Paws face the current object
+        Transform lookTarget = pathPoints[index];
+        if (lookTarget != null)
+        {
+            Vector3 lookDirection = (lookTarget.position - transform.position).normalized;
+            lookDirection.y = 0;
+
+            if (lookDirection != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(lookDirection);
+                transform.rotation = lookRotation;
+            }
+        }
+
+        switch (index)
+        {
+
+            case 1:
+                 Debug.Log("🦴 CHECKPOINT1");
+                break;
+
+            case 2:
+          Debug.Log("🦴 CHECKPOINT2");
+
+                yield return new WaitForSeconds(0);
+                break;
+
+            case 3:
+                Debug.Log("🦴 CHECKPOINT3");
+                break;
+
+            case 4:
+             Debug.Log("🦴 CHECKPOINT4");
+     isPaused = true;
+     canMove = false;
+     animator?.SetBool("isWalking", false);
+     yield break; 
+
+   
+                break;
+
+            case 5:
+
+                Debug.Log("🦴 CHECKPOINT5");
+              
+
+                break;
+
+            case 6:
+            Debug.Log("🦴 CHECKPOINT6");
+
+                break;
+
+            case 7:
+                Debug.Log("🦴 CHECKPOINT7");
+
+                break;
+                
+        }
 
         // Resume walking if not finished
-        if (currentPoint < pathPoints.Length - 1)
+        if (index < pathPoints.Length - 1)
         {
             isPaused = false;
             animator?.SetBool("isWalking", true);
-            Debug.Log($"▶️ Resuming from point {pointIndex}");
         }
         else
         {
             animator?.SetBool("isWalking", false);
-            canMove = false; // stop permanently
-            Debug.Log("🏁 Finished all points!");
+            canMove = false; // Stop permanently
         }
     }
 
@@ -115,6 +170,7 @@ public class DrPawsPathWalker : MonoBehaviour
         animator?.SetBool("isWalking", true);
         animator?.SetBool("isGrabBone", false);
         animator?.SetBool("isGreetings", false);
+        animator?.SetBool("isGiving", false);
       
         Debug.Log("🎬 Timeline Trigger: Dr. Paws starts moving!");
     }
@@ -126,10 +182,22 @@ public class DrPawsPathWalker : MonoBehaviour
 
 
     }
-      public void OpeningDoor()
+    public void OpeningDoor()
     {
 
         animator?.SetBool("isOpeningDoor", true);
+
+    }
+    public void GiveChecklist()
+    {
+
+        animator?.SetBool("isGiving", true);
+
+    }
+            public void Idle()
+    {
+        animator?.SetBool("isIdle", true);
+        animator?.SetBool("isGiving", false);
 
     }
     public void StopWalkingFromTimeline()
@@ -139,6 +207,42 @@ public class DrPawsPathWalker : MonoBehaviour
         animator?.SetBool("isWalking", false);
         Debug.Log("⏸️ Timeline Trigger: Dr. Paws stops moving!");
     }
+    public void ResumeWalking()
+    {
+        Debug.Log("▶ Resuming walking!");
+        canMove = true;
+        isPaused = false;
+        animator?.SetBool("isWalking", true);
+    }
+    public void Clapping()
+    {
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isGrabbing", false);
+        animator.SetBool("isGiving", false);
+        animator.SetBool("isOpeningDoor", false);
+
+        animator.SetBool("isClapping", true);
+    }
+
+    public void Talking()
+    {
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isGrabbing", false);
+        animator.SetBool("isGiving", false);
+        animator.SetBool("isOpeningDoor", false);
+        animator.SetBool("isClapping", false);
+
+        animator.SetBool("isTalking", true);
+
+    }
+  public void Angry()
+{
+    animator.SetBool("isAngry", true);
+
+}
+
+
+
 
     void OnDrawGizmos()
     {
