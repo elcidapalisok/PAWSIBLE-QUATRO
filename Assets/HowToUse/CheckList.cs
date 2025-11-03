@@ -18,7 +18,7 @@ public class Checklist : MonoBehaviour
        public int nextTaskIndex = 0;
         public float completionTime = 0f; // ⏱ save total time spent
     }
-    public DrPawsPathWalker drPawsPathWalker;
+    public DrPawsPathWalker_Storymode drPawsPathWalker;
     public TaskGroup[] taskGroups;
     public Toggle[] toggles;
     public Animator animator;

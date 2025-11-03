@@ -9,7 +9,7 @@ public class doorDetector : MonoBehaviour
     public float closeDelay = 2f;
     private bool doorOpened = false;
 
-    public DrPawsPathWalker drPawsPathWalker;
+    public DrPawsPathWalker_CutScene drPawsPathWalker;
 
     private Renderer rend;
 

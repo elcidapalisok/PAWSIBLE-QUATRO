@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class DrPawsPathWalker : MonoBehaviour
+public class DrPawsPathWalker_CutScene : MonoBehaviour
 {
     [Header("XR Socket Settings")]
     public GameObject xrSocket;      // Assign your XR socket here
-
+    public GameObject boneObject;  
+    public GameObject LiverObject;   
     [Header("Path Settings")]
     public Transform[] pathPoints;
     [Range(0.1f, 5f)] public float speed = 1.2f;
@@ -122,15 +123,15 @@ public class DrPawsPathWalker : MonoBehaviour
                 break;
 
             case 4:
-             Debug.Log("🦴 CHECKPOINT4");
+                Debug.Log("🦴 CHECKPOINT4");
+         
      isPaused = true;
      canMove = false;
-     animator?.SetBool("isWalking", false);
+                animator?.SetBool("isWalking", false);
+     speed = 3.0f;
      yield break; 
 
    
-                break;
-
             case 5:
 
                 Debug.Log("🦴 CHECKPOINT5");
@@ -145,9 +146,110 @@ public class DrPawsPathWalker : MonoBehaviour
 
             case 7:
                 Debug.Log("🦴 CHECKPOINT7");
+  Debug.Log("🦴 CHECKPOINT7");
+                // 🦴 Play grab animation first
+                animator.SetBool("isGrabBone", true);
+                Debug.Log("🦴 Dr. Paws starts grabbing bone...");
+                yield return new WaitForSeconds(1.2f);
+
+                // Attach bone mid-animation
+                Debug.Log("🦴 Bone successfully attached.");
+
+                yield return new WaitForSeconds(1.3f); // Finish grab animation
+                animator.SetBool("isGrabBone", false);
+                break;
+ 
+            case 8:
+                Debug.Log("🦴 CHECKPOINT8");
 
                 break;
-                
+            case 9:
+                Debug.Log("🦴 CHECKPOINT9");
+                speed = 2.0f;
+                animator.SetBool("isPuttingBone", true);
+                Debug.Log("🐾 Dr. Paws puts the bone.");
+                yield return new WaitForSeconds(3f);
+                animator.SetBool("isPuttingBone", false);
+
+                // 🧩 Disable socket and physics control
+                if (xrSocket != null)
+                {
+                    xrSocket.SetActive(false);
+                    Debug.Log("🧩 XR Socket disabled.");
+                }
+
+                if (boneObject != null)
+                {
+                    Rigidbody rb = boneObject.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = false;
+                        Debug.Log("💥 Bone physics re-enabled (isKinematic = false).");
+                    }
+                }
+
+                yield return new WaitForSeconds(1.5f);
+                break;
+              
+            case 10:
+                Debug.Log("🦴 CHECKPOINT10");
+
+                break;
+            case 11:
+                Debug.Log("🦴 CHECKPOINT11");
+
+                     xrSocket.SetActive(true);
+
+                // 🦴 Play grab animation first
+                animator.SetBool("isGrabBone", true);
+                Debug.Log("🦴 Dr. Paws starts grabbing Liver...");
+                yield return new WaitForSeconds(1.2f);
+
+                Debug.Log("🦴 Liver successfully attached.");
+
+                yield return new WaitForSeconds(1.3f); // Finish grab animation
+                animator.SetBool("isGrabBone", false);
+
+                break;
+
+
+            case 12:
+                Debug.Log("🦴 CHECKPOINT12");
+
+                break;
+            case 13:
+                Debug.Log("🦴 CHECKPOINT13");
+ animator.SetBool("isPuttingBone", true);
+                Debug.Log("🐾 Dr. Paws puts the Liver.");
+                yield return new WaitForSeconds(3f);
+                animator.SetBool("isPuttingBone", false);
+
+            
+
+                if (xrSocket != null)
+                {
+                    xrSocket.SetActive(false);
+                    Debug.Log("🧩 XR Socket disabled.");
+                }
+
+                if (LiverObject != null)
+                {
+                    Rigidbody rb = LiverObject.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = false;
+                        Debug.Log("💥 Bone physics re-enabled (isKinematic = false).");
+                    }
+                }
+                break;
+               
+            case 14:
+                Debug.Log("🦴 CHECKPOINT14");
+                break;
+            case 15:
+                Debug.Log("🦴 CHECKPOINT15");
+
+                break;                   
         }
 
         // Resume walking if not finished
@@ -171,6 +273,7 @@ public class DrPawsPathWalker : MonoBehaviour
         animator?.SetBool("isGrabBone", false);
         animator?.SetBool("isGreetings", false);
         animator?.SetBool("isGiving", false);
+        animator?.SetBool("isTalking", false);
       
         Debug.Log("🎬 Timeline Trigger: Dr. Paws starts moving!");
     }
@@ -213,6 +316,7 @@ public class DrPawsPathWalker : MonoBehaviour
         canMove = true;
         isPaused = false;
         animator?.SetBool("isWalking", true);
+
     }
     public void Clapping()
     {

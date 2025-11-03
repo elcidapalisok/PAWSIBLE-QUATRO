@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class ChecklistGrabResume : MonoBehaviour
 {
     [Header("Dr. Paws Walker Script")]
-    public DrPawsPathWalker drPawsWalker;
+    public DrPawsPathWalker_Storymode drPawsWalker;
 
     private int grabCount = 0;
     private XRGrabInteractable grabInteractable;
