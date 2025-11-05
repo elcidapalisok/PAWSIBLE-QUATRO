@@ -8,7 +8,6 @@ TagManager:
   - Femur
   - Radius
   - Ulna
-  - Wrist
   - Vertaebrae002
   - Humerus
   - Vertaebrae003
@@ -24,6 +23,32 @@ TagManager:
   - DAPInjectionZone
   - Syringe
   - Checklist
+  - Scapula
+  - Fibia
+  - Pelvic
+  - Tail
+  - Ankle
+  - Hinelegs
+  - Phalanges
+  - Wrist
+  - Femur_R
+  - Tibia_R
+  - Fibia_R
+  - Ankle_R
+  - Hinelegs_R
+  - Scapula_R
+  - Humerus_R
+  - Ulna_R
+  - Radius_R
+  - Phalanges_R
+  - Hinelegs_FL
+  - Hinelegs_FR
+  - Neck
+  - Jaw
+  - Skull
+  - Vertaebrae
+  - Intestine
+  - Heart
   layers:
   - Default
   - TransparentFX
