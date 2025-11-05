@@ -206,16 +206,21 @@
         if (ChecklistManager.Instance != null)
         {
             if (segment == "handwashing" && line == 5)
-                ChecklistManager.Instance.CompleteTask("Sanitize");
+                //ChecklistManager.Instance.CompleteTask("Sanitize");
+                DialogueChecklist.Instance?.CompleteTask("Sanitize");
 
             if (segment == "glovescoat" && line == 2)
-                ChecklistManager.Instance.CompleteTask("Wear PPE");
+                //ChecklistManager.Instance.CompleteTask("Wear PPE");
+                DialogueChecklist.Instance?.CompleteTask("Wear PPE");
 
             if (segment == "vaccine prep" && line == 6)
-                ChecklistManager.Instance.CompleteTask("Prepare Vaccine");
+                //ChecklistManager.Instance.CompleteTask("Prepare Vaccine");
+                DialogueChecklist.Instance?.CompleteTask("Prepare Vaccine");
 
             if (segment == "injection" && line == 4)
-                ChecklistManager.Instance.CompleteTask("Vaccinate the dog");
+                //ChecklistManager.Instance.CompleteTask("Vaccinate the dog");
+                DialogueChecklist.Instance?.CompleteTask("Vaccinate the dog");
+
         }
 
         NextDialogue();
