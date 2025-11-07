@@ -49,6 +49,11 @@ TagManager:
   - Vertaebrae
   - Intestine
   - Heart
+  - Penis
+  - Uninary_Bladder
+  - Testicle
+  - Anus
+  - Colon
   layers:
   - Default
   - TransparentFX
