@@ -38328,14 +38328,18 @@ MonoBehaviour:
     - And of course, the necessary equipments are on stand by as well.
   - segmentName: Sanitize and PPE
     dialogueLines:
-    - Moving on, we both know the importance of maintaining proper attire hygiene
-      and safety, and of course, we also have to disinfect first.
-    - To get started, head to your right for the sink and reach out to the faucet
-      to wash your hands
-    - 'Don''t forget to use the soap again when washing your hands. '
-    - Once again, use the sanitizer to disinfect your hands. You've done this earlier
-      but it is important to avoid contamination especially in rooms where we tend
-      to wounds so I assure you it's completely necessary.
+    - "Moving on \u2014 we both know how important proper hygiene and safety are.
+      Before anything else, let\u2019s disinfect first.\r\n"
+    - 'Head to your right, locate the sink, and turn on the faucet to wash your hands.
+
+'
+    - "Don\u2019t forget to use the soap again when washing your hands\r\n\r\n"
+    - 'Now, apply sanitizer to disinfect your hands once more. This step prevents
+      contamination, especially when treating wounds.
+
+      
+
+'
     - This will serve as a good practice for aspiring professional veterinaries like
       you!
     - Next, put on a new set of lab coat.
@@ -38355,20 +38359,20 @@ MonoBehaviour:
     - Before anything, you should know that unlike humans, canines shouldn't use
       the products that humans use to sanitize themselves since some of them can
       be toxic.
-    - We'll be needing some equipment form the inventory so check them on the shelves
+    - We'll be needing some equipment from  the inventory so check them on the shelves
   - segmentName: Equipments
     dialogueLines:
     - First, take some water basin and put it on the steel tray near the other table.
     - 'Next, take the bandage, scissors, an iodine pad, a non-stick pad, gauze, some
       napkins and a vet wrap.
 
-      
+
 
 '
     - "Place all those items on the tray near Ik-Jun\u2019s table.\r\n\r\n"
     - 'Preparing everything ahead saves time later. That should do for now!
 
-      
+
 
 '
   - segmentName: Treatment
@@ -38376,18 +38380,18 @@ MonoBehaviour:
     - "Ik-Jun seems nervous \u2014 try comforting him first.\r\n"
     - 'Nicely done! He seems to enjoy your company.
 
-      
+
 
 '
     - 'Now, open up the iodine pad and apply it to his wound to disinfect it.
 
-      
+
 
 '
     - 'Next, get a napkin and soak it with the water from the water basin and clean
       off excess iodine around the wound.
 
-      
+
 
 '
     - "Great! Now, apply a non-stick pad around the wound. You can cut it to match
@@ -38398,29 +38402,29 @@ MonoBehaviour:
     - "Make sure it\u2019s the right tightness \u2014 not too tight, not too loose.\r\n\r\n"
     - 'A two-roll application should be enough. Cut it with the scissors now.
 
-      
+
 
 '
     - 'Nicely done! Now, proceed with the Vet Wrap.
 
-      
+
 
 '
     - 'Vet Wrap is a bit stickier than the others so be careful as you cover up the
       entire area where we applied the gauze.
 
-      
+
 
 '
     - 'Apply it in the same manner we applied the gauze.
 
-      
+
 
 '
     - 'Great work! Congratulations on your first treatment! Even Ik-Jun is very happy
       for you!
 
-      
+
 
 '
   - segmentName: Done IJ
@@ -38428,7 +38432,7 @@ MonoBehaviour:
     - Great job, now proceed to the hallway on the far right to check out the other
       room!
   voiceSource: {fileID: 1397920453}
-  audioFolderPath: Audio/Vaccination_StoryMode
+  audioFolderPath: Audio/WoundTreatment_StoryMode
   typingSpeed: 0.03
 --- !u!4 &1397920458
 Transform:

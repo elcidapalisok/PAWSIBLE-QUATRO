@@ -16,11 +16,12 @@
 
         [Header("Dialogue Segments")]
         public List<DialogueSegment> dialogueSegments = new List<DialogueSegment>();
-
+        
         private int currentSegmentIndex = 0;
         private int currentDialogueIndex = 0;
         private Coroutine typingCoroutine;
         private bool canProceed = true;
+        
 
         [Header("Audio Settings")]
         public AudioSource voiceSource; // Assign this in Inspector
@@ -31,7 +32,7 @@
         public float typingSpeed = 0.03f;
 
         private HashSet<(string, int)> triggerRequiredLines = new HashSet<(string, int)>();
-
+        
         [System.Serializable]
         public class DialogueSegment
         {
@@ -39,8 +40,10 @@
             [TextArea(3, 10)]
             public List<string> dialogueLines = new List<string>();
         }
+        [Header("Cutscene Control")]
+        public bool cutsceneMode = false; // When true, DialogueManager won't auto-play audio
 
-        void Start()
+    void Start()
         {
             nextButton.onClick.AddListener(NextDialogue);
             prevButton.onClick.AddListener(PrevDialogue);
@@ -128,34 +131,35 @@
             AdvanceDialogue();
         }
 
-        // ----------------------------
-        // AUDIO HANDLING
-        // ----------------------------
-        void PlayVoiceForCurrentLine()
+    // ----------------------------
+    // AUDIO HANDLING
+    // ----------------------------
+    void PlayVoiceForCurrentLine()
+    {
+        if (voiceSource == null || cutsceneMode) return; // 👈 skip audio during cutscene
+
+        string segment = GetCurrentSegmentName().Replace(" ", "").ToLower();
+        string fileName = $"{segment}_{currentDialogueIndex:D2}"; // e.g. handwashing_00
+        string fullPath = Path.Combine(audioFolderPath, fileName);
+
+        AudioClip clip = Resources.Load<AudioClip>(fullPath);
+        if (clip != null)
         {
-            if (voiceSource == null) return;
-
-            string segment = GetCurrentSegmentName().Replace(" ", "").ToLower();
-            string fileName = $"{segment}_{currentDialogueIndex:D2}"; // e.g. handwashing_00
-            string fullPath = Path.Combine(audioFolderPath, fileName);
-
-            AudioClip clip = Resources.Load<AudioClip>(fullPath);
-            if (clip != null)
-            {
-                voiceSource.clip = clip;
-                voiceSource.Play();
-                Debug.Log($"Playing voice clip: {fullPath}");
-            }
-            else
-            {
-                Debug.LogWarning($"Voice clip not found: {fullPath}");
-            }
+            voiceSource.clip = clip;
+            voiceSource.Play();
+            Debug.Log($"Playing voice clip: {fullPath}");
         }
+        else
+        {
+            Debug.LogWarning($"Voice clip not found: {fullPath}");
+        }
+    }
 
-        // ----------------------------
-        // BUTTON HANDLERS
-        // ----------------------------
-        void NextDialogue()
+
+    // ----------------------------
+    // BUTTON HANDLERS
+    // ----------------------------
+    void NextDialogue()
         {
             var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
             if (currentDialogueIndex < lines.Count - 1)
@@ -254,4 +258,13 @@
         {
             return currentDialogueIndex;
         }
-    }
+        public void ShowCutsceneLine(int lineIndex)
+        {
+            if (!cutsceneMode) return; // only during cutscene
+            currentSegmentIndex = 0; // assuming Cutscene is segment 0
+            currentDialogueIndex = lineIndex;
+            ShowCurrentDialogue();
+        }
+
+
+}
