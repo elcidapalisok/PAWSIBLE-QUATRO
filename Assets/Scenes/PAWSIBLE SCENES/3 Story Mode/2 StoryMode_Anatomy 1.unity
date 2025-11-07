@@ -27656,6 +27656,10 @@ PlayableDirector:
     value: {fileID: 641067386}
   - key: {fileID: -8469783114311832919, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
     value: {fileID: 9109050053501268235}
+  - key: {fileID: 1431745940478475252, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
+    value: {fileID: 7004155197426948230}
+  - key: {fileID: 3260132730085560691, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
+    value: {fileID: 7183658228422126013}
   m_ExposedReferences:
     m_References:
     - 75d1784acb77d19489b50db51d7f3564: {fileID: 0}
@@ -68878,6 +68882,8 @@ GameObject:
   - component: {fileID: 7004155197426948226}
   - component: {fileID: 7004155197426948227}
   - component: {fileID: 7004155197426948228}
+  - component: {fileID: 7004155197426948229}
+  - component: {fileID: 7004155197426948230}
   m_Layer: 0
   m_Name: Tibia
   m_TagString: Tibia
@@ -77350,6 +77356,51 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1007781610511010038, guid: f0639fc25659fdf429a1e06863001846, type: 3}
+--- !u!114 &7004155197426948229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636515646349542492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 65203289239692351}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
+--- !u!114 &7004155197426948230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636515646349542492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 58267bead91da93449b3be997f87c8de, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7004155197426948229}
+          m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+          m_MethodName: EnableHighlight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7135213119191140383
 GameObject:
   m_ObjectHideFlags: 0
@@ -77475,6 +77526,8 @@ GameObject:
   - component: {fileID: 7183658228422126008}
   - component: {fileID: 7183658228422126007}
   - component: {fileID: 7183658228422126012}
+  - component: {fileID: 7183658228422126013}
+  - component: {fileID: 7183658228422126014}
   m_Layer: 0
   m_Name: fibia
   m_TagString: Fibia
@@ -77695,6 +77748,51 @@ MonoBehaviour:
     limb and supports muscles around the ankle.
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+--- !u!114 &7183658228422126013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183658228422126006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 5d1b90552f4e920428150201b962a437, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7183658228422126014}
+          m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+          m_MethodName: EnableHighlight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7183658228422126014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183658228422126006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 5346957991114183024}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!23 &7202271454444822891
 MeshRenderer:
   m_ObjectHideFlags: 0
