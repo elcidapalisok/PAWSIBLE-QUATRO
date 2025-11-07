@@ -4,11 +4,11 @@ using TMPro;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using System.Collections;
 
-public class BoneDescription : MonoBehaviour
+public class VisceralDescription : MonoBehaviour
 {
-    [Header("Bone Info")]
-    public string boneTitle;           // e.g. "Femur"
-    [TextArea] public string boneInfo; // detailed description
+    [Header("Visceral Info")]
+    public string visceralTitle;           // e.g. "Femur"
+    [TextArea] public string visceralInfo; // detailed description
 
     [Header("UI References")]
     public TextMeshProUGUI titleText;
@@ -68,13 +68,13 @@ public class BoneDescription : MonoBehaviour
 
     private void ShowText()
     {
-        if (titleText != null) titleText.text = boneTitle;
-        if (descriptionText != null) descriptionText.text = boneInfo;
+        if (titleText != null) titleText.text = visceralTitle;
+        if (descriptionText != null) descriptionText.text = visceralInfo;
     }
 
     private void ClearText()
     {
-        if (titleText != null) titleText.text = "Vkeletal structure ";
-        if (descriptionText != null) descriptionText.text = "Welcome to PAWSIBLE! This is the skeletal system of the dog. The skeleton provides structure, protects vital organs, and supports movement. Explore each bone to learn its name, location, and function";
+        if (titleText != null) titleText.text = "Visceral System";
+        if (descriptionText != null)   descriptionText.text = "Welcome to PAWSIBLE! This is the visceral system of the dog. These internal organs keep the body alive by helping with breathing, digestion, blood circulation, and waste removal. Explore each organ to learn its name, location, and function.";
     }
 }
