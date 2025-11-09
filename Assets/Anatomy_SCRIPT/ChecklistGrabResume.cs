@@ -38,6 +38,7 @@ public class ChecklistGrabResume : MonoBehaviour
         {
             Debug.Log("✅ Second grab detected → Dr. Paws resumes walking!");
             drPawsWalker.ResumeWalking();
+            
         }
     }
 }

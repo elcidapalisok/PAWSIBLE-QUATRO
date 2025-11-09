@@ -17,6 +17,12 @@ public class GameStartMenu : MonoBehaviour
     public Button optionButton;
     public Button aboutButton;
     public Button quitButton;
+    [Header("Background")]
+    public Image backgroundImage; // Drag your Image object here
+    public Sprite mainMenuBg;
+    public Sprite optionBg;
+    public Sprite aboutBg;
+
 
     public List<Button> returnButtons;
 
@@ -63,22 +69,24 @@ public class GameStartMenu : MonoBehaviour
         about.SetActive(false);
     }
 
-    public void EnableMainMenu()
+  public void EnableMainMenu()
     {
+        HideAll();
         mainMenu.SetActive(true);
-        options.SetActive(false);
-        about.SetActive(false);
+        backgroundImage.sprite = mainMenuBg;
     }
+
     public void EnableOption()
     {
-        mainMenu.SetActive(false);
+        HideAll();
         options.SetActive(true);
-        about.SetActive(false);
+        backgroundImage.sprite = optionBg;
     }
+
     public void EnableAbout()
     {
-        mainMenu.SetActive(false);
-        options.SetActive(false);
+        HideAll();
         about.SetActive(true);
+        backgroundImage.sprite = aboutBg;
     }
 }

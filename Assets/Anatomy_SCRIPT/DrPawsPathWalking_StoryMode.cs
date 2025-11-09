@@ -120,6 +120,7 @@ public class DrPawsPathWalker_Storymode : MonoBehaviour
 
             case 3:
                 Debug.Log("🦴 CHECKPOINT3");
+                
                 break;
 
      
@@ -191,7 +192,8 @@ public class DrPawsPathWalker_Storymode : MonoBehaviour
         canMove = true;
         isPaused = false;
         animator?.SetBool("isWalking", true);
-
+        animator.SetBool("isGiving", false);
+        animator.SetBool("isWalking", false);
     }
     public void Clapping()
     {
@@ -210,6 +212,7 @@ public class DrPawsPathWalker_Storymode : MonoBehaviour
         animator.SetBool("isGiving", false);
         animator.SetBool("isOpeningDoor", false);
         animator.SetBool("isClapping", false);
+        animator.SetBool("isGreetings", false);
 
         animator.SetBool("isTalking", true);
 
