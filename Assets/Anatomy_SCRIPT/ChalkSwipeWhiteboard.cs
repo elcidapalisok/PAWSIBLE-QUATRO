@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 [System.Serializable]
 public class TextChunk
 {
@@ -10,8 +11,8 @@ public class TextChunk
     public Vector2 position; // x, y offset from center
     public float fontSize = 0f; // 0 = use default
     public TextAlignmentOptions alignment = TextAlignmentOptions.Center;
+    public Sprite pageSprite; // 👈 NEW: Specific sprite for this page
 }
-
 
 public class ChalkSwipeWhiteboard : MonoBehaviour
 {
@@ -19,10 +20,6 @@ public class ChalkSwipeWhiteboard : MonoBehaviour
     public Image[] swipeSprites;
 
     [Header("References")]
-    
-    [Header("Sprites Sequence")]
-public Sprite[] spriteSequence; // The images you want to cycle through
-private int currentSpriteIndex = 0; 
     public TextMeshProUGUI textMesh;
     public Transform rightHandTransform;
 
@@ -84,6 +81,9 @@ private int currentSpriteIndex = 0;
             // Force TMP to update mesh before animation
             DisplayPage(currentIndex);
             textMesh.ForceMeshUpdate();
+
+            // Update sprites for the first page
+            UpdateSwipeSprites();
 
             // Start the chalk animation for the first page
             StartCoroutine(PlayChalkTransition(currentIndex, skipErase: true));
@@ -226,45 +226,63 @@ private int currentSpriteIndex = 0;
             swipeInProgress = false;
         }
     }
-private void OnSwipeRight()
-{
-    if (isAnimating) return;
-    int newIndex = (currentIndex + 1) % pages.Length;
-    if (newIndex != currentIndex)
+
+    private void OnSwipeRight()
     {
-        currentIndex = newIndex;
-        StartCoroutine(PlayChalkTransition(currentIndex));
-        UpdateSwipeSprites();
+        if (isAnimating) return;
+        int newIndex = (currentIndex + 1) % pages.Length;
+        if (newIndex != currentIndex)
+        {
+            currentIndex = newIndex;
+            StartCoroutine(PlayChalkTransition(currentIndex));
+            UpdateSwipeSprites();
+        }
     }
-}
 
-private void OnSwipeLeft()
-{
-    if (isAnimating) return;
-    int newIndex = (currentIndex - 1 + pages.Length) % pages.Length;
-    if (newIndex != currentIndex)
+    private void OnSwipeLeft()
     {
-        currentIndex = newIndex;
-        StartCoroutine(PlayChalkTransition(currentIndex));
-        UpdateSwipeSprites();
+        // 👇 PREVENT SWIPE LEFT AT FIRST PAGE
+        if (isAnimating || currentIndex == 0) 
+        {
+            if (logSwipeEvents && currentIndex == 0)
+                Debug.Log("Swipe left blocked - already at first page");
+            return;
+        }
+        
+        int newIndex = (currentIndex - 1 + pages.Length) % pages.Length;
+        if (newIndex != currentIndex)
+        {
+            currentIndex = newIndex;
+            StartCoroutine(PlayChalkTransition(currentIndex));
+            UpdateSwipeSprites();
+        }
     }
-}
-private void UpdateSwipeSprites()
-{
-    if (swipeSprites == null || swipeSprites.Length == 0 || spriteSequence == null || spriteSequence.Length == 0)
-        return;
 
-    // Cycle sprite index
-    currentSpriteIndex = (currentSpriteIndex + 1) % spriteSequence.Length;
-
-    // Update all swipeSprites to the new sprite (or you can assign individually)
-    foreach (var img in swipeSprites)
+    private void UpdateSwipeSprites()
     {
-        if (img != null)
-            img.sprite = spriteSequence[currentSpriteIndex];
-    }
-}
+        if (swipeSprites == null || swipeSprites.Length == 0)
+            return;
 
+        // Get the sprite for the current page
+        Sprite currentSprite = null;
+        if (currentIndex >= 0 && currentIndex < pages.Length)
+        {
+            currentSprite = pages[currentIndex].pageSprite;
+        }
+
+        // Update all swipeSprites with the current page's sprite
+        foreach (var img in swipeSprites)
+        {
+            if (img != null && currentSprite != null)
+            {
+                img.sprite = currentSprite;
+            }
+            else if (img != null && currentSprite == null)
+            {
+                Debug.LogWarning($"No sprite assigned for page {currentIndex}", this);
+            }
+        }
+    }
 
     private IEnumerator PlayChalkTransition(int pageIndex, bool skipErase = false)
     {
@@ -312,7 +330,6 @@ private void UpdateSwipeSprites()
 
         isAnimating = false;
     }
-
 
     private void TryAutoFindRightHand()
     {
@@ -374,6 +391,11 @@ private void UpdateSwipeSprites()
         if (isAnimating || pageIndex < 0 || pageIndex >= pages.Length) return;
 
         currentIndex = pageIndex;
+        
+        // Update display immediately
+        DisplayPage(currentIndex);
+        UpdateSwipeSprites();
+        
         if (!isAnimating)
         {
             StartCoroutine(PlayChalkTransition(currentIndex));

@@ -11,51 +11,54 @@ public class QuizSummaryDetector : MonoBehaviour
 
     [Header("UI Elements")]
     public GameObject summaryPanel;
-    public TMP_Text summaryText;
+    [Header("World Output Texts")]
+    public TMP_Text summaryTitleText;
+    public TMP_Text scoreText;
+
+    public TMP_Text correctText;
+    public TMP_Text wrongText;
+    public TMP_Text breakdownTitleText;
+    public TMP_Text breakdownDetailsText;
+
+    [Header("Progress Bars")]
+    public Image accuracyProgressBar;
+    public Image timeScoreProgressBar;
+    public TMP_Text accuracyPercentageText;
+    public TMP_Text timeScorePercentageText;
 
     [Header("Scoring")]
     public int pointsPerCorrect = 10;
     public int pointsPerWrong = -5;
+    public int maxTimeScore = 100; // Maximum time-based score
+    public float timeWeight = 0.3f; // How much time affects final score (0-1)
+
+    // Reference to your timer
+    public AssessmentTimer timer;
 
     private List<string> correctTags = new List<string>()
     {
-       "Liver", "Penis", "Heart"
+       "Humerus", "Pelvic", "Vertaebrae", "Liver", "Penis", "Heart"
     };
 
     private List<string> detectedTags = new List<string>();
     private List<string> wrongTags = new List<string>(); // Track wrong objects
     private int score = 0;
+    private int timeBasedScore = 0;
+    private int finalScore = 0;
 
     void Start()
     {
         Debug.Log("=== QUIZ DETECTOR STARTED ===");
-        summaryPanel.SetActive(false);
-        SetupColliders();
-    }
-
-    void SetupColliders()
-    {
-        // Set up bones table collider
-        if (bonesTable != null)
+        if (summaryPanel != null)
         {
-            BoxCollider collider = bonesTable.GetComponent<BoxCollider>();
-            if (collider == null) collider = bonesTable.AddComponent<BoxCollider>();
-            collider.isTrigger = true;
-            collider.size = Vector3.one * 3f; // Larger size
-            Debug.Log($"Bones table collider setup: {collider.size}");
+            summaryPanel.SetActive(false);
         }
 
-        // Set up visceral freezer collider
-        if (visceralFreezer != null)
-        {
-            BoxCollider collider = visceralFreezer.GetComponent<BoxCollider>();
-            if (collider == null) collider = visceralFreezer.AddComponent<BoxCollider>();
-            collider.isTrigger = true;
-            collider.size = Vector3.one * 3f; // Larger size
-            Debug.Log($"Visceral freezer collider setup: {collider.size}");
-        }
-
-        Debug.Log("Colliders setup complete");
+        // Initialize progress bars
+        if (accuracyProgressBar != null)
+            accuracyProgressBar.fillAmount = 0f;
+        if (timeScoreProgressBar != null)
+            timeScoreProgressBar.fillAmount = 0f;
     }
 
     void OnTriggerEnter(Collider other)
@@ -77,8 +80,13 @@ public class QuizSummaryDetector : MonoBehaviour
                 score += pointsPerCorrect;
                 Debug.Log($"✅ CORRECT: {other.tag} +{pointsPerCorrect}pts - Total: {detectedTags.Count}/{correctTags.Count} - Score: {score}");
                 
+                // Update accuracy progress bar in real-time
+                UpdateAccuracyProgressBar();
+                
                 if (detectedTags.Count >= correctTags.Count)
                 {
+                    if (timer != null)
+                        timer.StopTimer();
                     ShowSummary();
                 }
             }
@@ -95,6 +103,9 @@ public class QuizSummaryDetector : MonoBehaviour
                 wrongTags.Add(other.tag);
                 score += pointsPerWrong;
                 Debug.Log($"❌ WRONG: {other.tag} {pointsPerWrong}pts - Score: {score}");
+                
+                // Update accuracy progress bar in real-time
+                UpdateAccuracyProgressBar();
             }
             else
             {
@@ -103,60 +114,118 @@ public class QuizSummaryDetector : MonoBehaviour
         }
     }
 
-
-
-    void ShowSummary()
+    void UpdateAccuracyProgressBar()
     {
-        if (summaryPanel == null || summaryText == null)
+        if (accuracyProgressBar != null)
         {
-            Debug.LogError("UI elements not assigned!");
-            return;
+            float accuracy = Mathf.Clamp(
+                ((float)detectedTags.Count / correctTags.Count) * 100f -
+                ((float)wrongTags.Count / correctTags.Count) * 50f,
+                0f, 100f
+            );
+            
+            accuracyProgressBar.fillAmount = accuracy / 100f;
+            
+            if (accuracyPercentageText != null)
+                accuracyPercentageText.text = $"{accuracy:F1}%";
         }
+    }
 
-        summaryPanel.SetActive(true);
+    int CalculateTimeBasedScore()
+    {
+        if (timer == null) return maxTimeScore;
         
-        // Calculate percentage
-        float percentage = (float)detectedTags.Count / correctTags.Count * 100f;
+        float elapsedTime = timer.GetElapsedTime();
         
-        string result = $"QUIZ COMPLETE!\n";
-        result += "====================\n";
-        result += $"SCORE: {score} points\n";
-        result += $"ACCURACY: {percentage:F1}%\n\n";
+        // Example: More time = lower score, but never below 0
+        // You can adjust this formula based on your needs
+        float timeScore = Mathf.Max(0, maxTimeScore - (elapsedTime / 60f) * 10f);
         
-        result += $"Correct Objects: {detectedTags.Count}/{correctTags.Count}\n";
-        foreach (string tag in correctTags)
+        return Mathf.RoundToInt(timeScore);
+    }
+
+    void UpdateTimeScoreProgressBar(int timeScore)
+    {
+        if (timeScoreProgressBar != null)
         {
-            string status = detectedTags.Contains(tag) ? "✓ FOUND" : "✗ MISSING";
-            result += $"- {tag}: {status}\n";
+            float normalizedScore = (float)timeScore / maxTimeScore;
+            timeScoreProgressBar.fillAmount = normalizedScore;
+            
+            if (timeScorePercentageText != null)
+                timeScorePercentageText.text = $"{timeScore} pts";
         }
+    }
+
+    public void ShowSummary()
+    {
+        // Show Objects if they were hidden
+        summaryTitleText.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(true);
+ 
+        correctText.gameObject.SetActive(true);
+        wrongText.gameObject.SetActive(true);
+        breakdownTitleText.gameObject.SetActive(true);
+        breakdownDetailsText.gameObject.SetActive(true);
         
-        result += $"\nWrong Objects: {wrongTags.Count}\n";
+        if (summaryPanel != null)
+            summaryPanel.SetActive(true);
+
+        // Calculate scores
+        float accuracyPercentage = Mathf.Clamp(
+            ((float)detectedTags.Count / correctTags.Count) * 100f -
+            ((float)wrongTags.Count / correctTags.Count) * 50f,
+            0f, 100f
+        );
+
+        timeBasedScore = CalculateTimeBasedScore();
+        
+        // Calculate final score (combination of accuracy and time)
+        finalScore = Mathf.RoundToInt(
+            (score * (1f - timeWeight)) + 
+            (timeBasedScore * timeWeight)
+        );
+
+        // Update UI
+        summaryTitleText.text = "Mastery Evaluation";
+        scoreText.text = $"Final Score: {finalScore} pts";
+      
+
+        // ✅ Show item names for correct
+        string correctList = string.Join(", ", detectedTags);
+        correctText.text = $"<color=#00FF00>Correct:</color> {correctList}";
+
+        // ✅ Show item names for wrong (RED)
         if (wrongTags.Count > 0)
         {
-            foreach (string wrongTag in wrongTags)
-            {
-                result += $"- {wrongTag} (penalty)\n";
-            }
+            string wrongList = string.Join(", ", wrongTags);
+            wrongText.text = $"<color=#FF0000>Wrong:</color> {wrongList}";
         }
         else
         {
-            result += "- None! Great job! 🎉\n";
+            wrongText.text = "<color=#FF0000>Wrong:</color> None";
         }
 
-        result += $"\nBreakdown:\n";
-        result += $"+{detectedTags.Count * pointsPerCorrect} from correct answers\n";
+        breakdownTitleText.text = "Summary:";
+
+        string details = $"+{detectedTags.Count * pointsPerCorrect} correct points\n";
+        details += $"+{timeBasedScore} time bonus\n";
         if (wrongTags.Count > 0)
-        {
-            result += $"{wrongTags.Count * pointsPerWrong} from wrong answers\n";
-        }
+            details += $"{wrongTags.Count * pointsPerWrong} penalty\n";
 
-        summaryText.text = result;
-        Debug.Log("Summary shown!");
+        breakdownDetailsText.text = details;
+
+        // Update progress bars
+        UpdateAccuracyProgressBar();
+        UpdateTimeScoreProgressBar(timeBasedScore);
+
+        Debug.Log("Separated Summary shown!");
     }
 
     // Public method to manually show summary
     public void ManualShowSummary()
     {
+        if (timer != null)
+            timer.StopTimer();
         ShowSummary();
     }
 
@@ -166,14 +235,30 @@ public class QuizSummaryDetector : MonoBehaviour
         detectedTags.Clear();
         wrongTags.Clear();
         score = 0;
-        summaryPanel.SetActive(false);
+        timeBasedScore = 0;
+        finalScore = 0;
+        
+        if (summaryPanel != null)
+            summaryPanel.SetActive(false);
+            
+        if (accuracyProgressBar != null)
+            accuracyProgressBar.fillAmount = 0f;
+        if (timeScoreProgressBar != null)
+            timeScoreProgressBar.fillAmount = 0f;
+            
+        if (timer != null)
+        {
+            timer.ResetTimer();
+            timer.StartTimer();
+        }
+        
         Debug.Log("Quiz reset!");
     }
 
     // Get current score for other scripts
     public int GetCurrentScore()
     {
-        return score;
+        return finalScore;
     }
 
     // Get detection progress

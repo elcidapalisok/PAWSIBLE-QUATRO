@@ -369,6 +369,18 @@ public class SubtitleSignalTrigger : MonoBehaviour
         subtitleCanvas.SetActive(true); // show canvas again
         StartCoroutine(ShowLinesSequentially(lines, true));
     }
+    public void StartOfVisceralSection()
+{
+    string[] lines = new string[]
+    {
+
+        "Excellent work! All bones are now properly placed on the medical table and trolley.",
+        "You’re really mastering this! Now, let’s move on to the Visceral Section and handle the internal organs with care"
+    };
+
+    subtitleCanvas.SetActive(true);
+    StartCoroutine(ShowLinesSequentially(lines, true));
+}
     public void Heart()
 {
     string[] lines = new string[]
@@ -397,7 +409,7 @@ public void Intestine()
 {
     string[] lines = new string[]
     {
-        "Great! Now pick up the intestines and gently place them inside the freezer."
+        "Great job! Pick up the intestines and position them neatly beside the colon in the second freezer "
     };
 
     subtitleCanvas.SetActive(true);
@@ -415,12 +427,66 @@ public void IntestineDescription()
     subtitleCanvas.SetActive(true);
     StartCoroutine(ShowLinesSequentially(lines, true));
 }
+public void Liver()
+{
+    string[] lines = new string[]
+    {
+        " Great progress! Now take the liver and place it inside the second freezer"
+    };
 
+    subtitleCanvas.SetActive(true);
+    StartCoroutine(ShowLinesSequentially(lines, true));
+}
+
+    public void LiverDescription()
+    {
+        string[] lines = new string[]
+        {
+        "The intestines help break down and absorb nutrients from the food the dog eats.",
+
+        };
+
+        subtitleCanvas.SetActive(true);
+        StartCoroutine(ShowLinesSequentially(lines, true));
+    }
+public void Stomach()
+{
+    string[] lines = new string[]
+    {
+        "Finally, grab the stomach and set it beside the liver"
+    };
+
+    subtitleCanvas.SetActive(true);
+    StartCoroutine(ShowLinesSequentially(lines, true));
+}
+
+public void StomachDescription()
+    {
+        string[] lines = new string[]
+        {
+        "The stomach breaks down food using acids and enzymes and can stretch to hold large meals",
+
+        };
+
+        subtitleCanvas.SetActive(true);
+        StartCoroutine(ShowLinesSequentially(lines, true));
+    }
+public void Urogenital()
+{
+    string[] lines = new string[]
+    {
+        "Now, for the Urogenital System we will put it in the first freezer",
+
+    };
+
+    subtitleCanvas.SetActive(true);
+    StartCoroutine(ShowLinesSequentially(lines, true));
+}
 public void Penis()
 {
     string[] lines = new string[]
     {
-        "Awesome! Go ahead and place the penis model inside the second freezer"
+        "Awesome! Go ahead and place the penis"
     };
 
     subtitleCanvas.SetActive(true);
@@ -431,7 +497,7 @@ public void PenisDescription()
 {
     string[] lines = new string[]
     {
-        "The penis is part of the male reproductive system,",
+        "The penis is part of the male reproductive system, helping with mating and urination",
     };
 
     subtitleCanvas.SetActive(true);
@@ -465,9 +531,9 @@ public void Colon()
 {
     string[] lines = new string[]
     {
-        "Next, grab the colon. Place it inside the freezer"
+        "Now, grab the colon and gently place it inside the second freezer"
     };
-
+ 
     subtitleCanvas.SetActive(true);
     StartCoroutine(ShowLinesSequentially(lines, true));
 }
@@ -488,7 +554,7 @@ public void UrinaryBladder()
 {
     string[] lines = new string[]
     {
-        "Finally, grab the urinary bladder and put it inside the freezer."
+        "Now gently pick up the urinary bladder and put it inside the freezer"
     };
 
     subtitleCanvas.SetActive(true);
