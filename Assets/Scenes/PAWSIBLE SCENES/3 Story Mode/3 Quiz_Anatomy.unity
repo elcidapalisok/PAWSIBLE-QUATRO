@@ -6336,7 +6336,7 @@ RectTransform:
   m_GameObject: {fileID: 69005001}
   m_LocalRotation: {x: 0.024796814, y: -0, z: 0.00000006053596, w: 0.9996925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3631384, y: 7.1410103, z: 2.1759431}
+  m_LocalScale: {x: 1.93626, y: 4.111294, z: 2.1759431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2146167188}
@@ -16231,6 +16231,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1911365564}
+          m_TargetAssemblyTypeName: AnatomyQuizSubtitle, Assembly-CSharp
+          m_MethodName: StartOfQuiz
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 743941457}
@@ -16244,6 +16256,18 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 232485621}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
           m_CallState: 2
 --- !u!54 &232485625
 Rigidbody:
@@ -29996,7 +30020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.46
+      value: -68.47
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30004,7 +30028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.21
+      value: 17.26
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33751,7 +33775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.9, y: 8.8}
+  m_AnchoredPosition: {x: 63.9, y: -8.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773310886
@@ -72888,7 +72912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -67.4, y: 8.3}
+  m_AnchoredPosition: {x: -67.4, y: -3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687642534
@@ -76210,7 +76234,7 @@ GameObject:
   - component: {fileID: 1911365561}
   - component: {fileID: 1911365560}
   - component: {fileID: 1911365559}
-  - component: {fileID: 1911365558}
+  - component: {fileID: 1911365564}
   m_Layer: 5
   m_Name: Anatomy Quiz Subtitle
   m_TagString: Untagged
@@ -76218,20 +76242,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1911365558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911365557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6579e11e6c5e3ea48a6ca9f661403f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typingSubtitle: {fileID: 1911365559}
-  subtitleCanvas: {fileID: 1911365557}
 --- !u!114 &1911365559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76329,6 +76339,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1911365564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911365557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e9684e114d1ec4592253421402f253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typingSubtitle: {fileID: 1911365559}
+  subtitleCanvas: {fileID: 1911365557}
 --- !u!1001 &1920603538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79577,7 +79601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2112826917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79587,7 +79611,7 @@ RectTransform:
   m_GameObject: {fileID: 2112826916}
   m_LocalRotation: {x: 0.024796814, y: -0, z: 0.00000006053596, w: 0.9996925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3631384, y: 7.1410103, z: 2.1759431}
+  m_LocalScale: {x: 1.93626, y: 4.111294, z: 2.1759431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1922512620}

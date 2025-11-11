@@ -442,7 +442,7 @@ public void Liver()
     {
         string[] lines = new string[]
         {
-        "The intestines help break down and absorb nutrients from the food the dog eats.",
+        "The liver filters toxins from the blood and produces bile to help digest fats",
 
         };
 

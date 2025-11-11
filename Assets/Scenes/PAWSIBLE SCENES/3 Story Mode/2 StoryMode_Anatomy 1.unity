@@ -344,15 +344,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11617529}
   m_LocalRotation: {x: 0.0038049426, y: -0.9999924, z: 0.00095064234, w: 0.00016091106}
-  m_LocalPosition: {x: 0, y: 0, z: 0.076}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.087}
+  m_LocalScale: {x: 0.7429561, y: 0.7429561, z: 0.7363883}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2095209974}
   m_LocalEulerAnglesHint: {x: 0.109, y: -179.982, z: -0.436}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.058, y: 0.094}
+  m_AnchoredPosition: {x: 0.146, y: 0.01}
   m_SizeDelta: {x: 1.3225, y: 0.5303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &12254439
@@ -23368,6 +23368,7 @@ Transform:
   - {fileID: 1492020725}
   - {fileID: 709627933}
   - {fileID: 2060596916}
+  - {fileID: 2047121540}
   - {fileID: 55364970}
   - {fileID: 9013964595693037864}
   m_Father: {fileID: 0}
@@ -32699,6 +32700,8 @@ PlayableDirector:
     value: {fileID: 709627930}
   - key: {fileID: -7635468822335147709, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
     value: {fileID: 1448694750}
+  - key: {fileID: 2504180607679814769, guid: 978f75a859ac3224a9830e3e4d87cafc, type: 2}
+    value: {fileID: 2047121537}
   m_ExposedReferences:
     m_References:
     - 75d1784acb77d19489b50db51d7f3564: {fileID: 0}
@@ -32770,6 +32773,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e16d6f3c8386bef4a9f8c2bfe5ff1743, type: 2}
     - {fileID: 11400000, guid: ad5ed6e5e1f76ec4e8bf409ec1f03945, type: 2}
     - {fileID: 11400000, guid: 02d028c75d6cca04e8b1c1bf5b5d7ab9, type: 2}
+    - {fileID: 11400000, guid: e3d1578b600a96549b514298cc24b5ed, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -32785,15 +32789,27 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 919132148977298353}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 784372363}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+        - m_Target: {fileID: 784372371}
+          m_TargetAssemblyTypeName: SubtitleSignalTrigger, Assembly-CSharp
+          m_MethodName: ScapulaDescription
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -32831,7 +32847,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 784372371}
           m_TargetAssemblyTypeName: SubtitleSignalTrigger, Assembly-CSharp
-          m_MethodName: RadiusDescription
+          m_MethodName: Radius
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -33327,6 +33343,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 784372371}
+          m_TargetAssemblyTypeName: SubtitleSignalTrigger, Assembly-CSharp
+          m_MethodName: SkullDescription
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &518937128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33538,7 +33568,7 @@ MonoBehaviour:
     time: 407.2707
     hasPlayed: 0
   - name: Testicles place inside the freezer
-    time: 415.0333
+    time: 412.6039
     hasPlayed: 0
 --- !u!114 &518937130
 MonoBehaviour:
@@ -46552,6 +46582,103 @@ MonoBehaviour:
   reachDistance: 0.2
   rotationSpeed: 2
   animator: {fileID: 641067380}
+--- !u!114 &641067391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641067379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 641067392}
+        m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
+        m_MethodName: TriggerNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+--- !u!114 &641067392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641067379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bf216f3d9abfa4e82a75384afe256f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: 3 Quiz_Anatomy
 --- !u!1001 &643140229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52710,6 +52837,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d31f5b482fc9909409b6c49104759dcf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 641067389}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d31f5b482fc9909409b6c49104759dcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 641067392}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d31f5b482fc9909409b6c49104759dcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 641067391}
     - targetCorrespondingSourceObject: {fileID: 1082271958561512970, guid: d31f5b482fc9909409b6c49104759dcf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1972080422}
@@ -59143,17 +59276,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945790404}
-  m_LocalRotation: {x: 0.13879198, y: 0.000000029802326, z: 0.000000029802326, w: 0.9903216}
-  m_LocalPosition: {x: 0, y: 0, z: -17}
-  m_LocalScale: {x: 1.7143446, y: 1.7143446, z: 1.7143446}
+  m_LocalRotation: {x: 0.15145057, y: 0, z: 0, w: 0.98846483}
+  m_LocalPosition: {x: 0, y: 0, z: -5.2}
+  m_LocalScale: {x: 1.378325, y: 1.378325, z: 1.378325}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722775320}
   m_Father: {fileID: 784372367}
-  m_LocalEulerAnglesHint: {x: 15.956, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.422, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -8, y: 358}
+  m_AnchoredPosition: {x: -79.2, y: 417.9}
   m_SizeDelta: {x: 225.03003, y: 55.21997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &945790406
@@ -59169,7 +59302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8156863}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -87320,7 +87453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56660f997c6ed87429637f54c2bdd551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetTag: Testicles
+  TargetTag: Testicle
   OnEnterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -98509,7 +98642,7 @@ Transform:
   m_GameObject: {fileID: 2041853011}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7233543, y: -0.0010043005, z: -0.04011347, w: 0.68931025}
-  m_LocalPosition: {x: -37.636, y: 2.3789997, z: -25.94}
+  m_LocalPosition: {x: -37.636, y: 2.3789997, z: -25.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98704,6 +98837,116 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2047121537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047121540}
+  - component: {fileID: 2047121539}
+  - component: {fileID: 2047121538}
+  m_Layer: 0
+  m_Name: Medical Table
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &2047121538
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047121537}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f3d8dc1f3e2915418703b6face98beb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &2047121539
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047121537}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8d5a2396576883048aebaf5aa8143d39, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.6, y: 3.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2047121540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047121537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.84412485, z: -0, w: 0.5361467}
+  m_LocalPosition: {x: 8.998, y: -1.0539999, z: -15.486}
+  m_LocalScale: {x: 0.66413, y: 0.66413, z: 0.66413}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 334148206}
+  m_LocalEulerAnglesHint: {x: 0, y: 115.157, z: 0}
 --- !u!4 &2048517395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5545149646685965750, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
@@ -102126,7 +102369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132149335687372
 GameObject:
   m_ObjectHideFlags: 0
@@ -104691,6 +104934,7 @@ GameObject:
   - component: {fileID: 3964424295498492769}
   - component: {fileID: 3964424295498492773}
   - component: {fileID: 3964424295498492772}
+  - component: {fileID: 3964424295498492774}
   m_Layer: 0
   m_Name: Carpal
   m_TagString: Phalanges
@@ -104937,6 +105181,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &3964424295498492774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3964424295498492768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Ankle
+  boneInfo: "The Ankle is a group of small bones forming the dog\u2019s ankle. It
+    allows flexibility and shock absorption when the dog walks or jumps."
+  titleText: {fileID: 267909145}
+  descriptionText: {fileID: 1828952118}
 --- !u!4 &3994321921580551330
 Transform:
   m_ObjectHideFlags: 0
@@ -105191,6 +105452,7 @@ GameObject:
   - component: {fileID: 4223913506459658544}
   - component: {fileID: 4223913506459658548}
   - component: {fileID: 4223913506459658547}
+  - component: {fileID: 4223913506459658549}
   m_Layer: 0
   m_Name: hinelegs.001
   m_TagString: Hinelegs_FL
@@ -105453,6 +105715,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4223913506459658549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201196960532431882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Hinelegs
+  boneInfo: The toes provide grip and balance. They help dogs walk, run, and push
+    off the ground during movement.
+  titleText: {fileID: 267909145}
+  descriptionText: {fileID: 1828952118}
 --- !u!4 &4255913631467893602
 Transform:
   m_ObjectHideFlags: 0
@@ -112683,18 +112962,6 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7421348273834540608}
-        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
-        m_MethodName: DisableHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 518937129}
         m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
         m_MethodName: TryPlayStep
@@ -112703,6 +112970,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 35
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7421348273834540608}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -115803,7 +116082,7 @@ MonoBehaviour:
     completionTime: 0
   - groupName: Visceral (Cardiovascular )
     tasks:
-    - Grab Heart
+    - 'Grab Heart '
     - Heart Place in the freezer
     nextTaskIndex: 0
     completionTime: 0
