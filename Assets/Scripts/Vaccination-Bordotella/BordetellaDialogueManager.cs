@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.IO;
 
-public class WoundDialogueManager : MonoBehaviour
+public class BordetellaDialogueManager : MonoBehaviour
 {
     [Header("UI References")]
     public TextMeshProUGUI dialogueText;
@@ -24,8 +24,8 @@ public class WoundDialogueManager : MonoBehaviour
 
     [Header("Audio Settings")]
     public AudioSource voiceSource;
-    [Tooltip("Relative path inside Resources folder (e.g. 'Audio/WoundTreatment')")]
-    public string audioFolderPath = "Audio/WoundTreatment";
+    [Tooltip("Relative path inside Resources folder (e.g. 'Audio/Bordetella')")]
+    public string audioFolderPath = "Audio/Bordetella";
 
     [Header("Typewriter Settings")]
     public float typingSpeed = 0.03f;
@@ -40,9 +40,6 @@ public class WoundDialogueManager : MonoBehaviour
         public List<string> dialogueLines = new List<string>();
     }
 
-    [Header("Cutscene Control")]
-    public bool cutsceneMode = false;
-
     void Start()
     {
         if (nextButton != null) nextButton.onClick.AddListener(NextDialogue);
@@ -55,35 +52,32 @@ public class WoundDialogueManager : MonoBehaviour
             ShowCurrentDialogue();
     }
 
+    // ----------------------------
+    // REGISTER TRIGGERS
+    // ----------------------------
     void RegisterTriggerRequiredLines()
     {
-        // Sanitize and PPE
-        triggerRequiredLines.Add(("Sanitize and PPE", 1));
-        triggerRequiredLines.Add(("Sanitize and PPE", 2));
-        triggerRequiredLines.Add(("Sanitize and PPE", 3));
-        triggerRequiredLines.Add(("Sanitize and PPE", 5));
-        triggerRequiredLines.Add(("Sanitize and PPE", 6)); // Gloves trigger
+        // Handwashing triggers
+        triggerRequiredLines.Add(("handwashing", 2)); // Use soap
+        triggerRequiredLines.Add(("handwashing", 3)); // Apply sanitizer
 
-        // Scratch Examine
-        triggerRequiredLines.Add(("Scratch Examine", 0));
-        triggerRequiredLines.Add(("Scratch Examine", 2));
-        triggerRequiredLines.Add(("Scratch Examine", 6));
+        // PPE triggers
+        triggerRequiredLines.Add(("glovescoat", 0)); // Gloves
+        triggerRequiredLines.Add(("glovescoat", 1)); // Lab coat
 
-        // Equipments
-        triggerRequiredLines.Add(("Equipments", 0));
-        triggerRequiredLines.Add(("Equipments", 1));
-        triggerRequiredLines.Add(("Equipments", 2));
+        // Vaccine prep triggers
+        triggerRequiredLines.Add(("vaccine prep", 2)); // Pick up vial
+        triggerRequiredLines.Add(("vaccine prep", 3)); // Draw liquid
+        triggerRequiredLines.Add(("vaccine prep", 4)); // Replace needle
 
-        // Treatment
-        triggerRequiredLines.Add(("Treatment", 0));
-        triggerRequiredLines.Add(("Treatment", 2));
-        triggerRequiredLines.Add(("Treatment", 3));
-        triggerRequiredLines.Add(("Treatment", 4));
-        triggerRequiredLines.Add(("Treatment", 5));
-        triggerRequiredLines.Add(("Treatment", 7));
-        triggerRequiredLines.Add(("Treatment", 10));
+        // Injection triggers
+        triggerRequiredLines.Add(("injection", 1)); // Temperature check
+        triggerRequiredLines.Add(("injection", 3)); // Inject vaccine
     }
 
+    // ----------------------------
+    // MAIN DIALOGUE DISPLAY
+    // ----------------------------
     void ShowCurrentDialogue()
     {
         if (dialogueSegments.Count == 0) return;
@@ -92,7 +86,6 @@ public class WoundDialogueManager : MonoBehaviour
         if (lines.Count == 0) return;
 
         string currentLine = lines[currentDialogueIndex];
-
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
@@ -101,12 +94,12 @@ public class WoundDialogueManager : MonoBehaviour
         prevButton.interactable = currentDialogueIndex > 0;
         nextButton.interactable = currentDialogueIndex < lines.Count - 1;
 
-        string segment = GetCurrentSegmentName();
-        Debug.Log($"Showing dialogue [{segment}:{currentDialogueIndex}] — \"{currentLine}\"");
-
         PlayVoiceForCurrentLine();
     }
 
+    // ----------------------------
+    // TYPEWRITER EFFECT
+    // ----------------------------
     IEnumerator TypeText(string line)
     {
         canProceed = false;
@@ -120,7 +113,7 @@ public class WoundDialogueManager : MonoBehaviour
 
         canProceed = true;
 
-        string segment = GetCurrentSegmentName();
+        string segment = GetCurrentSegmentName().ToLower().Trim();
         bool requiresTrigger = triggerRequiredLines.Contains((segment, currentDialogueIndex));
 
         if (requiresTrigger)
@@ -129,16 +122,20 @@ public class WoundDialogueManager : MonoBehaviour
             yield break;
         }
 
+        // Wait for audio to finish, then auto advance
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
         yield return new WaitForSeconds(0.5f);
         AdvanceDialogue();
     }
 
+    // ----------------------------
+    // AUDIO HANDLING
+    // ----------------------------
     void PlayVoiceForCurrentLine()
     {
-        if (voiceSource == null || cutsceneMode) return;
+        if (voiceSource == null) return;
 
-        string segment = GetCurrentSegmentName().Replace(" ", "");
+        string segment = GetCurrentSegmentName().Replace(" ", "").ToLower();
         string fileName = $"{segment}_{currentDialogueIndex:D2}";
         string fullPath = Path.Combine(audioFolderPath, fileName);
 
@@ -147,7 +144,6 @@ public class WoundDialogueManager : MonoBehaviour
         {
             voiceSource.clip = clip;
             voiceSource.Play();
-            Debug.Log($"Playing voice clip: {fullPath}");
         }
         else
         {
@@ -155,6 +151,9 @@ public class WoundDialogueManager : MonoBehaviour
         }
     }
 
+    // ----------------------------
+    // BUTTON HANDLERS
+    // ----------------------------
     void NextDialogue()
     {
         var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
@@ -197,54 +196,7 @@ public class WoundDialogueManager : MonoBehaviour
 
     public void AdvanceDialogue()
     {
-        Debug.Log($"Advancing dialogue externally ({GetCurrentSegmentName()}:{currentDialogueIndex})");
-
-        string segment = GetCurrentSegmentName();
-        int line = currentDialogueIndex;
-
-        // ? Custom logic for automatic segment transition after PPE gloves
-        if (segment == "Sanitize and PPE" && line == 6)
-        {
-            Debug.Log("? PPE complete — moving to Scratch Examine segment...");
-            int scratchIndex = GetSegmentIndexByName("Scratch Examine");
-            if (scratchIndex != -1)
-            {
-                currentSegmentIndex = scratchIndex;
-                currentDialogueIndex = 0;
-                ShowCurrentDialogue();
-                return;
-            }
-        }
-
-        // Checklist completions
-        if (DialogueChecklist.Instance != null)
-        {
-            if (segment == "Sanitize and PPE")
-            {
-                if (line == 5) DialogueChecklist.Instance?.CompleteTask("Sanitize");
-                if (line == 6) DialogueChecklist.Instance?.CompleteTask("Wear PPE");
-            }
-
-            if (segment == "Scratch Examine" && line == 6)
-                DialogueChecklist.Instance?.CompleteTask("Check Equipment");
-
-            if (segment == "Treatment")
-            {
-                if (line == 10) DialogueChecklist.Instance?.CompleteTask("Treatment Complete");
-            }
-        }
-
         NextDialogue();
-    }
-
-    private int GetSegmentIndexByName(string name)
-    {
-        for (int i = 0; i < dialogueSegments.Count; i++)
-        {
-            if (dialogueSegments[i].segmentName == name)
-                return i;
-        }
-        return -1;
     }
 
     private void MoveToNextSegment()
@@ -257,31 +209,20 @@ public class WoundDialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("All dialogue segments completed!");
+            Debug.Log("All Bordetella dialogue segments completed!");
         }
     }
 
+    // ----------------------------
+    // ACCESSORS
+    // ----------------------------
     public string GetCurrentSegmentName()
     {
         return dialogueSegments[currentSegmentIndex].segmentName;
     }
 
-    public string GetCurrentSegmentNameNormalized()
-    {
-        return dialogueSegments[currentSegmentIndex].segmentName.Replace(" ", "").ToLower();
-    }
-
     public int GetCurrentLineIndex()
     {
         return currentDialogueIndex;
-    }
-
-    public void ShowCutsceneLine(int lineIndex)
-    {
-        if (!cutsceneMode) return;
-
-        currentSegmentIndex = 0;
-        currentDialogueIndex = lineIndex;
-        ShowCurrentDialogue();
     }
 }

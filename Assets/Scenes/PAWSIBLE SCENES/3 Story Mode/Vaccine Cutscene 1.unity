@@ -28395,6 +28395,8 @@ PlayableDirector:
     value: {fileID: 1949199921}
   - key: {fileID: -1187628516969253552, guid: 0da3e1327d60be64ab859ffc7641ea04, type: 2}
     value: {fileID: 1279718023}
+  - key: {fileID: -6317915111121532413, guid: 0da3e1327d60be64ab859ffc7641ea04, type: 2}
+    value: {fileID: 1493787918}
   m_ExposedReferences:
     m_References:
     - 2fb0a5eb88f4f3a4e99ddcf4aed72066: {fileID: 2132614574}
@@ -28482,6 +28484,7 @@ MonoBehaviour:
   voiceSource: {fileID: 1493787917}
   audioFolderPath: Audio/Vaccination_Cutscene1
   typingSpeed: 0.03
+  autoAdvanceDelay: 0.3
   dialogueLines: []
   nextSceneName: StoryMode_Vaccine
 --- !u!1001 &517815416
@@ -38335,7 +38338,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752651879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ffd7457941cf243aa0329ce970d95d, type: 3}
   m_Name: 
@@ -38347,7 +38350,8 @@ MonoBehaviour:
   skipButton: {fileID: 581501767}
   voiceSource: {fileID: 1493787917}
   audioFolderPath: Audio/Vaccination_Cutscene1
-  typingSpeed: 0.03
+  typingSpeed: 0.01
+  autoAdvanceDelay: 0.3
   dialogueLines:
   - 'Welcome to the Vaccination Module!
 
@@ -38379,7 +38383,7 @@ MonoBehaviour:
   - 'I''m sure you''re already raring to get started.
 
 '
-  nextSceneName: StoryMode_Vaccine
+  nextSceneName: StoryMode Vaccine
 --- !u!114 &752651885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72387,6 +72391,8 @@ GameObject:
   - component: {fileID: 1493787916}
   - component: {fileID: 1493787917}
   - component: {fileID: 1493787918}
+  - component: {fileID: 1493787920}
+  - component: {fileID: 1493787921}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -72639,7 +72645,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493787911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
@@ -72654,6 +72660,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4146428a260815d419d7bc031c0e43df, type: 2}
     - {fileID: 11400000, guid: d772a1639242dd44084902b8f0e3f0a8, type: 2}
     - {fileID: 11400000, guid: 9907f2afe35c2df4b9865204dd301eb5, type: 2}
+    - {fileID: 11400000, guid: 7db10b157580dd94e8b703f6800f23fb, type: 2}
+    - {fileID: 11400000, guid: e6be854f673e8104e9c0df7b0b8f7aa2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -72767,6 +72775,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1493787920}
+          m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+          m_MethodName: StopAllCoroutines
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1493787920}
+          m_TargetAssemblyTypeName: CutsceneEndTransition, Assembly-CSharp
+          m_MethodName: OnCutsceneEndSignal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1493787919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72774,7 +72810,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493787911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ffd7457941cf243aa0329ce970d95d, type: 3}
   m_Name: 
@@ -72786,17 +72822,71 @@ MonoBehaviour:
   skipButton: {fileID: 581501767}
   voiceSource: {fileID: 1493787917}
   audioFolderPath: Audio/Vaccination_Cutscene1
-  typingSpeed: 0.03
+  typingSpeed: 0.01
+  autoAdvanceDelay: 0.3
   dialogueLines:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'Welcome to the Vaccination Module!
+
+'
+  - 'In this room, you''ll learn the basics of vaccination
+
+'
+  - 'Don''t worry, it may sound overwhelming, but I''ll be guiding you throughout
+    the way.
+
+'
+  - 'Once you finish studying in this room, you should be able to identify the 4
+    basic vaccines.
+
+'
+  - 'I''ll also make sure that you learn correct vaccination points for each vaccine
+    and proper vaccination procedure.
+
+'
+  - 'This module will also allow you to practice the necessary vaccination skills,
+    promote proper vaccination etiquette, and of course, familiarize you, with the
+    common practices in the professional setting.
+
+'
+  - 'I''ve prepared a few tasks to accomplish those objectives. You can check on
+    the task board from time to time to monitor your progress.
+
+'
+  - 'I''m sure you''re already raring to get started.
+
+'
   nextSceneName: StoryMode_Vaccine
+--- !u!114 &1493787920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493787911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991f8a8308cfd2345ab855dc8a887a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: StoryMode Vaccine
+--- !u!114 &1493787921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493787911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 0}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1497527030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2dac542616f9b74eb38242b2be164d6, type: 3}

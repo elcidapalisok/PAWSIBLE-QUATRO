@@ -21,7 +21,12 @@ public class CutsceneDialogueManager : MonoBehaviour
     public string audioFolderPath = "Audio/Vaccination_Cutscene1";
 
     [Header("Typewriter Settings")]
-    public float typingSpeed = 0.03f;
+    [Tooltip("Typing speed per character. Set lower for faster text.")]
+    public float typingSpeed = 0.001f; // almost instant typing
+
+    [Header("Auto Advance Settings")]
+    [Tooltip("Delay before automatically showing next line after voice ends")]
+    public float autoAdvanceDelay = 0.3f; // short delay before next line
 
     [Header("Dialogue Lines")]
     [TextArea(2, 10)]
@@ -33,6 +38,7 @@ public class CutsceneDialogueManager : MonoBehaviour
 
     private int currentLine = 0;
     private Coroutine typingCoroutine;
+    private bool isTyping = false;
 
     void Start()
     {
@@ -80,21 +86,28 @@ public class CutsceneDialogueManager : MonoBehaviour
         if (subtitleCanvas != null) subtitleCanvas.alpha = 1f;
         dialogueText.gameObject.SetActive(true);
         dialogueText.text = "";
+        isTyping = true;
 
+        // instantly show entire text (no visible delay)
         foreach (char letter in text)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        // Wait for voice to finish
+        isTyping = false;
+
+        // Wait for the voice line to finish
         if (voiceSource != null && voiceSource.clip != null)
         {
             while (voiceSource.isPlaying)
                 yield return null;
         }
 
-        // Auto advance only if not last line
+        // Wait briefly before advancing
+        yield return new WaitForSeconds(autoAdvanceDelay);
+
+        // Auto advance if not the last line
         if (currentLine + 1 < dialogueLines.Count)
         {
             ShowLine(currentLine + 1);
@@ -132,6 +145,14 @@ public class CutsceneDialogueManager : MonoBehaviour
     // -----------------------------
     public void ShowNextLine()
     {
+        // Skip typing instantly if still animating
+        if (isTyping)
+        {
+            isTyping = false;
+            dialogueText.text = dialogueLines[currentLine];
+            return;
+        }
+
         if (currentLine + 1 < dialogueLines.Count)
             ShowLine(currentLine + 1);
         else
@@ -158,7 +179,7 @@ public class CutsceneDialogueManager : MonoBehaviour
         if (voiceSource != null && voiceSource.isPlaying)
             voiceSource.Stop();
 
-        // Optional fade
+        // Fade out before loading next scene
         if (subtitleCanvas != null)
             StartCoroutine(FadeOutAndLoadNextScene());
         else
@@ -186,6 +207,7 @@ public class CutsceneDialogueManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
+            Debug.Log($"[CutsceneDialogueManager] Loading next scene: {nextSceneName}");
             SceneManager.LoadScene(nextSceneName);
         }
         else

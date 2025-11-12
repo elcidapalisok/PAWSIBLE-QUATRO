@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PAWSIBLE SCENES/3 Story Mode/3 Quiz_Anatomy.unity
     guid: 1bdafd2308fae6b4eb551ffafdefd5d3
+  - enabled: 1
+    path: Assets/Scenes/PAWSIBLE SCENES/3 Story Mode/Vaccine Cutscene 1.unity
+    guid: 45f6945ba2fce234db051d497f266042
+  - enabled: 1
+    path: Assets/Scenes/PAWSIBLE SCENES/3 Story Mode/StoryMode Vaccine.unity
+    guid: 2f95b821caf43b84d8ded5e6a64dea8e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: baef526c7f713924abde6e67631d66dd, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -35,7 +35,14 @@ public class ChecklistManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"⚠️ Task not found or already completed: {taskName}");
+            Debug.LogWarning($"⚠ Task not found or already completed: {taskName}");
         }
+    }
+
+    // <-- NEW METHOD -->
+    public bool IsTaskCompleted(string taskName)
+    {
+        TaskItem task = tasks.Find(t => t.taskName.ToLower().Trim() == taskName.ToLower().Trim());
+        return task != null && task.isCompleted;
     }
 }
