@@ -81430,7 +81430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84a64c4158cc84498acd92369ec8cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Faucet
   advanceDialogueOnUse: 1
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   targetSegmentName: Handwashing
