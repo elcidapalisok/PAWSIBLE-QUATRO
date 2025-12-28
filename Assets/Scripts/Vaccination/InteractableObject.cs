@@ -90,7 +90,7 @@ public class InteractableObject : MonoBehaviour
         }
         else
         {
-            Debug.Log($"{objectName} interaction ignored — not the correct stage ({currentSegment}:{currentLine})");
+            Debug.Log($"{objectName} interaction ignored not the correct stage ({currentSegment}:{currentLine})");
         }
     }
 }
