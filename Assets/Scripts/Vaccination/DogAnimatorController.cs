@@ -15,27 +15,26 @@ public class DogAnimatorController : MonoBehaviour
         xrHead = Camera.main.transform;
 
         animator.SetInteger("Action", -1);
-        animator.SetBool("IsFar", true);
+        //animator.SetBool("IsFar", true);
     }
 
-    void Update()
-    {
-        float distance = Vector3.Distance(xrHead.position, transform.position);
-        bool isFar = distance > farDistance;
+    //void Update()
+    //{
+    //    float distance = Vector3.Distance(xrHead.position, transform.position);
+    //    bool isFar = distance > farDistance;
 
-        animator.SetBool("IsFar", isFar);
 
-        // If far, always revert to idle cycle
-        if (isFar)
-        {
-            animator.SetInteger("Action", -1);
-        }
-    }
+    //    // If far, always revert to idle cycle
+    //    if (isFar)
+    //    {
+    //        animator.SetInteger("Action", -1);
+    //    }
+    //}
 
     public void PlayAction(int actionIndex)
     {
         animator.SetInteger("Action", actionIndex);
         animator.SetTrigger("Interact");
-        animator.SetBool("IsFar", false);
+        //animator.SetBool("IsFar", false);
     }
 }
