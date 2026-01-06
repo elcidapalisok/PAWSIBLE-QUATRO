@@ -33,12 +33,12 @@ public class HazardBinController : MonoBehaviour
 
     private void OnHoverEnter(HoverEnterEventArgs args)
     {
-        animator.SetBool("Open", true);
+        animator.SetBool("isOpen", true);
     }
 
     private void OnHoverExit(HoverExitEventArgs args)
     {
-        animator.SetBool("Open", false);
+        animator.SetBool("isOpen", false);
         Invoke(nameof(DestroyContents), destroyDelay);
     }
 
