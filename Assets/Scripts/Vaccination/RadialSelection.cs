@@ -1,87 +1,121 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class RadialSelection : MonoBehaviour
 {
-    [Header("Radial Setup")]
-    [SerializeField] private RadialPart radialPartPrefab;
-    [SerializeField] private RectTransform radialCanvas;
-    [SerializeField] private int numberOfParts = 4;
+    [Header("UI")]
+    [SerializeField] private RectTransform canvas;
+    [SerializeField] private RadialPartXR slicePrefab;
 
-    [Tooltip("Gap between slices (0.02–0.08 recommended)")]
-    [SerializeField] private float sliceSpacing = 0.05f;
+    [Header("Dog")]
+    [SerializeField] private DogAnimator dogAnimator;
 
-    [Header("XR Behaviour")]
-    [SerializeField] private Transform xrHead;
-    [SerializeField] private float heightOffset = 0.4f;
+    [Header("Positioning")]
+    [SerializeField] private float heightOffset = 1.2f;
     [SerializeField] private float closeDistance = 3f;
 
-    private readonly List<RadialPart> parts = new();
-    private Transform targetDog;
-    private bool menuOpen;
+    private readonly List<RadialPartXR> slices = new();
+    private Transform dog;
+    private Transform xrCamera;
+    private bool isOpen;
 
-    void Start()
+    void Awake()
     {
-        if (!xrHead)
-            xrHead = Camera.main.transform; // fallback
-
-        CreateRadialParts();
-        CloseMenu();
+        xrCamera = Camera.main.transform;
+        CreateSlices();
+        canvas.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (!menuOpen || targetDog == null)
-            return;
+        if (!isOpen || dog == null) return;
 
         UpdatePosition();
-        AutoCloseCheck();
+        CheckDistance();
     }
 
-    public void OpenMenu(Transform dog)
+    // ---------------- OPEN / CLOSE ----------------
+
+    public void OpenMenu(Transform dogTransform)
     {
-        targetDog = dog;
-        menuOpen = true;
-        radialCanvas.gameObject.SetActive(true);
+        dog = dogTransform;
+        isOpen = true;
+        canvas.gameObject.SetActive(true);
+        UpdatePosition();
     }
 
     public void CloseMenu()
     {
-        menuOpen = false;
-        radialCanvas.gameObject.SetActive(false);
-        targetDog = null;
+        isOpen = false;
+        canvas.gameObject.SetActive(false);
+        dog = null;
     }
+
+    // ---------------- POSITION ----------------
 
     void UpdatePosition()
     {
-        transform.position = targetDog.position + Vector3.up * heightOffset;
-        transform.LookAt(xrHead);
+        transform.position = dog.position + Vector3.up * heightOffset;
+        transform.LookAt(xrCamera);
         transform.Rotate(0f, 180f, 0f);
     }
 
-    void AutoCloseCheck()
+    void CheckDistance()
     {
-        if (Vector3.Distance(xrHead.position, targetDog.position) > closeDistance)
+        if (Vector3.Distance(xrCamera.position, dog.position) > closeDistance)
         {
+            dogAnimator.ReturnToIdle();
             CloseMenu();
         }
     }
 
-    void CreateRadialParts()
+    // ---------------- SLICES ----------------
+
+    void CreateSlices()
     {
-        parts.Clear();
+        string[] labels = { "Sit", "Lay", "Paw", "" };
+        float fillAmount = 1f / labels.Length;
+        float angleStep = 360f / labels.Length;
 
-        float baseFill = 1f / numberOfParts;
-        float finalFill = Mathf.Clamp(baseFill - sliceSpacing, 0.01f, 1f);
-        float angleStep = 360f / numberOfParts;
-
-        for (int i = 0; i < numberOfParts; i++)
+        for (int i = 0; i < labels.Length; i++)
         {
-            RadialPart part = Instantiate(radialPartPrefab, radialCanvas);
-            part.Initialize(i);
-            part.SetFill(finalFill);
-            part.SetRotation(-angleStep * i);
-            parts.Add(part);
+            RadialPartXR slice = Instantiate(slicePrefab, canvas);
+            slice.Setup(i, labels[i]);
+
+            Image img = slice.GetComponent<Image>();
+            img.type = Image.Type.Filled;
+            img.fillMethod = Image.FillMethod.Radial360;
+            img.fillAmount = fillAmount;
+
+            // ðŸ”¥ THIS IS THE FIX
+            img.rectTransform.localRotation =
+                Quaternion.Euler(0, 0, -angleStep * i);
+
+            slices.Add(slice);
         }
+    }
+
+
+    // Called by RadialPartXR
+    public void OnSliceSelected(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                dogAnimator.Sit();
+                break;
+            case 1:
+                dogAnimator.Lay();
+                break;
+            case 2:
+                dogAnimator.Paw();
+                break;
+            case 3:
+                // empty
+                break;
+        }
+
+        CloseMenu();
     }
 }

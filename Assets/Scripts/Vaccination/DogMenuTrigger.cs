@@ -12,11 +12,21 @@ public class DogMenuTrigger : MonoBehaviour
     void Awake()
     {
         interactable = GetComponent<XRBaseInteractable>();
+    }
+
+    void OnEnable()
+    {
         interactable.selectEntered.AddListener(OnSelected);
+    }
+
+    void OnDisable()
+    {
+        interactable.selectEntered.RemoveListener(OnSelected);
     }
 
     private void OnSelected(SelectEnterEventArgs args)
     {
-        radialMenu.OpenMenu(transform);
+        if (radialMenu != null)
+            radialMenu.OpenMenu(transform);
     }
 }
