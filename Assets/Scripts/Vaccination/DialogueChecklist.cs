@@ -22,7 +22,7 @@ public class DialogueChecklist : MonoBehaviour
     public List<TaskItem> tasks = new List<TaskItem>();
 
     public static DialogueChecklist Instance;
-
+    //
     void Awake()
     {
         Instance = this;
