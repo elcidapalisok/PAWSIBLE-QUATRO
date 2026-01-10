@@ -12,7 +12,7 @@ public class CageDoorController : MonoBehaviour
         isOpen = false;
         animator.SetBool("Open", false);
     }
-
+    //
     public void ToggleDoor()
     {
         isOpen = !isOpen;
