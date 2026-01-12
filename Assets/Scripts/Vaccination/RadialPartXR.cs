@@ -60,4 +60,3 @@ public class RadialPartXR : MonoBehaviour
         menu.OnSliceSelected(index);
     }
 }
-.
