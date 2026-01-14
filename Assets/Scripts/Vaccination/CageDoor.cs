@@ -83,7 +83,7 @@ public class CageDoor : MonoBehaviour
         source.clip = lockClip;
         source.spatialBlend = 1f;
         source.playOnAwake = false;
-
+//
         source.Play();
         Destroy(audioObj, lockClip.length);
     }
