@@ -21,7 +21,7 @@
         private int currentDialogueIndex = 0;
         private Coroutine typingCoroutine;
         private bool canProceed = true;
-        
+        //
 
         [Header("Audio Settings")]
         public AudioSource voiceSource; // Assign this in Inspector
