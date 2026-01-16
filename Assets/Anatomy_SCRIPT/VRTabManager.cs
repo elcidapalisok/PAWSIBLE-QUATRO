@@ -20,9 +20,13 @@ public class VRTabManager : MonoBehaviour
     public void OpenTab(int index)
     {
         foreach (Transform child in content)
+        {
             Destroy(child.gameObject);
+        }
 
         foreach (var prefab in tabs[index].items)
+        {
             Instantiate(prefab, content);
+        }
     }
 }
