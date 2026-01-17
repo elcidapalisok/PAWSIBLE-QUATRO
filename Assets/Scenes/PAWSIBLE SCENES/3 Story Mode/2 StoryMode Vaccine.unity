@@ -18336,7 +18336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c1d15cf0ab3d5e4d89dfcbd3da2ad00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.182
+      value: -52.005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c1d15cf0ab3d5e4d89dfcbd3da2ad00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18344,7 +18344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c1d15cf0ab3d5e4d89dfcbd3da2ad00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.626
+      value: 47.629
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c1d15cf0ab3d5e4d89dfcbd3da2ad00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73400,7 +73400,7 @@ MonoBehaviour:
     dialogueLines:
     - "If you\u2019re ready, let's kick things off."
     - Before we start, we need to make sure that your hands are clean
-    - Head to your right, and turn on the faucet to wash your hands.
+    - Now, head to your right, and turn on the faucet to wash your hands.
     - Use the soap for a thorough cleaning.
     - Now, remove the bubbles by rinsing off again.
     - Now for the final touch, use the sanitizer!
