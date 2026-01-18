@@ -1,156 +1,135 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using System.IO;
+﻿    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using TMPro;
+    using UnityEngine.UI;
+    using System.IO;
 
-public class DialogueManager : MonoBehaviour
-{
-    [Header("UI References")]
-    public TextMeshProUGUI dialogueText;
-    public Image npcIcon;
-    public Button nextButton;
-    public Button prevButton;
-    public Button skipButton;
-
-    [Header("Dialogue Segments")]
-    public List<DialogueSegment> dialogueSegments = new List<DialogueSegment>();
-
-    private int currentSegmentIndex = 0;
-    private int currentDialogueIndex = 0;
-    private Coroutine typingCoroutine;
-    private bool canProceed = true;
-
-    [Header("Audio Settings")]
-    public AudioSource voiceSource; // Assign this in Inspector
-    [Tooltip("Relative path inside Resources folder (e.g. 'Audio/Vaccination_StoryMode')")]
-    public string audioFolderPath = "Audio/Vaccination_StoryMode";
-
-    [Header("Typewriter Settings")]
-    public float typingSpeed = 0.03f;
-
-    private HashSet<(string, int)> triggerRequiredLines = new HashSet<(string, int)>();
-
-    [System.Serializable]
-    public class DialogueSegment
+    public class DialogueManager : MonoBehaviour
     {
-        public string segmentName;
-        [TextArea(3, 10)]
-        public List<string> dialogueLines = new List<string>();
-    }
+        [Header("UI References")]
+        public TextMeshProUGUI dialogueText;
+        public Image npcIcon;
+        public Button nextButton;
+        public Button prevButton;
+        public Button skipButton;
 
-    [Header("Cutscene Control")]
-    public bool cutsceneMode = false; // When true, DialogueManager won't auto-play audio
+        [Header("Dialogue Segments")]
+        public List<DialogueSegment> dialogueSegments = new List<DialogueSegment>();
+        
+        private int currentSegmentIndex = 0;
+        private int currentDialogueIndex = 0;
+        private Coroutine typingCoroutine;
+        private bool canProceed = true;
+        //
 
-    // ============================
-    // NEW: NPC Animation Hook
-    // ============================
-    [Header("NPC Animation (Optional)")]
-    public Animator npcAnimator; // Drag Dr. Paws' Animator here in Inspector
-    public string isTalkingParam = "IsTalking";
+        [Header("Audio Settings")]
+        public AudioSource voiceSource; // Assign this in Inspector
+        [Tooltip("Relative path inside Resources folder (e.g. 'Audio/Vaccination_StoryMode')")]
+        public string audioFolderPath = "Audio/Vaccination_StoryMode";
 
-    void SetTalking(bool talking)
-    {
-        if (npcAnimator == null) return;
-        npcAnimator.SetBool(isTalkingParam, talking);
-    }
+        [Header("Typewriter Settings")]
+        public float typingSpeed = 0.03f;
+
+        private HashSet<(string, int)> triggerRequiredLines = new HashSet<(string, int)>();
+        
+        [System.Serializable]
+        public class DialogueSegment
+        {
+            public string segmentName;
+            [TextArea(3, 10)]
+            public List<string> dialogueLines = new List<string>();
+        }
+        [Header("Cutscene Control")]
+        public bool cutsceneMode = false; // When true, DialogueManager won't auto-play audio
 
     void Start()
-    {
-        nextButton.onClick.AddListener(NextDialogue);
-        prevButton.onClick.AddListener(PrevDialogue);
-        skipButton.onClick.AddListener(SkipDialogue);
-
-        RegisterTriggerRequiredLines();
-
-        if (dialogueSegments.Count > 0)
-            ShowCurrentDialogue();
-    }
-
-    // ----------------------------
-    // REGISTER TRIGGERS
-    // ----------------------------
-    void RegisterTriggerRequiredLines()
-    {
-        triggerRequiredLines.Add(("handwashing", 2));
-        triggerRequiredLines.Add(("handwashing", 3));
-        triggerRequiredLines.Add(("handwashing", 5));
-
-        triggerRequiredLines.Add(("glovescoat", 0));
-        triggerRequiredLines.Add(("glovescoat", 1));
-
-        triggerRequiredLines.Add(("vaccine prep", 2));
-        triggerRequiredLines.Add(("vaccine prep", 3));
-        triggerRequiredLines.Add(("vaccine prep", 4));
-
-        triggerRequiredLines.Add(("injection", 1));
-        triggerRequiredLines.Add(("injection", 3));
-    }
-
-    // ----------------------------
-    // MAIN DIALOGUE DISPLAY
-    // ----------------------------
-    void ShowCurrentDialogue()
-    {
-        if (dialogueSegments.Count == 0) return;
-
-        var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
-        if (lines.Count == 0) return;
-
-        string currentLine = lines[currentDialogueIndex];
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
-
-        typingCoroutine = StartCoroutine(TypeText(currentLine));
-
-        prevButton.interactable = currentDialogueIndex > 0;
-        nextButton.interactable = currentDialogueIndex < lines.Count - 1;
-
-        string segment = GetCurrentSegmentName();
-        Debug.Log($"Showing dialogue [{segment}:{currentDialogueIndex}] — \"{currentLine}\"");
-
-        PlayVoiceForCurrentLine();
-    }
-
-    // ----------------------------
-    // TYPEWRITER EFFECT
-    // ----------------------------
-    IEnumerator TypeText(string line)
-    {
-        canProceed = false;
-        dialogueText.text = "";
-
-        // NEW: start talking animation as soon as line begins
-        SetTalking(true);
-
-        foreach (char letter in line)
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            nextButton.onClick.AddListener(NextDialogue);
+            prevButton.onClick.AddListener(PrevDialogue);
+            skipButton.onClick.AddListener(SkipDialogue);
+
+            RegisterTriggerRequiredLines();
+
+            if (dialogueSegments.Count > 0)
+                ShowCurrentDialogue();
         }
 
-        canProceed = true;
-
-        string segment = GetCurrentSegmentName().ToLower().Trim();
-        bool requiresTrigger = triggerRequiredLines.Contains((segment, currentDialogueIndex));
-
-        if (requiresTrigger)
+        // ----------------------------
+        // REGISTER TRIGGERS
+        // ----------------------------
+        void RegisterTriggerRequiredLines()
         {
-            Debug.Log($"Dialogue paused — waiting for trigger ({segment}:{currentDialogueIndex})");
-            // NEW: keep talking animation ON while paused, until external advance happens.
-            yield break;
+            triggerRequiredLines.Add(("handwashing", 2));
+            triggerRequiredLines.Add(("handwashing", 3));
+            triggerRequiredLines.Add(("handwashing", 5));
+
+            triggerRequiredLines.Add(("glovescoat", 0));
+            triggerRequiredLines.Add(("glovescoat", 1));
+
+            triggerRequiredLines.Add(("vaccine prep", 2));
+            triggerRequiredLines.Add(("vaccine prep", 3));
+            triggerRequiredLines.Add(("vaccine prep", 4));
+
+            triggerRequiredLines.Add(("injection", 1));
+            triggerRequiredLines.Add(("injection", 3));
         }
 
-        // Wait for voice to finish, then auto advance
-        yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
+        // ----------------------------
+        // MAIN DIALOGUE DISPLAY
+        // ----------------------------
+        void ShowCurrentDialogue()
+        {
+            if (dialogueSegments.Count == 0) return;
 
-        // NEW: stop talking once text is fully shown AND voice finished
-        SetTalking(false);
+            var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
+            if (lines.Count == 0) return;
 
-        yield return new WaitForSeconds(0.5f);
-        AdvanceDialogue();
-    }
+            string currentLine = lines[currentDialogueIndex];
+            if (typingCoroutine != null)
+                StopCoroutine(typingCoroutine);
+
+            typingCoroutine = StartCoroutine(TypeText(currentLine));
+
+            prevButton.interactable = currentDialogueIndex > 0;
+            nextButton.interactable = currentDialogueIndex < lines.Count - 1;
+
+            string segment = GetCurrentSegmentName();
+            Debug.Log($"Showing dialogue [{segment}:{currentDialogueIndex}] — \"{currentLine}\"");
+
+            PlayVoiceForCurrentLine();
+        }
+
+        // ----------------------------
+        // TYPEWRITER EFFECT
+        // ----------------------------
+        IEnumerator TypeText(string line)
+        {
+            canProceed = false;
+            dialogueText.text = "";
+
+            foreach (char letter in line)
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+            canProceed = true;
+
+            string segment = GetCurrentSegmentName().ToLower().Trim();
+            bool requiresTrigger = triggerRequiredLines.Contains((segment, currentDialogueIndex));
+
+            if (requiresTrigger)
+            {
+                Debug.Log($"Dialogue paused — waiting for trigger ({segment}:{currentDialogueIndex})");
+                yield break;
+            }
+
+            // Wait for voice to finish, then auto advance
+            yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
+            yield return new WaitForSeconds(0.5f);
+            AdvanceDialogue();
+        }
 
     // ----------------------------
     // AUDIO HANDLING
@@ -169,60 +148,57 @@ public class DialogueManager : MonoBehaviour
             voiceSource.clip = clip;
             voiceSource.Play();
             Debug.Log($"Playing voice clip: {fullPath}");
-
-            // NEW: if audio starts, ensure talking is ON
-            SetTalking(true);
         }
         else
         {
             Debug.LogWarning($"Voice clip not found: {fullPath}");
-            // If no voice exists, talking will still be driven by the typewriter timing.
         }
     }
+
 
     // ----------------------------
     // BUTTON HANDLERS
     // ----------------------------
     void NextDialogue()
-    {
-        var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
-        if (currentDialogueIndex < lines.Count - 1)
         {
-            currentDialogueIndex++;
+            var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
+            if (currentDialogueIndex < lines.Count - 1)
+            {
+                currentDialogueIndex++;
+                ShowCurrentDialogue();
+            }
+            else
+            {
+                Debug.Log($"Segment completed: {GetCurrentSegmentName()}");
+                MoveToNextSegment();
+            }
+        }
+
+        void PrevDialogue()
+        {
+            if (currentDialogueIndex > 0)
+            {
+                currentDialogueIndex--;
+                ShowCurrentDialogue();
+            }
+        }
+
+        void SkipDialogue()
+        {
+            var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
+            currentDialogueIndex = lines.Count - 1;
             ShowCurrentDialogue();
         }
-        else
-        {
-            Debug.Log($"Segment completed: {GetCurrentSegmentName()}");
-            MoveToNextSegment();
-        }
-    }
 
-    void PrevDialogue()
-    {
-        if (currentDialogueIndex > 0)
+        public void SetDialogueSegment(int index)
         {
-            currentDialogueIndex--;
-            ShowCurrentDialogue();
+            if (index >= 0 && index < dialogueSegments.Count)
+            {
+                currentSegmentIndex = index;
+                currentDialogueIndex = 0;
+                ShowCurrentDialogue();
+            }
         }
-    }
-
-    void SkipDialogue()
-    {
-        var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
-        currentDialogueIndex = lines.Count - 1;
-        ShowCurrentDialogue();
-    }
-
-    public void SetDialogueSegment(int index)
-    {
-        if (index >= 0 && index < dialogueSegments.Count)
-        {
-            currentSegmentIndex = index;
-            currentDialogueIndex = 0;
-            ShowCurrentDialogue();
-        }
-    }
 
     public void AdvanceDialogue()
     {
@@ -234,60 +210,61 @@ public class DialogueManager : MonoBehaviour
         if (ChecklistManager.Instance != null)
         {
             if (segment == "handwashing" && line == 5)
+                //ChecklistManager.Instance.CompleteTask("Sanitize");
                 DialogueChecklist.Instance?.CompleteTask("Sanitize");
 
             if (segment == "glovescoat" && line == 2)
+                //ChecklistManager.Instance.CompleteTask("Wear PPE");
                 DialogueChecklist.Instance?.CompleteTask("Wear PPE");
 
             if (segment == "vaccine prep" && line == 6)
+                //ChecklistManager.Instance.CompleteTask("Prepare Vaccine");
                 DialogueChecklist.Instance?.CompleteTask("Prepare Vaccine");
 
             if (segment == "injection" && line == 4)
+                //ChecklistManager.Instance.CompleteTask("Vaccinate the dog");
                 DialogueChecklist.Instance?.CompleteTask("Vaccinate the dog");
-        }
 
-        // NEW: If we were paused waiting for trigger, stop talking before moving on,
-        // and the next line will restart talking automatically.
-        SetTalking(false);
+        }
 
         NextDialogue();
     }
 
+
     private void MoveToNextSegment()
-    {
-        if (currentSegmentIndex < dialogueSegments.Count - 1)
         {
-            currentSegmentIndex++;
-            currentDialogueIndex = 0;
-            Debug.Log($"Moving to next segment: {GetCurrentSegmentName()}");
+            if (currentSegmentIndex < dialogueSegments.Count - 1)
+            {
+                currentSegmentIndex++;
+                currentDialogueIndex = 0;
+                Debug.Log($"Moving to next segment: {GetCurrentSegmentName()}");
+                ShowCurrentDialogue();
+            }
+            else
+            {
+                Debug.Log("All dialogue segments completed!");
+            }
+        }
+
+        // ----------------------------
+        // ACCESSORS
+        // ----------------------------
+        public string GetCurrentSegmentName()
+        {
+            return dialogueSegments[currentSegmentIndex].segmentName;
+        }
+
+        public int GetCurrentLineIndex()
+        {
+            return currentDialogueIndex;
+        }
+        public void ShowCutsceneLine(int lineIndex)
+        {
+            if (!cutsceneMode) return; // only during cutscene
+            currentSegmentIndex = 0; // assuming Cutscene is segment 0
+            currentDialogueIndex = lineIndex;
             ShowCurrentDialogue();
         }
-        else
-        {
-            Debug.Log("All dialogue segments completed!");
-            // NEW: Ensure we return to idle when everything ends
-            SetTalking(false);
-        }
-    }
 
-    // ----------------------------
-    // ACCESSORS
-    // ----------------------------
-    public string GetCurrentSegmentName()
-    {
-        return dialogueSegments[currentSegmentIndex].segmentName;
-    }
 
-    public int GetCurrentLineIndex()
-    {
-        return currentDialogueIndex;
-    }
-
-    public void ShowCutsceneLine(int lineIndex)
-    {
-        if (!cutsceneMode) return; // only during cutscene
-        currentSegmentIndex = 0; // assuming Cutscene is segment 0
-        currentDialogueIndex = lineIndex;
-        ShowCurrentDialogue();
-    }
 }
