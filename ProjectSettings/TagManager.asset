@@ -58,6 +58,7 @@ TagManager:
   - Lungs
   - Kidney
   - Esophagus
+  - 5in1
   layers:
   - Default
   - TransparentFX
@@ -65,7 +66,7 @@ TagManager:
   - Overlay UI
   - Water
   - UI
-  - 
+  - Hands
   - 
   - 
   - 
