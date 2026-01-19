@@ -8,42 +8,29 @@ public class InteractableObject : MonoBehaviour
     [Header("Interaction Settings")]
     public string objectName = "Interactable";
     public bool advanceDialogueOnUse = true;
-    public Color highlightColor = Color.yellow;
 
     [Header("Dialogue Trigger Target")]
     public string targetSegmentName;
     public int targetLineIndex;
 
+    [Header("Feedback")]
+    public bool showWrongFeedbackWhenNotAtStage = true;
+    [Min(0f)] public float wrongFeedbackCooldown = 1.0f;
+
+    [Tooltip("If assigned, feedback spawns at this transform. Otherwise uses this object's transform.")]
+    public Transform feedbackAnchor;
+
+    [Tooltip("Offset added to feedback spawn position.")]
+    public Vector3 feedbackOffset = new Vector3(0f, 0.15f, 0f);
+
     [Header("References (Optional)")]
     [SerializeField] private DialogueManager dialogueManager;
 
     private XRBaseInteractable interactable;
+    private float lastWrongTime = -999f;
 
-    private Renderer objectRenderer;
-    private MaterialPropertyBlock mpb;
-    private static readonly int ColorProp = Shader.PropertyToID("_Color");
-
-    private Color originalColor = Color.white;
-    private bool hasColorProp = false;
-
-    void Awake()
+    private void Awake()
     {
-        objectRenderer = GetComponent<Renderer>();
-        if (objectRenderer == null)
-            objectRenderer = GetComponentInChildren<Renderer>();
-
-        if (objectRenderer != null)
-        {
-            mpb = new MaterialPropertyBlock();
-            objectRenderer.GetPropertyBlock(mpb);
-
-            if (objectRenderer.sharedMaterial != null && objectRenderer.sharedMaterial.HasProperty(ColorProp))
-            {
-                hasColorProp = true;
-                originalColor = objectRenderer.sharedMaterial.GetColor(ColorProp);
-            }
-        }
-
         if (string.IsNullOrEmpty(objectName))
             objectName = gameObject.name;
 
@@ -53,62 +40,51 @@ public class InteractableObject : MonoBehaviour
         interactable = GetComponent<XRBaseInteractable>();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (interactable != null)
-        {
-            interactable.hoverEntered.AddListener(OnHoverEnter);
-            interactable.hoverExited.AddListener(OnHoverExit);
             interactable.selectEntered.AddListener(OnSelect);
-        }
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         if (interactable != null)
-        {
-            interactable.hoverEntered.RemoveListener(OnHoverEnter);
-            interactable.hoverExited.RemoveListener(OnHoverExit);
             interactable.selectEntered.RemoveListener(OnSelect);
-        }
     }
 
-    public void OnHoverEnter(HoverEnterEventArgs args)
-    {
-        SetHighlight(true);
-        TooltipManager.Instance?.ShowTooltip(objectName);
-    }
-
-    public void OnHoverExit(HoverExitEventArgs args)
-    {
-        SetHighlight(false);
-        TooltipManager.Instance?.HideTooltip();
-    }
-
-    private void SetHighlight(bool on)
-    {
-        if (objectRenderer == null || mpb == null || !hasColorProp) return;
-
-        objectRenderer.GetPropertyBlock(mpb);
-        mpb.SetColor(ColorProp, on ? highlightColor : originalColor);
-        objectRenderer.SetPropertyBlock(mpb);
-    }
-
-    public void OnSelect(SelectEnterEventArgs args)
+    private void OnSelect(SelectEnterEventArgs args)
     {
         if (dialogueManager == null) return;
 
-        if (dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
+        bool atStage = dialogueManager.IsAtStage(targetSegmentName, targetLineIndex);
+
+        if (atStage)
         {
             if (advanceDialogueOnUse)
             {
+                Vector3 spawnPos = GetFeedbackSpawnPosition();
+                FeedbackManager.Instance?.ReportCorrect(spawnPos);
+
                 dialogueManager.AdvanceDialogue();
-                Debug.Log($"{objectName} triggered dialogue ({DialogueManager.NormalizeSegmentKey(targetSegmentName)}:{targetLineIndex})");
+                Debug.Log($"{objectName} triggered dialogue (Correct) at {targetSegmentName}:{targetLineIndex}");
             }
+            return;
         }
-        else
+
+        if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
         {
-            Debug.Log($"{objectName} interaction ignored (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
+            lastWrongTime = Time.time;
+
+            Vector3 spawnPos = GetFeedbackSpawnPosition();
+            FeedbackManager.Instance?.ReportWrong(spawnPos);
+
+            Debug.Log($"{objectName} used at wrong stage (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
         }
+    }
+
+    private Vector3 GetFeedbackSpawnPosition()
+    {
+        Transform anchor = feedbackAnchor != null ? feedbackAnchor : transform;
+        return anchor.position + feedbackOffset;
     }
 }
