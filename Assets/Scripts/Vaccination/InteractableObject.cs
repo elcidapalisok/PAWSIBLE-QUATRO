@@ -14,25 +14,42 @@ public class InteractableObject : MonoBehaviour
     public string targetSegmentName;
     public int targetLineIndex;
 
-    private Color originalColor;
-    private Renderer objectRenderer;
-    private DialogueManager dialogueManager;
+    [Header("References (Optional)")]
+    [SerializeField] private DialogueManager dialogueManager;
+
     private XRBaseInteractable interactable;
+
+    private Renderer objectRenderer;
+    private MaterialPropertyBlock mpb;
+    private static readonly int ColorProp = Shader.PropertyToID("_Color");
+
+    private Color originalColor = Color.white;
+    private bool hasColorProp = false;
 
     void Awake()
     {
-        // Find the renderer either on this object or its children
         objectRenderer = GetComponent<Renderer>();
         if (objectRenderer == null)
             objectRenderer = GetComponentInChildren<Renderer>();
 
         if (objectRenderer != null)
-            originalColor = objectRenderer.material.color;
+        {
+            mpb = new MaterialPropertyBlock();
+            objectRenderer.GetPropertyBlock(mpb);
+
+            if (objectRenderer.sharedMaterial != null && objectRenderer.sharedMaterial.HasProperty(ColorProp))
+            {
+                hasColorProp = true;
+                originalColor = objectRenderer.sharedMaterial.GetColor(ColorProp);
+            }
+        }
 
         if (string.IsNullOrEmpty(objectName))
             objectName = gameObject.name;
 
-        dialogueManager = FindObjectOfType<DialogueManager>();
+        if (dialogueManager == null)
+            dialogueManager = DialogueManager.Instance;
+
         interactable = GetComponent<XRBaseInteractable>();
     }
 
@@ -58,39 +75,40 @@ public class InteractableObject : MonoBehaviour
 
     public void OnHoverEnter(HoverEnterEventArgs args)
     {
-        if (objectRenderer != null)
-            objectRenderer.material.color = highlightColor;
-
+        SetHighlight(true);
         TooltipManager.Instance?.ShowTooltip(objectName);
     }
 
     public void OnHoverExit(HoverExitEventArgs args)
     {
-        if (objectRenderer != null)
-            objectRenderer.material.color = originalColor;
-
+        SetHighlight(false);
         TooltipManager.Instance?.HideTooltip();
+    }
+
+    private void SetHighlight(bool on)
+    {
+        if (objectRenderer == null || mpb == null || !hasColorProp) return;
+
+        objectRenderer.GetPropertyBlock(mpb);
+        mpb.SetColor(ColorProp, on ? highlightColor : originalColor);
+        objectRenderer.SetPropertyBlock(mpb);
     }
 
     public void OnSelect(SelectEnterEventArgs args)
     {
         if (dialogueManager == null) return;
 
-        string currentSegment = dialogueManager.GetCurrentSegmentName().ToLower().Trim();
-        int currentLine = dialogueManager.GetCurrentLineIndex();
-        string targetSegment = targetSegmentName.ToLower().Trim();
-
-        if (currentSegment == targetSegment && currentLine == targetLineIndex)
+        if (dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
         {
             if (advanceDialogueOnUse)
             {
                 dialogueManager.AdvanceDialogue();
-                Debug.Log($"{objectName} triggered dialogue ({targetSegment}:{targetLineIndex})");
+                Debug.Log($"{objectName} triggered dialogue ({DialogueManager.NormalizeSegmentKey(targetSegmentName)}:{targetLineIndex})");
             }
         }
         else
         {
-            Debug.Log($"{objectName} interaction ignored not the correct stage ({currentSegment}:{currentLine})");
+            Debug.Log($"{objectName} interaction ignored (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
         }
     }
 }
