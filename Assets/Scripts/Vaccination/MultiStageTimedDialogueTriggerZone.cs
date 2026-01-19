@@ -2,11 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class TimedDialogueTriggerZone : MonoBehaviour
+public class MultiStageTimedDialogueTriggerZone : MonoBehaviour
 {
-    [Header("Dialogue Stage Gate")]
-    public string targetSegmentName;
-    public int targetLineIndex;
+    [System.Serializable]
+    public class StageGate
+    {
+        public string segmentName;
+        public int lineIndex;
+    }
+
+    [Header("Allowed Dialogue Stages (Any of these can complete the timer)")]
+    public List<StageGate> allowedStages = new List<StageGate>();
 
     [Header("Timing")]
     [Min(0.1f)] public float requiredSeconds = 3f;
@@ -27,15 +33,16 @@ public class TimedDialogueTriggerZone : MonoBehaviour
     [SerializeField] private WaterTapXR waterTap;
 
     private Collider triggerCollider;
-
     private readonly HashSet<Collider> inside = new HashSet<Collider>();
+
     private float timer = 0f;
 
-    // Arms timing only when a hand ENTERS while stage is correct.
+    // Session gating
     private bool eligibleForCompletion = false;
-
-    // NEW: once wrong happens, you must fully EXIT before correct can ever happen.
     private bool blockedUntilExit = false;
+
+    // Which stage we armed on (prevents “arm on one stage, complete on another”)
+    private int armedStageIndex = -1;
 
     private float lastWrongTime = -999f;
 
@@ -54,7 +61,9 @@ public class TimedDialogueTriggerZone : MonoBehaviour
             return;
         }
 
+        // Start disabled; enabled only while faucet is ON
         triggerCollider.enabled = false;
+
         waterTap.OnTapStateChanged += HandleTapStateChanged;
     }
 
@@ -69,38 +78,34 @@ public class TimedDialogueTriggerZone : MonoBehaviour
         triggerCollider.enabled = isOpen;
 
         if (!isOpen)
-        {
             ResetSession();
-        }
     }
 
     private void Update()
     {
         if (!triggerCollider.enabled) return;
         if (dialogueManager == null) return;
-
-        // If nothing inside, do nothing.
         if (inside.Count == 0) return;
 
-        // If blocked, do not allow completion.
         if (blockedUntilExit)
         {
             timer = 0f;
             return;
         }
 
-        // Must be eligible (entered while correct stage).
-        if (!eligibleForCompletion)
+        if (!eligibleForCompletion || armedStageIndex < 0 || armedStageIndex >= allowedStages.Count)
         {
             timer = 0f;
             return;
         }
 
-        // Must still be at correct stage; otherwise force re-entry.
-        if (!dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
+        // Must remain on the exact stage we armed on
+        StageGate armed = allowedStages[armedStageIndex];
+        if (!dialogueManager.IsAtStage(armed.segmentName, armed.lineIndex))
         {
             timer = 0f;
             eligibleForCompletion = false;
+            armedStageIndex = -1;
             return;
         }
 
@@ -108,13 +113,13 @@ public class TimedDialogueTriggerZone : MonoBehaviour
 
         if (timer >= requiredSeconds)
         {
-            // SUCCESS: show correct feedback and advance.
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportCorrect(spawnPos);
 
-            // Block until exit so you can't get another correct immediately while still inside.
+            // Block until exit to avoid rapid retriggers while hands are still inside
             blockedUntilExit = true;
             eligibleForCompletion = false;
+            armedStageIndex = -1;
             timer = 0f;
 
             dialogueManager.AdvanceDialogue();
@@ -127,20 +132,19 @@ public class TimedDialogueTriggerZone : MonoBehaviour
 
         inside.Add(other);
 
-        // If already blocked, do nothing until user fully exits.
         if (blockedUntilExit) return;
 
-        bool atStage = dialogueManager != null && dialogueManager.IsAtStage(targetSegmentName, targetLineIndex);
-
-        if (atStage)
+        int stageIndex = GetMatchingStageIndex();
+        if (stageIndex >= 0)
         {
-            // Arm timer only when a hand ENTERS at correct stage.
+            // Arm completion only when a hand ENTERS while at a valid stage
             eligibleForCompletion = true;
-            timer = 0f; // restart cleanly on entry
+            armedStageIndex = stageIndex;
+            timer = 0f;
             return;
         }
 
-        // WRONG attempt: show wrong feedback and block until exit.
+        // Wrong attempt: show wrong feedback and block until exit (prevents wrong+correct combos)
         if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
         {
             lastWrongTime = Time.time;
@@ -151,19 +155,29 @@ public class TimedDialogueTriggerZone : MonoBehaviour
 
         blockedUntilExit = true;
         eligibleForCompletion = false;
+        armedStageIndex = -1;
         timer = 0f;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (inside.Remove(other))
+        if (inside.Remove(other) && inside.Count == 0)
+            ResetSession();
+    }
+
+    private int GetMatchingStageIndex()
+    {
+        if (dialogueManager == null) return -1;
+        if (allowedStages == null || allowedStages.Count == 0) return -1;
+
+        for (int i = 0; i < allowedStages.Count; i++)
         {
-            if (inside.Count == 0)
-            {
-                // Only when ALL hands exit do we allow a new session.
-                ResetSession();
-            }
+            StageGate g = allowedStages[i];
+            if (dialogueManager.IsAtStage(g.segmentName, g.lineIndex))
+                return i;
         }
+
+        return -1;
     }
 
     private void ResetSession()
@@ -172,6 +186,7 @@ public class TimedDialogueTriggerZone : MonoBehaviour
         timer = 0f;
         eligibleForCompletion = false;
         blockedUntilExit = false;
+        armedStageIndex = -1;
     }
 
     private Vector3 GetFeedbackSpawnPosition()
