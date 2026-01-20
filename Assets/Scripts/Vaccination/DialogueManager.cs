@@ -137,9 +137,11 @@ public class DialogueManager : MonoBehaviour
         triggerRequiredLines.Add(("handwashing", 3));
         triggerRequiredLines.Add(("handwashing", 4));
         triggerRequiredLines.Add(("handwashing", 5));
+        triggerRequiredLines.Add(("handwashing", 6));
+        triggerRequiredLines.Add(("handwashing", 7));
 
         triggerRequiredLines.Add(("glovescoat", 0));
-        triggerRequiredLines.Add(("glovescoat", 1));
+        triggerRequiredLines.Add(("glovescoat", 1));    
 
         triggerRequiredLines.Add(("vaccineprep", 0));
         triggerRequiredLines.Add(("vaccineprep", 3));
