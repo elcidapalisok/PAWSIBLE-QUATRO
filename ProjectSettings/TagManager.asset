@@ -59,6 +59,7 @@ TagManager:
   - Kidney
   - Esophagus
   - 5in1
+  - towel
   layers:
   - Default
   - TransparentFX

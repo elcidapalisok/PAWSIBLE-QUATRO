@@ -23,11 +23,28 @@ public class InteractableObject : MonoBehaviour
     [Tooltip("Offset added to feedback spawn position.")]
     public Vector3 feedbackOffset = new Vector3(0f, 0.15f, 0f);
 
+    [Header("Timed Hold Requirement")]
+    [Tooltip("Enable to require holding/selecting the object for a duration before advancing dialogue.")]
+    public bool useHoldTimer = false;
+
+    [Min(0.1f)]
+    public float holdDurationSeconds = 6f;
+
+    [Tooltip("If true, releasing the object resets hold progress. If false, progress is kept but only counts while held.")]
+    public bool resetTimerOnRelease = true;
+
+    [Tooltip("If true, timer counts only when the user is currently selecting/holding the object.")]
+    public bool timerCountsOnlyWhileSelected = true;
+
     [Header("References (Optional)")]
     [SerializeField] private DialogueManager dialogueManager;
 
     private XRBaseInteractable interactable;
     private float lastWrongTime = -999f;
+
+    private bool isSelected = false;
+    private float holdTimer = 0f;
+    private bool completedThisStage = false;
 
     private void Awake()
     {
@@ -43,42 +60,138 @@ public class InteractableObject : MonoBehaviour
     private void OnEnable()
     {
         if (interactable != null)
-            interactable.selectEntered.AddListener(OnSelect);
+        {
+            interactable.selectEntered.AddListener(OnSelectEntered);
+            interactable.selectExited.AddListener(OnSelectExited);
+        }
     }
 
     private void OnDisable()
     {
         if (interactable != null)
-            interactable.selectEntered.RemoveListener(OnSelect);
+        {
+            interactable.selectEntered.RemoveListener(OnSelectEntered);
+            interactable.selectExited.RemoveListener(OnSelectExited);
+        }
     }
 
-    private void OnSelect(SelectEnterEventArgs args)
+    private void Update()
     {
+        if (!useHoldTimer) return;
+        if (completedThisStage) return;
+        if (dialogueManager == null) return;
+
+        // Timer counts only while selected (recommended default)
+        if (timerCountsOnlyWhileSelected && !isSelected)
+            return;
+
+        // Only count time at the correct stage
+        if (!dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
+        {
+            holdTimer = 0f;
+            return;
+        }
+
+        // If user must be holding but isn't, reset (optional behavior)
+        if (timerCountsOnlyWhileSelected && !isSelected)
+        {
+            holdTimer = 0f;
+            return;
+        }
+
+        // Count time
+        holdTimer += Time.deltaTime;
+
+        if (holdTimer >= holdDurationSeconds)
+        {
+            CompleteCorrect();
+        }
+    }
+
+    private void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        isSelected = true;
+
         if (dialogueManager == null) return;
 
         bool atStage = dialogueManager.IsAtStage(targetSegmentName, targetLineIndex);
 
-        if (atStage)
+        // Instant mode (default behavior)
+        if (!useHoldTimer)
         {
-            if (advanceDialogueOnUse)
+            if (atStage)
             {
-                Vector3 spawnPos = GetFeedbackSpawnPosition();
-                FeedbackManager.Instance?.ReportCorrect(spawnPos);
-
-                dialogueManager.AdvanceDialogue();
-                Debug.Log($"{objectName} triggered dialogue (Correct) at {targetSegmentName}:{targetLineIndex}");
+                CompleteCorrect();
+            }
+            else
+            {
+                MaybeWrongFeedback();
             }
             return;
         }
 
-        if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
+        // Timed mode
+        if (!atStage)
+        {
+            // Wrong stage: show wrong feedback, but do not advance
+            MaybeWrongFeedback();
+
+            // Optional: prevent "pre-holding" from counting
+            holdTimer = 0f;
+            return;
+        }
+
+        // At correct stage:
+        // Start (or continue) hold timer.
+        // If you want timer to start fresh every time it is selected, reset here:
+        if (resetTimerOnRelease)
+            holdTimer = 0f;
+    }
+
+    private void OnSelectExited(SelectExitEventArgs args)
+    {
+        isSelected = false;
+
+        if (!useHoldTimer) return;
+        if (!resetTimerOnRelease) return;
+
+        holdTimer = 0f;
+        completedThisStage = false;
+    }
+
+    private void CompleteCorrect()
+    {
+        if (completedThisStage) return;
+
+        completedThisStage = true;
+        holdTimer = 0f;
+
+        Vector3 spawnPos = GetFeedbackSpawnPosition();
+        FeedbackManager.Instance?.ReportCorrect(spawnPos);
+
+        if (advanceDialogueOnUse && dialogueManager != null)
+        {
+            dialogueManager.AdvanceDialogue();
+        }
+
+        Debug.Log($"{objectName} triggered dialogue (Correct) at {targetSegmentName}:{targetLineIndex}");
+    }
+
+    private void MaybeWrongFeedback()
+    {
+        if (!showWrongFeedbackWhenNotAtStage) return;
+
+        if (Time.time - lastWrongTime >= wrongFeedbackCooldown)
         {
             lastWrongTime = Time.time;
 
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportWrong(spawnPos);
 
-            Debug.Log($"{objectName} used at wrong stage (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
+            if (dialogueManager != null)
+            {
+                Debug.Log($"{objectName} used at wrong stage (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
+            }
         }
     }
 
