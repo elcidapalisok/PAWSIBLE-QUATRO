@@ -60,6 +60,8 @@ TagManager:
   - Esophagus
   - 5in1
   - towel
+  - syringe_cap
+  - syringe_needle
   layers:
   - Default
   - TransparentFX
@@ -68,7 +70,7 @@ TagManager:
   - Water
   - UI
   - Hands
-  - 
+  - Needle
   - 
   - 
   - 

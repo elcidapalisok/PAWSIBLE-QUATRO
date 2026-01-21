@@ -92,13 +92,6 @@ public class InteractableObject : MonoBehaviour
             return;
         }
 
-        // If user must be holding but isn't, reset (optional behavior)
-        if (timerCountsOnlyWhileSelected && !isSelected)
-        {
-            holdTimer = 0f;
-            return;
-        }
-
         // Count time
         holdTimer += Time.deltaTime;
 
@@ -142,7 +135,6 @@ public class InteractableObject : MonoBehaviour
         }
 
         // At correct stage:
-        // Start (or continue) hold timer.
         // If you want timer to start fresh every time it is selected, reset here:
         if (resetTimerOnRelease)
             holdTimer = 0f;
@@ -166,6 +158,9 @@ public class InteractableObject : MonoBehaviour
         completedThisStage = true;
         holdTimer = 0f;
 
+        // --- SCORE: correct completion of this step ---
+        ScoreManager.Instance?.RegisterCorrect(targetSegmentName, targetLineIndex);
+
         Vector3 spawnPos = GetFeedbackSpawnPosition();
         FeedbackManager.Instance?.ReportCorrect(spawnPos);
 
@@ -188,8 +183,15 @@ public class InteractableObject : MonoBehaviour
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportWrong(spawnPos);
 
+            // --- SCORE: mistake registered on actual current stage ---
             if (dialogueManager != null)
             {
+                ScoreManager.Instance?.RegisterMistake(
+                    dialogueManager.GetCurrentSegmentName(),
+                    dialogueManager.GetCurrentLineIndex(),
+                    $"{objectName} used at wrong stage"
+                );
+
                 Debug.Log($"{objectName} used at wrong stage (current {DialogueManager.NormalizeSegmentKey(dialogueManager.GetCurrentSegmentName())}:{dialogueManager.GetCurrentLineIndex()})");
             }
         }
