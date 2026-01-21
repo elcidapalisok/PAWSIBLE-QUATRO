@@ -78,27 +78,6 @@ public class HazardBinController : MonoBehaviour
     // -------------------------
     private void OnTriggerEnter(Collider other)
     {
-        // Large proximity trigger: open when user enters
-        if (proximityTrigger != null && other == proximityTrigger)
-        {
-            // This branch is not used: Unity passes the entering collider, not the trigger itself.
-            // Kept intentionally empty.
-        }
-
-        // If we have a proximity trigger assigned, check if this OnTriggerEnter came from it
-        if (proximityTrigger != null && other != null)
-        {
-            // If the entering object is in proximity zone, open bin
-            // We detect this by checking whether "other" is inside the proximityTrigger volume.
-            // But OnTriggerEnter is fired on THIS script object, so we need a different approach:
-            // We'll handle proximity via a separate component below (recommended).
-        }
-
-        // Small contents trigger logic: only accept objects if they entered the contentsTrigger
-        // Since OnTriggerEnter is called on the object that has this script, we assume
-        // the collider that fired is the one on this GameObject or its children.
-        // Best practice: put this script on the bin root and place the contentsTrigger collider on the same GameObject
-        // OR ensure the bin root has the trigger collider component.
         HandleContentsEnter(other);
     }
 
@@ -114,12 +93,6 @@ public class HazardBinController : MonoBehaviour
     {
         if (other == null) return;
 
-        // If a contentsTrigger is assigned, ensure this trigger event is coming from it.
-        // In many setups, OnTriggerEnter fires on the object with the trigger collider.
-        // If your trigger is on a child, Unity won't call this unless the script is on the same object as that collider.
-        // So we do a soft check: if contentsTrigger exists and other is NOT the trigger itself, still accept,
-        // because Unity passes the entering object collider, not the trigger collider.
-        // The real gating is that this script should be on the same object as the contentsTrigger collider.
         if (!contents.Contains(other.gameObject))
         {
             contents.Add(other.gameObject);
@@ -133,6 +106,9 @@ public class HazardBinController : MonoBehaviour
             {
                 towelStepCompleted = true;
 
+                // --- SCORE: correct completion of this step ---
+                ScoreManager.Instance?.RegisterCorrect(targetSegmentName, targetLineIndex);
+
                 FeedbackManager.Instance?.ReportCorrect(GetFeedbackSpawnPosition());
                 dm.AdvanceDialogue();
 
@@ -140,8 +116,18 @@ public class HazardBinController : MonoBehaviour
             }
             else
             {
-                // Optional wrong feedback (only if user is at wrong stage)
+                // Wrong feedback + scoring
                 FeedbackManager.Instance?.ReportWrong(GetFeedbackSpawnPosition());
+
+                if (dm != null)
+                {
+                    ScoreManager.Instance?.RegisterMistake(
+                        dm.GetCurrentSegmentName(),
+                        dm.GetCurrentLineIndex(),
+                        "Towel dropped in bin at wrong stage"
+                    );
+                }
+
                 Debug.Log($"{name}: Towel detected but not at correct stage. No advance.");
             }
         }

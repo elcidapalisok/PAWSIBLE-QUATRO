@@ -116,6 +116,9 @@ public class MultiStageTimedDialogueTriggerZone : MonoBehaviour
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportCorrect(spawnPos);
 
+            // --- SCORE: correct completion of the armed stage ---
+            ScoreManager.Instance?.RegisterCorrect(armed.segmentName, armed.lineIndex);
+
             // Block until exit to avoid rapid retriggers while hands are still inside
             blockedUntilExit = true;
             eligibleForCompletion = false;
@@ -151,6 +154,16 @@ public class MultiStageTimedDialogueTriggerZone : MonoBehaviour
 
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportWrong(spawnPos);
+
+            // --- SCORE: mistake registered on actual current stage ---
+            if (dialogueManager != null)
+            {
+                ScoreManager.Instance?.RegisterMistake(
+                    dialogueManager.GetCurrentSegmentName(),
+                    dialogueManager.GetCurrentLineIndex(),
+                    "Hands entered timed zone at wrong stage"
+                );
+            }
         }
 
         blockedUntilExit = true;
