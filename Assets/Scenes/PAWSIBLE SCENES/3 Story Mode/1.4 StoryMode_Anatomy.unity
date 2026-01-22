@@ -12970,90 +12970,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allAnatomyObjects:
   - objectName: Skull
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 504763257}
+    highlighter: {fileID: 504763259}
     category: Skeletal
     associatedIcon: {fileID: 1097330564145105912, guid: c1c304e0b2a40bd4099dbe02544a564c, type: 3}
   - objectName: Jaw
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 327881443}
+    highlighter: {fileID: 327881445}
     category: Skeletal
     associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
   - objectName: Cervical
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1278531206}
+    highlighter: {fileID: 1278531208}
     category: Skeletal
-    associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
+    associatedIcon: {fileID: 8881547526959011664, guid: 535bd916545f60b4fbdf1960c89ed03f, type: 3}
   - objectName: Lumbar
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1861732716}
+    highlighter: {fileID: 1861732718}
     category: Skeletal
-    associatedIcon: {fileID: -5822795771201303138, guid: 490bf2e919dfc0f4baf230b36fc74aab, type: 3}
+    associatedIcon: {fileID: -5822795771201303138, guid: e3dc121274a69704fac5d4bb75f572b8, type: 3}
   - objectName: Pelvic
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1999515943}
+    highlighter: {fileID: 1999515945}
     category: Skeletal
-    associatedIcon: {fileID: 1705268983806140232, guid: 1c92f8954e67fd3478964366ef503bb7, type: 3}
+    associatedIcon: {fileID: 1705268983806140232, guid: b5f034153667177498b333298dd8abef, type: 3}
   - objectName: Tail
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1694528870}
+    highlighter: {fileID: 1694528872}
     category: Skeletal
-    associatedIcon: {fileID: -6572816907119889360, guid: b92d31540b2e5e94a873c4bcd4bc6206, type: 3}
+    associatedIcon: {fileID: -6572816907119889360, guid: 08ff99797eec4e04081971a866f74b3d, type: 3}
   - objectName: Scapula
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 309217978}
+    highlighter: {fileID: 309217980}
     category: Skeletal
-    associatedIcon: {fileID: -4595587652472626132, guid: 68080fb714b7ce24a9cc0b1aaee601b5, type: 3}
+    associatedIcon: {fileID: -4595587652472626132, guid: 0a008a4fed9d47040a65005196ca0a24, type: 3}
   - objectName: Humerus
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1427485854}
+    highlighter: {fileID: 1427485856}
     category: Skeletal
-    associatedIcon: {fileID: 4504688558891776150, guid: 75fa4865126f9d2459226b2c1c4c42b3, type: 3}
+    associatedIcon: {fileID: 4504688558891776150, guid: 036a4086d4fe3d749b095d479de0875a, type: 3}
   - objectName: Radius
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 63981055}
+    highlighter: {fileID: 63981057}
     category: Skeletal
-    associatedIcon: {fileID: -2668435240749431626, guid: cdc3677eb7f5029479e80c6bc9a59454, type: 3}
+    associatedIcon: {fileID: -2668435240749431626, guid: f944cfeff92e5ef4cbeec4f250698428, type: 3}
   - objectName: Ulna
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1847566456}
+    highlighter: {fileID: 1847566458}
     category: Skeletal
-    associatedIcon: {fileID: -692345058000023029, guid: a60cb9ea846f06145bc947ad4403a5b2, type: 3}
+    associatedIcon: {fileID: -692345058000023029, guid: e66daa1394b4bf246b85de3624ed31b5, type: 3}
   - objectName: Thoracic_Ankle
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 318417118}
+    highlighter: {fileID: 318417120}
     category: Skeletal
-    associatedIcon: {fileID: 2266058860159454728, guid: df44151c0d754034d94c0f638988b4a6, type: 3}
+    associatedIcon: {fileID: 2266058860159454728, guid: bdcb266a508290846be63ac6d88b338e, type: 3}
   - objectName: Thoracic_Metacarpas
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1463827049}
+    highlighter: {fileID: 1463827051}
     category: Skeletal
     associatedIcon: {fileID: 5282259098015488384, guid: 8fd8ab81c2ab9a443b466c686a218e22, type: 3}
   - objectName: Femur
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 1892233132}
+    highlighter: {fileID: 1892233134}
     category: Skeletal
-    associatedIcon: {fileID: 6711366311025178581, guid: e5ee130df3b5c2744a03bdd02285a545, type: 3}
+    associatedIcon: {fileID: 6711366311025178581, guid: a1912b114745f4c40b37196af87b9280, type: 3}
   - objectName: Tibia
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 2038316815}
+    highlighter: {fileID: 2038316817}
     category: Skeletal
-    associatedIcon: {fileID: 6993196948796264193, guid: 18146c06c13c9164a9a2f24b92da69cd, type: 3}
+    associatedIcon: {fileID: 6993196948796264193, guid: d1565c6250115f2499b08646b48311a3, type: 3}
   - objectName: Fibula
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 516850668}
+    highlighter: {fileID: 516850670}
     category: Skeletal
-    associatedIcon: {fileID: -6212321491021778613, guid: a89418e706c09794fb2c9fa4e79d7d7b, type: 3}
+    associatedIcon: {fileID: -6212321491021778613, guid: f91543d2b48e445408b9bd1444976dc1, type: 3}
   - objectName: Pelvic_Ankle
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 69165633}
+    highlighter: {fileID: 69165635}
     category: Skeletal
     associatedIcon: {fileID: 2266058860159454728, guid: b2b9fbcc01adeee428b57b80fad4a3ee, type: 3}
   - objectName: Pelvic_Metacarpal
-    sceneObject: {fileID: 0}
-    highlighter: {fileID: 0}
+    sceneObject: {fileID: 401856957}
+    highlighter: {fileID: 401856959}
     category: Skeletal
-    associatedIcon: {fileID: 5282259098015488384, guid: 386317fc977bf3648b2a16325d773735, type: 3}
+    associatedIcon: {fileID: 5282259098015488384, guid: 676b58373d5e4ec44bdbd79ba8170f7f, type: 3}
   - objectName: Esophagus
     sceneObject: {fileID: 0}
     highlighter: {fileID: 0}
@@ -90232,7 +90232,15 @@ MonoBehaviour:
     - {fileID: 2574704796688102942, guid: d1565c6250115f2499b08646b48311a3, type: 3}
     - {fileID: 6434044557965506715, guid: e66daa1394b4bf246b85de3624ed31b5, type: 3}
   - items: []
-  - items: []
+  - items:
+    - {fileID: 2002524921133812414, guid: 5092bfbc8971df540a9c513f141cbd4e, type: 3}
+    - {fileID: 1422887162058125976, guid: 6004cc36925519146b48dabfc06b82cd, type: 3}
+    - {fileID: 707581627466981776, guid: d1ddc24f93a625a4d85fdb2824ec880e, type: 3}
+    - {fileID: 7260385841630373812, guid: 7844ccf02bba7a44786b29914c96d2b2, type: 3}
+    - {fileID: 6523651501264425279, guid: da5992d9da7d6d84996ae3c4f89b67af, type: 3}
+    - {fileID: 8357534317481657165, guid: a6ece365b34061741a87d2d7aae5d061, type: 3}
+    - {fileID: 718790518843519736, guid: 7cf18a47f4aa62949a2e704548839926, type: 3}
+    - {fileID: 6585284307506597963, guid: 737cdf1c9c2451443b2a192d76b8dd65, type: 3}
   content: {fileID: 1715667705}
 --- !u!4 &1863484974 stripped
 Transform:
