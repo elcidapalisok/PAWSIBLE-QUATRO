@@ -26218,6 +26218,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -76023,29 +76030,29 @@ MonoBehaviour:
   scoredSteps:
   - segmentName: Handwashing
     lineIndex: 2
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 3
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 4
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 5
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 6
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 7
-    points: 400
+    points: 0
   - segmentName: GlovesCoat
     lineIndex: 0
-    points: 400
+    points: 0
   - segmentName: GlovesCoat
     lineIndex: 1
-    points: 400
-  mistakePenalty: 200
+    points: 0
+  mistakePenalty: 0
 --- !u!4 &1374914189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 640415405592496269, guid: 87b3c854d53a4194c91cd559788482f5, type: 3}
