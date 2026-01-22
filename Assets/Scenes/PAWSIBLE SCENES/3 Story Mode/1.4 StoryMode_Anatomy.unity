@@ -12979,6 +12979,121 @@ MonoBehaviour:
     highlighter: {fileID: 0}
     category: Skeletal
     associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
+  - objectName: Cervical
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
+  - objectName: Lumbar
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -5822795771201303138, guid: 490bf2e919dfc0f4baf230b36fc74aab, type: 3}
+  - objectName: Pelvic
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 1705268983806140232, guid: 1c92f8954e67fd3478964366ef503bb7, type: 3}
+  - objectName: Tail
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -6572816907119889360, guid: b92d31540b2e5e94a873c4bcd4bc6206, type: 3}
+  - objectName: Scapula
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -4595587652472626132, guid: 68080fb714b7ce24a9cc0b1aaee601b5, type: 3}
+  - objectName: Humerus
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 4504688558891776150, guid: 75fa4865126f9d2459226b2c1c4c42b3, type: 3}
+  - objectName: Radius
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -2668435240749431626, guid: cdc3677eb7f5029479e80c6bc9a59454, type: 3}
+  - objectName: Ulna
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -692345058000023029, guid: a60cb9ea846f06145bc947ad4403a5b2, type: 3}
+  - objectName: Thoracic_Ankle
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 2266058860159454728, guid: df44151c0d754034d94c0f638988b4a6, type: 3}
+  - objectName: Thoracic_Metacarpas
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 5282259098015488384, guid: 8fd8ab81c2ab9a443b466c686a218e22, type: 3}
+  - objectName: Femur
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 6711366311025178581, guid: e5ee130df3b5c2744a03bdd02285a545, type: 3}
+  - objectName: Tibia
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 6993196948796264193, guid: 18146c06c13c9164a9a2f24b92da69cd, type: 3}
+  - objectName: Fibula
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: -6212321491021778613, guid: a89418e706c09794fb2c9fa4e79d7d7b, type: 3}
+  - objectName: Pelvic_Ankle
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 2266058860159454728, guid: b2b9fbcc01adeee428b57b80fad4a3ee, type: 3}
+  - objectName: Pelvic_Metacarpal
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Skeletal
+    associatedIcon: {fileID: 5282259098015488384, guid: 386317fc977bf3648b2a16325d773735, type: 3}
+  - objectName: Esophagus
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: -6950834150659620348, guid: 8616bc4dc37a93a48befb6521fa848d7, type: 3}
+  - objectName: Lungs
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: -2466438347127961172, guid: b6f43148d69dd15458262bbfe796686e, type: 3}
+  - objectName: Heart
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: 5402769134371404220, guid: cc8d2b9e350ecc7468ed59e7a86f9cc8, type: 3}
+  - objectName: Intestine
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: 1729920233130053004, guid: 5a9cef2a79ae73744824c4496b77d54a, type: 3}
+  - objectName: Kidney
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: -5488866161683093047, guid: 98e8b9e06e2895b449e995843139b5a4, type: 3}
+  - objectName: Liver
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: -4332109279481273305, guid: 70fd0bcd8be460f428f815cf00b8d92f, type: 3}
+  - objectName: Stomach
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: -2949573980776673402, guid: e1bc233b3edb65a4695e1fb773ab24e7, type: 3}
+  - objectName: Urinary_System
+    sceneObject: {fileID: 0}
+    highlighter: {fileID: 0}
+    category: Visceral
+    associatedIcon: {fileID: 4352931888401553747, guid: 2eb6b01fc9cc48f42a42462bc6b36bea, type: 3}
 --- !u!4 &273188238
 Transform:
   m_ObjectHideFlags: 0
