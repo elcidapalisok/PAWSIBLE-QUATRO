@@ -58,6 +58,10 @@ TagManager:
   - Lungs
   - Kidney
   - Esophagus
+  - 5in1
+  - towel
+  - syringe_cap
+  - syringe_needle
   layers:
   - Default
   - TransparentFX
@@ -65,8 +69,8 @@ TagManager:
   - Overlay UI
   - Water
   - UI
-  - 
-  - 
+  - Hands
+  - Needle
   - 
   - 
   - 
