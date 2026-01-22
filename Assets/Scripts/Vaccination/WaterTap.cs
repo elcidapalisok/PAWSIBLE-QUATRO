@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using System;
 
 [RequireComponent(typeof(XRSimpleInteractable))]
 public class WaterTapXR : MonoBehaviour
@@ -16,6 +17,9 @@ public class WaterTapXR : MonoBehaviour
 
     [Header("State (Read Only)")]
     [SerializeField] private bool isOpen = false;
+    public bool IsOpen => isOpen;
+
+    public event Action<bool> OnTapStateChanged;
 
     private XRSimpleInteractable interactable;
 
@@ -23,8 +27,6 @@ public class WaterTapXR : MonoBehaviour
     {
         interactable = GetComponent<XRSimpleInteractable>();
         interactable.selectEntered.AddListener(OnSelect);
-
-        // Force CLOSED state on startup
         ForceClosedState();
     }
 
@@ -48,68 +50,38 @@ public class WaterTapXR : MonoBehaviour
     {
         isOpen = open;
 
-        // ---- ANIMATOR ----
         if (tapAnimator != null)
         {
             tapAnimator.SetBool(openParam, isOpen);
             tapAnimator.SetBool(closeParam, !isOpen);
         }
 
-        // ---- WATER PARTICLES ----
         if (runningWater != null)
         {
-            if (isOpen)
-            {
-                if (!runningWater.isPlaying)
-                    runningWater.Play(true);
-            }
-            else
-            {
-                runningWater.Stop(
-                    true,
-                    ParticleSystemStopBehavior.StopEmittingAndClear
-                );
-            }
+            if (isOpen) runningWater.Play(true);
+            else runningWater.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
-        // ---- SOUND ----
         if (waterSound != null)
         {
             if (isOpen)
             {
-                if (!waterSound.isPlaying)
-                    waterSound.Play();
+                if (!waterSound.isPlaying) waterSound.Play();
             }
             else
             {
                 waterSound.Stop();
             }
         }
+
+        OnTapStateChanged?.Invoke(isOpen);
     }
 
     private void ForceClosedState()
     {
-        isOpen = false;
+        SetTapState(false);
 
         if (tapAnimator != null)
-        {
-            tapAnimator.SetBool(openParam, false);
-            tapAnimator.SetBool(closeParam, true);
-            tapAnimator.Update(0f); // forces immediate animator sync
-        }
-
-        if (runningWater != null)
-        {
-            runningWater.Stop(
-                true,
-                ParticleSystemStopBehavior.StopEmittingAndClear
-            );
-        }
-
-        if (waterSound != null)
-        {
-            waterSound.Stop();
-        }
+            tapAnimator.Update(0f);
     }
 }
-//
