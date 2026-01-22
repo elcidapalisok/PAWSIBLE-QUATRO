@@ -316,7 +316,6 @@ GameObject:
   - component: {fileID: 7989766}
   - component: {fileID: 7989765}
   - component: {fileID: 7989764}
-  - component: {fileID: 7989770}
   m_Layer: 0
   m_Name: hinelegs.002
   m_TagString: Hinelegs_FR
@@ -401,9 +400,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7989770}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -588,20 +587,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7989762}
   m_Mesh: {fileID: 943486397920331844, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &7989770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7989762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &8295752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2958,19 +2943,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 74439046}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -3072,20 +3045,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &74439046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74439041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &75313462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4572,9 +4531,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a1281ba57ad63d74f9a2f09d1f3dbde9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 918176328}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a1281ba57ad63d74f9a2f09d1f3dbde9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 918176331}
   m_SourcePrefab: {fileID: 100100000, guid: a1281ba57ad63d74f9a2f09d1f3dbde9, type: 3}
 --- !u!1 &103251080
 GameObject:
@@ -7183,7 +7139,7 @@ GameObject:
   - component: {fileID: 156649978}
   - component: {fileID: 156649977}
   - component: {fileID: 156649976}
-  - component: {fileID: 156649985}
+  - component: {fileID: 156649975}
   m_Layer: 0
   m_Name: fibia
   m_TagString: Fibia
@@ -7206,6 +7162,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1363250683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156649975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156649973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 156649983}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &156649976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7224,7 +7195,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 156649975}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -7314,9 +7285,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 156649985}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 156649975}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7526,20 +7497,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156649973}
   m_Mesh: {fileID: -8069272113285430901, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &156649985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156649973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &157865502
 GameObject:
   m_ObjectHideFlags: 0
@@ -9604,7 +9561,6 @@ GameObject:
   - component: {fileID: 210200832}
   - component: {fileID: 210200831}
   - component: {fileID: 210200830}
-  - component: {fileID: 210200836}
   m_Layer: 0
   m_Name: ankle.001
   m_TagString: Ankle_R
@@ -9688,9 +9644,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 210200836}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9876,20 +9832,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210200828}
   m_Mesh: {fileID: -1737800925225181837, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &210200836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210200828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &210900925
 GameObject:
   m_ObjectHideFlags: 0
@@ -13226,121 +13168,6 @@ MonoBehaviour:
     highlighter: {fileID: 1010827774}
     category: Skeletal
     associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
-  - objectName: Cervical
-    sceneObject: {fileID: 1010827763}
-    highlighter: {fileID: 1010827774}
-    category: Skeletal
-    associatedIcon: {fileID: -1895931089721799866, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
-  - objectName: Lumbar
-    sceneObject: {fileID: 1174574131}
-    highlighter: {fileID: 1174574140}
-    category: Skeletal
-    associatedIcon: {fileID: -5822795771201303138, guid: 490bf2e919dfc0f4baf230b36fc74aab, type: 3}
-  - objectName: Pelvic
-    sceneObject: {fileID: 654604895}
-    highlighter: {fileID: 654604907}
-    category: Skeletal
-    associatedIcon: {fileID: 1705268983806140232, guid: 1c92f8954e67fd3478964366ef503bb7, type: 3}
-  - objectName: Tail
-    sceneObject: {fileID: 1544625495}
-    highlighter: {fileID: 1544625504}
-    category: Skeletal
-    associatedIcon: {fileID: -6572816907119889360, guid: b92d31540b2e5e94a873c4bcd4bc6206, type: 3}
-  - objectName: Scapula
-    sceneObject: {fileID: 1284592955}
-    highlighter: {fileID: 1284592964}
-    category: Skeletal
-    associatedIcon: {fileID: -4595587652472626132, guid: 68080fb714b7ce24a9cc0b1aaee601b5, type: 3}
-  - objectName: Humerus
-    sceneObject: {fileID: 1031602189}
-    highlighter: {fileID: 1031602197}
-    category: Skeletal
-    associatedIcon: {fileID: 4504688558891776150, guid: 75fa4865126f9d2459226b2c1c4c42b3, type: 3}
-  - objectName: Radius
-    sceneObject: {fileID: 1619951547}
-    highlighter: {fileID: 1619951555}
-    category: Skeletal
-    associatedIcon: {fileID: -2668435240749431626, guid: cdc3677eb7f5029479e80c6bc9a59454, type: 3}
-  - objectName: Ulna
-    sceneObject: {fileID: 1683761133}
-    highlighter: {fileID: 1683761141}
-    category: Skeletal
-    associatedIcon: {fileID: -692345058000023029, guid: a60cb9ea846f06145bc947ad4403a5b2, type: 3}
-  - objectName: Thoracic_Ankle
-    sceneObject: {fileID: 1784901574}
-    highlighter: {fileID: 1784901582}
-    category: Skeletal
-    associatedIcon: {fileID: 2266058860159454728, guid: df44151c0d754034d94c0f638988b4a6, type: 3}
-  - objectName: Thoracic_Metacarpas
-    sceneObject: {fileID: 7989762}
-    highlighter: {fileID: 7989770}
-    category: Skeletal
-    associatedIcon: {fileID: 5282259098015488384, guid: 8fd8ab81c2ab9a443b466c686a218e22, type: 3}
-  - objectName: Femur
-    sceneObject: {fileID: 1510553045}
-    highlighter: {fileID: 1510553053}
-    category: Skeletal
-    associatedIcon: {fileID: 6711366311025178581, guid: e5ee130df3b5c2744a03bdd02285a545, type: 3}
-  - objectName: Tibia
-    sceneObject: {fileID: 1748118030}
-    highlighter: {fileID: 1748118037}
-    category: Skeletal
-    associatedIcon: {fileID: 6993196948796264193, guid: 18146c06c13c9164a9a2f24b92da69cd, type: 3}
-  - objectName: Fibula
-    sceneObject: {fileID: 735449982}
-    highlighter: {fileID: 735449991}
-    category: Skeletal
-    associatedIcon: {fileID: -6212321491021778613, guid: a89418e706c09794fb2c9fa4e79d7d7b, type: 3}
-  - objectName: Pelvic_Ankle
-    sceneObject: {fileID: 210200828}
-    highlighter: {fileID: 210200836}
-    category: Skeletal
-    associatedIcon: {fileID: 2266058860159454728, guid: b2b9fbcc01adeee428b57b80fad4a3ee, type: 3}
-  - objectName: Pelvic_Metacarpal
-    sceneObject: {fileID: 335611057}
-    highlighter: {fileID: 335611066}
-    category: Skeletal
-    associatedIcon: {fileID: 5282259098015488384, guid: 386317fc977bf3648b2a16325d773735, type: 3}
-  - objectName: Esophagus
-    sceneObject: {fileID: 1431931190}
-    highlighter: {fileID: 1431931197}
-    category: Visceral
-    associatedIcon: {fileID: -6950834150659620348, guid: 8616bc4dc37a93a48befb6521fa848d7, type: 3}
-  - objectName: Lungs
-    sceneObject: {fileID: 1281570497}
-    highlighter: {fileID: 1281570502}
-    category: Visceral
-    associatedIcon: {fileID: -2466438347127961172, guid: b6f43148d69dd15458262bbfe796686e, type: 3}
-  - objectName: Heart
-    sceneObject: {fileID: 74439041}
-    highlighter: {fileID: 74439046}
-    category: Visceral
-    associatedIcon: {fileID: 5402769134371404220, guid: cc8d2b9e350ecc7468ed59e7a86f9cc8, type: 3}
-  - objectName: Intestine
-    sceneObject: {fileID: 1019977522}
-    highlighter: {fileID: 1019977527}
-    category: Visceral
-    associatedIcon: {fileID: 1729920233130053004, guid: 5a9cef2a79ae73744824c4496b77d54a, type: 3}
-  - objectName: Kidney
-    sceneObject: {fileID: 749798000}
-    highlighter: {fileID: 749798007}
-    category: Visceral
-    associatedIcon: {fileID: -5488866161683093047, guid: 98e8b9e06e2895b449e995843139b5a4, type: 3}
-  - objectName: Liver
-    sceneObject: {fileID: 918176326}
-    highlighter: {fileID: 918176331}
-    category: Visceral
-    associatedIcon: {fileID: -4332109279481273305, guid: 70fd0bcd8be460f428f815cf00b8d92f, type: 3}
-  - objectName: Stomach
-    sceneObject: {fileID: 429949741}
-    highlighter: {fileID: 429949746}
-    category: Visceral
-    associatedIcon: {fileID: -2949573980776673402, guid: e1bc233b3edb65a4695e1fb773ab24e7, type: 3}
-  - objectName: Urinary_System
-    sceneObject: {fileID: 823477536}
-    highlighter: {fileID: 823477543}
-    category: Visceral
-    associatedIcon: {fileID: 4352931888401553747, guid: 2eb6b01fc9cc48f42a42462bc6b36bea, type: 3}
 --- !u!4 &273188238
 Transform:
   m_ObjectHideFlags: 0
@@ -13963,15 +13790,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 38.8641
+      value: 40.660908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 38.8641
+      value: 40.660908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 38.8641
+      value: 40.660908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13979,7 +13806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.387
+      value: 0.38206005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14038,9 +13865,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1281570499}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1281570502}
   m_SourcePrefab: {fileID: 100100000, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
 --- !u!1 &294733142
 GameObject:
@@ -16126,7 +15950,6 @@ GameObject:
   - component: {fileID: 335611061}
   - component: {fileID: 335611060}
   - component: {fileID: 335611059}
-  - component: {fileID: 335611066}
   m_Layer: 0
   m_Name: hinelegs.003
   m_TagString: Hinelegs_R
@@ -16228,9 +16051,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335611066}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16415,20 +16238,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335611057}
   m_Mesh: {fileID: -823240212283256822, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &335611066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335611057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &335855836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17452,7 +17261,6 @@ Transform:
   - {fileID: 2099161629}
   - {fileID: 1498749230}
   - {fileID: 1420690667}
-  - {fileID: 1809594271}
   - {fileID: 1459326463}
   - {fileID: 17393623}
   m_Father: {fileID: 0}
@@ -17616,9 +17424,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a0c70998b92c02b43abdfb2aa2b65ccb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 429949743}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a0c70998b92c02b43abdfb2aa2b65ccb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 429949746}
   m_SourcePrefab: {fileID: 100100000, guid: a0c70998b92c02b43abdfb2aa2b65ccb, type: 3}
 --- !u!1 &368114489
 GameObject:
@@ -20265,19 +20070,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 429949746}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -20401,20 +20194,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5461320835613783329, guid: a0c70998b92c02b43abdfb2aa2b65ccb, type: 3}
---- !u!114 &429949746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429949741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &431636463
 GameObject:
   m_ObjectHideFlags: 0
@@ -25795,8 +25574,8 @@ GameObject:
   - component: {fileID: 559283337}
   - component: {fileID: 559283336}
   - component: {fileID: 559283335}
+  - component: {fileID: 559283334}
   - component: {fileID: 559283333}
-  - component: {fileID: 559283343}
   m_Layer: 0
   m_Name: Tibia
   m_TagString: Tibia
@@ -25837,7 +25616,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 559283334}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -25849,6 +25628,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &559283334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559283331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 559283341}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!64 &559283335
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25950,10 +25744,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 559283343}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 559283334}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26128,20 +25934,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559283331}
   m_Mesh: {fileID: -1007781610511010038, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &559283343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559283331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &562733448
 GameObject:
   m_ObjectHideFlags: 0
@@ -28273,14 +28065,26 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 603393021}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 27
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -28473,8 +28277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.62719256, b: 0.990566, a: 1}
-  highlightIntensity: 2
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  highlightIntensity: 3.61
 --- !u!1 &604967610
 GameObject:
   m_ObjectHideFlags: 0
@@ -30553,7 +30357,7 @@ GameObject:
   - component: {fileID: 654604900}
   - component: {fileID: 654604899}
   - component: {fileID: 654604898}
-  - component: {fileID: 654604907}
+  - component: {fileID: 654604897}
   m_Layer: 0
   m_Name: pelvic
   m_TagString: Pelvic
@@ -30576,6 +30380,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1363250683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654604897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654604895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 654604905}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &654604898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30609,7 +30428,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 654604897}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -30734,9 +30553,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654604907}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 654604897}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30912,20 +30731,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654604895}
   m_Mesh: {fileID: -8099982626666854712, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &654604907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654604895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &655795022
 GameObject:
   m_ObjectHideFlags: 0
@@ -33356,7 +33161,7 @@ GameObject:
   - component: {fileID: 715391367}
   - component: {fileID: 715391366}
   - component: {fileID: 715391365}
-  - component: {fileID: 715391372}
+  - component: {fileID: 715391364}
   m_Layer: 0
   m_Name: vertaebrae.002
   m_TagString: Vertaebrae002
@@ -33379,6 +33184,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1183527351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715391364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715391362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 715391370}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &715391365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33397,7 +33217,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 715391364}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -33498,9 +33318,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 715391372}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 715391364}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33676,20 +33496,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715391362}
   m_Mesh: {fileID: -5932568779788122744, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &715391372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715391362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &716053409
 GameObject:
   m_ObjectHideFlags: 0
@@ -34565,7 +34371,7 @@ GameObject:
   - component: {fileID: 735449987}
   - component: {fileID: 735449986}
   - component: {fileID: 735449985}
-  - component: {fileID: 735449991}
+  - component: {fileID: 735449984}
   m_Layer: 0
   m_Name: fibia.001
   m_TagString: Fibia_R
@@ -34588,6 +34394,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1177650858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735449984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735449982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Fibia
+  boneInfo: The fibula is a thin bone beside the tibia. It helps stabilize the hind
+    limb and supports muscles around the ankle.
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!64 &735449985
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34671,9 +34494,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 735449991}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34837,20 +34660,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735449982}
   m_Mesh: {fileID: -4782919809350641545, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &735449991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735449982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &737873066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35685,7 +35494,6 @@ GameObject:
   - component: {fileID: 749798004}
   - component: {fileID: 749798003}
   - component: {fileID: 749798002}
-  - component: {fileID: 749798007}
   m_Layer: 0
   m_Name: Kidney
   m_TagString: Kidney
@@ -35755,19 +35563,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 749798007}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -35944,20 +35740,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749798000}
   m_Mesh: {fileID: 5461320835613783329, guid: aa91be99cab1dcc4cb9a1f94b51b950d, type: 3}
---- !u!114 &749798007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749798000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &750305200
 GameObject:
   m_ObjectHideFlags: 0
@@ -37444,8 +37226,9 @@ GameObject:
   - component: {fileID: 772317885}
   - component: {fileID: 772317884}
   - component: {fileID: 772317883}
+  - component: {fileID: 772317882}
   - component: {fileID: 772317881}
-  - component: {fileID: 772317889}
+  - component: {fileID: 772317880}
   m_Layer: 0
   m_Name: ulna
   m_TagString: Ulna
@@ -37468,6 +37251,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 790098782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772317880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772317878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 772317887}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &772317881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37486,7 +37284,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 772317880}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -37498,6 +37296,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &772317882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772317878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Ulna
+  boneInfo: The ulna lies beside the radius and forms the point of the elbow. In
+    dogs, it helps with joint movement and provides attachment for strong muscles
+    that extend the forelimb.
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!114 &772317883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37546,9 +37362,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 772317889}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 772317880}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37560,7 +37376,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -37745,20 +37573,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772317878}
   m_Mesh: {fileID: 509509609220105840, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &772317889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772317878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &777263964
 GameObject:
   m_ObjectHideFlags: 0
@@ -43828,7 +43642,6 @@ GameObject:
   - component: {fileID: 823477540}
   - component: {fileID: 823477539}
   - component: {fileID: 823477538}
-  - component: {fileID: 823477543}
   m_Layer: 0
   m_Name: Urinary System
   m_TagString: Penis
@@ -43898,19 +43711,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 823477543}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -44087,20 +43888,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823477536}
   m_Mesh: {fileID: 5461320835613783329, guid: dae85a0bb7c58634592f0436db8253ac, type: 3}
---- !u!114 &823477543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823477536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!4 &824249207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c15c78374a851e04ba7c06d2f6287b49, type: 3}
@@ -48410,19 +48197,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 918176331}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -48546,20 +48321,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5461320835613783329, guid: a1281ba57ad63d74f9a2f09d1f3dbde9, type: 3}
---- !u!114 &918176331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918176326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &920715225
 GameObject:
   m_ObjectHideFlags: 0
@@ -50930,7 +50691,8 @@ GameObject:
   - component: {fileID: 994361690}
   - component: {fileID: 994361689}
   - component: {fileID: 994361688}
-  - component: {fileID: 994361694}
+  - component: {fileID: 994361687}
+  - component: {fileID: 994361686}
   m_Layer: 0
   m_Name: hinelegs.001
   m_TagString: Hinelegs_FL
@@ -50954,6 +50716,38 @@ Transform:
   - {fileID: 1237391184}
   m_Father: {fileID: 790098782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994361686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994361684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Hinelegs
+  boneInfo: The toes provide grip and balance. They help dogs walk, run, and push
+    off the ground during movement.
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+--- !u!114 &994361687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994361684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 994361692}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &994361688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50972,7 +50766,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 994361687}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -51053,10 +50847,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994361694}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 994361687}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -51219,20 +51025,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994361684}
   m_Mesh: {fileID: -8385743364229941525, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &994361694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994361684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &994756068
 GameObject:
   m_ObjectHideFlags: 0
@@ -51934,9 +51726,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1010827774}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -52146,8 +51938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  highlightIntensity: 3.61
 --- !u!1 &1012273702
 GameObject:
   m_ObjectHideFlags: 0
@@ -52495,19 +52287,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1019977527}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -52631,20 +52411,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5461320835613783329, guid: 5f638431e85034e48ad8765838100cc1, type: 3}
---- !u!114 &1019977527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019977522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!4 &1019986778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5545149646685965750, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
@@ -53399,7 +53165,6 @@ GameObject:
   - component: {fileID: 1031602193}
   - component: {fileID: 1031602192}
   - component: {fileID: 1031602191}
-  - component: {fileID: 1031602197}
   m_Layer: 0
   m_Name: humerus.001
   m_TagString: Humerus_R
@@ -53504,9 +53269,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031602197}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53670,20 +53435,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031602189}
   m_Mesh: {fileID: 6313823306621280810, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1031602197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031602189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1033571384
 GameObject:
   m_ObjectHideFlags: 0
@@ -58215,8 +57966,9 @@ GameObject:
   - component: {fileID: 1147266172}
   - component: {fileID: 1147266171}
   - component: {fileID: 1147266170}
+  - component: {fileID: 1147266169}
   - component: {fileID: 1147266168}
-  - component: {fileID: 1147266176}
+  - component: {fileID: 1147266167}
   m_Layer: 0
   m_Name: scapula.001
   m_TagString: Scapula
@@ -58239,6 +57991,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 790098782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147266167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147266165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1147266174}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1147266168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58257,7 +58024,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1147266167}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -58269,6 +58036,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1147266169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147266165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Scapula
+  boneInfo: The scapula (shoulder blade) supports the forelimb and allows wide movement
+    of the front legs. It also connects large shoulder muscles.
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!65 &1147266170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58350,10 +58134,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147266176}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1147266167}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -58516,20 +58312,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147266165}
   m_Mesh: {fileID: -588763168761157319, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1147266176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147266165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1149213005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59419,7 +59201,6 @@ GameObject:
   - component: {fileID: 1174574135}
   - component: {fileID: 1174574134}
   - component: {fileID: 1174574133}
-  - component: {fileID: 1174574140}
   m_Layer: 0
   m_Name: vertaebrae
   m_TagString: Vertaebrae
@@ -59542,19 +59323,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1174574140}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -59709,20 +59478,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174574131}
   m_Mesh: {fileID: 4405565869134430954, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1174574140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174574131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1174862697
 GameObject:
   m_ObjectHideFlags: 0
@@ -59875,9 +59630,9 @@ Transform:
   m_Children:
   - {fileID: 1510553046}
   - {fileID: 1748118031}
-  - {fileID: 735449983}
   - {fileID: 210200829}
   - {fileID: 335611058}
+  - {fileID: 735449983}
   m_Father: {fileID: 1908856348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181060125
@@ -64362,7 +64117,6 @@ GameObject:
   - component: {fileID: 1277792505}
   - component: {fileID: 1277792504}
   - component: {fileID: 1277792503}
-  - component: {fileID: 1277792511}
   m_Layer: 0
   m_Name: neck
   m_TagString: Neck
@@ -64516,9 +64270,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1277792511}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64694,20 +64448,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277792500}
   m_Mesh: {fileID: -427045069731158668, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1277792511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277792500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!4 &1277894924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 599da75eb17d1b64d9a1e602cff41129, type: 3}
@@ -64802,19 +64542,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1281570502}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -64938,20 +64666,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5461320835613783329, guid: 2e0cb099cbf7855479e849cef4ea66fb, type: 3}
---- !u!114 &1281570502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281570497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1283007755
 GameObject:
   m_ObjectHideFlags: 0
@@ -65019,7 +64733,7 @@ GameObject:
   - component: {fileID: 1284592960}
   - component: {fileID: 1284592959}
   - component: {fileID: 1284592958}
-  - component: {fileID: 1284592964}
+  - component: {fileID: 1284592957}
   m_Layer: 0
   m_Name: scapula
   m_TagString: Scapula_R
@@ -65042,6 +64756,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1232564236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1284592957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284592955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Scapula
+  boneInfo: The scapula (shoulder blade) supports the forelimb and allows wide movement
+    of the front legs. It also connects large shoulder muscles.
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!64 &1284592958
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65125,9 +64856,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284592964}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65291,20 +65022,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284592955}
   m_Mesh: {fileID: 2246878391562200944, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1284592964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284592955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1286190543
 GameObject:
   m_ObjectHideFlags: 0
@@ -70617,7 +70334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.98
+      value: -47.185337
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -71420,7 +71137,6 @@ GameObject:
   - component: {fileID: 1431931194}
   - component: {fileID: 1431931193}
   - component: {fileID: 1431931192}
-  - component: {fileID: 1431931197}
   m_Layer: 0
   m_Name: Esophagus
   m_TagString: Esophagus
@@ -71436,13 +71152,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431931190}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.32650435, y: -0.39260578, z: -0.64291143, w: 0.5708945}
-  m_LocalPosition: {x: -37.419, y: 0.565, z: 6.19}
+  m_LocalRotation: {x: -0.33466628, y: -0.38333586, z: -0.64848137, w: 0.56614846}
+  m_LocalPosition: {x: -37.41446, y: 0.564584, z: 6.190859}
   m_LocalScale: {x: 20.451004, y: 20.451002, z: 20.451}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1787344809}
-  m_LocalEulerAnglesHint: {x: -61.357, y: -3.402, z: -94.772}
+  m_LocalEulerAnglesHint: {x: -61.177, y: 0, z: -97.756}
 --- !u!114 &1431931192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71490,19 +71206,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1431931197}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -71679,20 +71383,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431931190}
   m_Mesh: {fileID: 5461320835613783329, guid: 560a190c08c3c7e429e43b8b870c8cef, type: 3}
---- !u!114 &1431931197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431931190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1431964612
 GameObject:
   m_ObjectHideFlags: 0
@@ -71724,79 +71414,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1559415090}
   m_LocalEulerAnglesHint: {x: -92.732, y: 6.634995, z: 170.38}
---- !u!1001 &1433369820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 366973901}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.4643416
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.4643416
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 40.42921
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.566
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.11221
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.7257595
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7635826562936255635, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 7880741440302065015, guid: d9c69441fc743434182a694245188e5c, type: 3}
-    - target: {fileID: 919132149155446097, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_Name
-      value: 3D Eave Assembly Rubens Corrections (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
 --- !u!1 &1434456810
 GameObject:
   m_ObjectHideFlags: 0
@@ -73413,9 +73030,9 @@ GameObject:
   - component: {fileID: 1465549832}
   - component: {fileID: 1465549831}
   - component: {fileID: 1465549830}
+  - component: {fileID: 1465549826}
   - component: {fileID: 1465549829}
   - component: {fileID: 1465549828}
-  - component: {fileID: 1465549837}
   m_Layer: 0
   m_Name: femur
   m_TagString: Femur
@@ -73423,6 +73040,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1465549826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465549825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1465549827}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!23 &1465549827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73499,7 +73131,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1465549826}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -73598,10 +73230,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465549837}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -73746,20 +73390,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1363250683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1465549837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465549825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1466667259
 GameObject:
   m_ObjectHideFlags: 0
@@ -74596,15 +74226,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalScale.x
-      value: 122.40588
+      value: 153.63919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalScale.y
-      value: 122.40588
+      value: 153.63919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalScale.z
-      value: 122.40588
+      value: 153.63919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74612,11 +74242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.69
+      value: 1.9016099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.26
+      value: 8.554241
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e41e8d1e873bd3b4b81df9f41612a485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75153,9 +74783,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510553053}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75331,7 +74961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   highlightIntensity: 2
 --- !u!1 &1511505209
 GameObject:
@@ -77251,9 +76881,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f638431e85034e48ad8765838100cc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1019977524}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f638431e85034e48ad8765838100cc1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1019977527}
   m_SourcePrefab: {fileID: 100100000, guid: 5f638431e85034e48ad8765838100cc1, type: 3}
 --- !u!1 &1534163975
 GameObject:
@@ -77307,7 +76934,6 @@ GameObject:
   - component: {fileID: 1544625499}
   - component: {fileID: 1544625498}
   - component: {fileID: 1544625497}
-  - component: {fileID: 1544625504}
   m_Layer: 0
   m_Name: tail
   m_TagString: Tail
@@ -77428,19 +77054,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1544625504}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -77595,20 +77209,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544625495}
   m_Mesh: {fileID: -6983707741116640089, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1544625504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544625495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1546859880
 GameObject:
   m_ObjectHideFlags: 0
@@ -78213,7 +77813,8 @@ GameObject:
   - component: {fileID: 1558007158}
   - component: {fileID: 1558007157}
   - component: {fileID: 1558007156}
-  - component: {fileID: 1558007163}
+  - component: {fileID: 1558007155}
+  - component: {fileID: 1558007154}
   m_Layer: 0
   m_Name: Carpal
   m_TagString: Phalanges
@@ -78236,6 +77837,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 790098782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558007154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558007152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Ankle
+  boneInfo: "The Ankle is a group of small bones forming the dog\u2019s ankle. It
+    allows flexibility and shock absorption when the dog walks or jumps."
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+--- !u!114 &1558007155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558007152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1558007161}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1558007156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78254,7 +77887,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1558007155}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -78335,10 +77968,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1558007163}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1558007155}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -78513,20 +78158,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558007152}
   m_Mesh: {fileID: -3603894057448356419, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1558007163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558007152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1559405205
 GameObject:
   m_ObjectHideFlags: 0
@@ -81568,7 +81199,6 @@ GameObject:
   - component: {fileID: 1619951551}
   - component: {fileID: 1619951550}
   - component: {fileID: 1619951549}
-  - component: {fileID: 1619951555}
   m_Layer: 0
   m_Name: radius.001
   m_TagString: Radius_R
@@ -81673,9 +81303,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1619951555}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -81839,20 +81469,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619951547}
   m_Mesh: {fileID: -1093470944496977984, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1619951555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619951547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1620780568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83495,7 +83111,6 @@ GameObject:
   - component: {fileID: 1683761137}
   - component: {fileID: 1683761136}
   - component: {fileID: 1683761135}
-  - component: {fileID: 1683761141}
   m_Layer: 0
   m_Name: ulna.001
   m_TagString: Ulna_R
@@ -83579,9 +83194,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1683761141}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83767,20 +83382,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683761133}
   m_Mesh: {fileID: -893977909234194066, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1683761141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683761133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1687731091
 GameObject:
   m_ObjectHideFlags: 0
@@ -85941,7 +85542,6 @@ GameObject:
   - component: {fileID: 1748118034}
   - component: {fileID: 1748118033}
   - component: {fileID: 1748118032}
-  - component: {fileID: 1748118037}
   m_Layer: 0
   m_Name: tibia.001
   m_TagString: Tibia_R
@@ -86034,9 +85634,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1748118037}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1465549826}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -86200,20 +85800,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748118030}
   m_Mesh: {fileID: -717035861002614399, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1748118037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748118030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1748896762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87501,7 +87087,6 @@ GameObject:
   - component: {fileID: 1784901578}
   - component: {fileID: 1784901577}
   - component: {fileID: 1784901576}
-  - component: {fileID: 1784901582}
   m_Layer: 0
   m_Name: Phalanges
   m_TagString: Phalanges_R
@@ -87584,19 +87169,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1784901582}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -87773,20 +87346,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784901574}
   m_Mesh: {fileID: -5494431630506220716, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1784901582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784901574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1785035292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88659,11 +88218,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807740712}
   m_Mesh: {fileID: 7477690839607240098, guid: 3885c4911dd603246bed92d97691f1df, type: 3}
---- !u!4 &1809594271 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-  m_PrefabInstance: {fileID: 1433369820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1812624359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90102,8 +89656,8 @@ GameObject:
   - component: {fileID: 1844668427}
   - component: {fileID: 1844668426}
   - component: {fileID: 1844668425}
+  - component: {fileID: 1844668424}
   - component: {fileID: 1844668423}
-  - component: {fileID: 1844668433}
   m_Layer: 0
   m_Name: ankle
   m_TagString: Ankle
@@ -90144,7 +89698,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1844668424}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -90156,6 +89710,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1844668424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844668421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1844668431}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1844668425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90256,9 +89825,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1844668433}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1844668424}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -90446,20 +90015,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844668421}
   m_Mesh: {fileID: 5898883087405099551, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1844668433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844668421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1847552681
 GameObject:
   m_ObjectHideFlags: 0
@@ -91275,34 +90830,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabs:
   - items:
+    - {fileID: 5904228973849949269, guid: df44151c0d754034d94c0f638988b4a6, type: 3}
     - {fileID: 316285967045399945, guid: 535bd916545f60b4fbdf1960c89ed03f, type: 3}
     - {fileID: 6256831569335065174, guid: e5ee130df3b5c2744a03bdd02285a545, type: 3}
     - {fileID: 1568474300887035681, guid: a89418e706c09794fb2c9fa4e79d7d7b, type: 3}
     - {fileID: 1380438755986208813, guid: 75fa4865126f9d2459226b2c1c4c42b3, type: 3}
     - {fileID: 1557282938364595680, guid: 4c036c350cb51614a8b00676327d96bb, type: 3}
     - {fileID: 7322305517854936388, guid: 490bf2e919dfc0f4baf230b36fc74aab, type: 3}
-    - {fileID: 5904228973849949269, guid: b2b9fbcc01adeee428b57b80fad4a3ee, type: 3}
     - {fileID: 1623374398007920335, guid: 386317fc977bf3648b2a16325d773735, type: 3}
     - {fileID: 5068065421009600050, guid: 1c92f8954e67fd3478964366ef503bb7, type: 3}
     - {fileID: 1845554218145091796, guid: cdc3677eb7f5029479e80c6bc9a59454, type: 3}
     - {fileID: 1256727340126840832, guid: 68080fb714b7ce24a9cc0b1aaee601b5, type: 3}
     - {fileID: 4675371641586077975, guid: c1c304e0b2a40bd4099dbe02544a564c, type: 3}
-    - {fileID: 5904228973849949269, guid: df44151c0d754034d94c0f638988b4a6, type: 3}
-    - {fileID: 1623374398007920335, guid: 8fd8ab81c2ab9a443b466c686a218e22, type: 3}
     - {fileID: 4633514072405873255, guid: b92d31540b2e5e94a873c4bcd4bc6206, type: 3}
     - {fileID: 566568233652648720, guid: f07a0d79198d84542aaa60c0982a523d, type: 3}
     - {fileID: 2574704796688102942, guid: 18146c06c13c9164a9a2f24b92da69cd, type: 3}
     - {fileID: 6434044557965506715, guid: a60cb9ea846f06145bc947ad4403a5b2, type: 3}
   - items: []
-  - items:
-    - {fileID: 2002524921133812414, guid: 8616bc4dc37a93a48befb6521fa848d7, type: 3}
-    - {fileID: 1422887162058125976, guid: cc8d2b9e350ecc7468ed59e7a86f9cc8, type: 3}
-    - {fileID: 707581627466981776, guid: 5a9cef2a79ae73744824c4496b77d54a, type: 3}
-    - {fileID: 7260385841630373812, guid: 98e8b9e06e2895b449e995843139b5a4, type: 3}
-    - {fileID: 6523651501264425279, guid: 70fd0bcd8be460f428f815cf00b8d92f, type: 3}
-    - {fileID: 8357534317481657165, guid: b6f43148d69dd15458262bbfe796686e, type: 3}
-    - {fileID: 718790518843519736, guid: e1bc233b3edb65a4695e1fb773ab24e7, type: 3}
-    - {fileID: 6585284307506597963, guid: 2eb6b01fc9cc48f42a42462bc6b36bea, type: 3}
+  - items: []
   content: {fileID: 1715667705}
 --- !u!4 &1863484974 stripped
 Transform:
@@ -91327,7 +90872,7 @@ GameObject:
   - component: {fileID: 1865593692}
   - component: {fileID: 1865593691}
   - component: {fileID: 1865593690}
-  - component: {fileID: 1865593699}
+  - component: {fileID: 1865593689}
   m_Layer: 0
   m_Name: radius
   m_TagString: Radius
@@ -91350,6 +90895,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 790098782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865593689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865593687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1865593697}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1865593690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91368,7 +90928,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1865593689}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -91441,10 +91001,22 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865593699}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1865593689}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -91658,20 +91230,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865593687}
   m_Mesh: {fileID: -5154039906096021428, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1865593699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865593687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1 &1867788380
 GameObject:
   m_ObjectHideFlags: 0
@@ -92269,8 +91827,8 @@ GameObject:
   - component: {fileID: 1883163945}
   - component: {fileID: 1883163944}
   - component: {fileID: 1883163943}
+  - component: {fileID: 1883163942}
   - component: {fileID: 1883163941}
-  - component: {fileID: 1883163950}
   m_Layer: 0
   m_Name: 'metatarsal '
   m_TagString: Hinelegs
@@ -92312,7 +91870,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1883163942}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -92324,6 +91882,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1883163942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883163939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1883163948}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1883163943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92392,9 +91965,9 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1883163950}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1883163942}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -92600,20 +92173,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883163939}
   m_Mesh: {fileID: 1214324974263206475, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1883163950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883163939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1883606409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93544,10 +93103,11 @@ GameObject:
   - component: {fileID: 1918996877}
   - component: {fileID: 1918996876}
   - component: {fileID: 1918996875}
+  - component: {fileID: 1918996874}
   - component: {fileID: 1918996873}
+  - component: {fileID: 1918996872}
   - component: {fileID: 1918996871}
   - component: {fileID: 1918996870}
-  - component: {fileID: 1918996880}
   m_Layer: 0
   m_Name: humerus
   m_TagString: Humerus
@@ -93604,6 +93164,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00051550276, y: 0.0018870754, z: 0.0027985866}
   m_Center: {x: 0.000007769691, y: -0.000058417703, z: 0.00007339135}
+--- !u!114 &1918996872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918996868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b48c545015fe4458fa4f00ed1a62c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 1918996878}
+  highlightColor: {r: 0, g: 1, b: 1, a: 1}
+  emissionIntensity: 1.5
 --- !u!114 &1918996873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93623,7 +93198,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1918996872}
           m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
           m_MethodName: EnableHighlight
           m_Mode: 1
@@ -93649,6 +93224,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1918996874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918996868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9def436071bab4a44bf7baf691c55475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneTitle: Humerus
+  boneInfo: "The humerus is the long bone of the dog\u2019s upper forelimb, running
+    from the shoulder to the elbow. It helps support body weight, absorbs impact
+    during movement, and provides attachment for major forelimb muscles."
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
 --- !u!114 &1918996875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93709,9 +93302,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1918996880}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
+      - m_Target: {fileID: 1918996872}
+        m_TargetAssemblyTypeName: BoneHighlight, Assembly-CSharp
+        m_MethodName: DisableHighlight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -93723,7 +93316,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TriggerPoints, Assembly-CSharp
+        m_MethodName: TryPlayStep
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -93875,20 +93480,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918996868}
   m_Mesh: {fileID: 3767064469392332324, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1918996880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918996868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!1001 &1920603538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95576,7 +95167,6 @@ GameObject:
   - component: {fileID: 1970187493}
   - component: {fileID: 1970187492}
   - component: {fileID: 1970187491}
-  - component: {fileID: 1970187497}
   m_Layer: 0
   m_Name: vertaebrae.003
   m_TagString: Vertaebrae003
@@ -95687,19 +95277,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1970187497}
-        m_TargetAssemblyTypeName: SceneObjectHighlighter, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -95854,20 +95432,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970187489}
   m_Mesh: {fileID: -1494621318136529515, guid: f0639fc25659fdf429a1e06863001846, type: 3}
---- !u!114 &1970187497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970187489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b30db433f9be264c868aa99ad0dc851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightColor: {r: 0, g: 0.627451, b: 0.99215686, a: 1}
-  highlightIntensity: 2
 --- !u!4 &1971402880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5545149646685965750, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
@@ -98772,9 +98336,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6935223d6cd5e9744b8faf486811bff0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 74439043}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6935223d6cd5e9744b8faf486811bff0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 74439046}
   m_SourcePrefab: {fileID: 100100000, guid: 6935223d6cd5e9744b8faf486811bff0, type: 3}
 --- !u!1 &2058167943
 GameObject:
@@ -100924,15 +100485,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalScale.x
-      value: 120.0697
+      value: 150.70691
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalScale.y
-      value: 120.0697
+      value: 150.70691
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalScale.z
-      value: 120.0697
+      value: 150.70691
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100940,11 +100501,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.68
+      value: 1.9021101
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.31
+      value: 4.99424
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b593eb26a547c5841a08bea5ec5c8982, type: 3}
       propertyPath: m_LocalRotation.w
