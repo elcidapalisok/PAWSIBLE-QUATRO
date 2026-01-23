@@ -26218,6 +26218,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -76023,29 +76030,29 @@ MonoBehaviour:
   scoredSteps:
   - segmentName: Handwashing
     lineIndex: 2
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 3
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 4
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 5
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 6
-    points: 400
+    points: 0
   - segmentName: Handwashing
     lineIndex: 7
-    points: 400
+    points: 0
   - segmentName: GlovesCoat
     lineIndex: 0
-    points: 400
+    points: 0
   - segmentName: GlovesCoat
     lineIndex: 1
-    points: 400
-  mistakePenalty: 200
+    points: 0
+  mistakePenalty: 0
 --- !u!4 &1374914189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 640415405592496269, guid: 87b3c854d53a4194c91cd559788482f5, type: 3}
@@ -81839,16 +81846,17 @@ MonoBehaviour:
   - segmentName: Vaccine Prep
     dialogueLines:
     - Head to the vaccine workstations to see more.
-    - You can check on the name of each vial by pointing at them.
+    - Here, you can check on the name of each vial by pointing at them.
     - "For now, we\u2019ll work with DHPP and Sterile Diluent"
     - It's the one with the white DHPP label with a dog icon. Also, we'll mix it
       with the sterile diluent so pick it up as well, and place them on the tray
       on the table.
-    - Pick up the syringe and draw up the entire liquid from the sterile diluent
+    - Now, pick up the syringe and draw up the entire liquid from the sterile diluent
       vial.
     - For best practice, we have to replace the needle of our syringe every single
       use.
-    - First, remove the needle while the cap is on and put it in the hazards bin.
+    - To do that, remove the needle along with the cap and put it in the hazards
+      bin.
     - Now, to replace it, take a new cap with a syringe from the tray on the work
       station and put it on your syringe.
     - "Now we\u2019re ready to mix it."
@@ -81859,18 +81867,18 @@ MonoBehaviour:
     - This allows us to avoid clumps, and mix the compounds thoroughly before we
       draw up the mixture again.
     voiceClips:
+    - {fileID: 8300000, guid: 8071e92e7b66a274885ab5779ac2da24, type: 3}
+    - {fileID: 8300000, guid: 94cd40bb66392a24eb786179e271b0ab, type: 3}
+    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
+    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
+    - {fileID: 8300000, guid: 1d8459b2fa19e434e94f40559baf33fb, type: 3}
+    - {fileID: 8300000, guid: ee967789e1488da4daee057f537474de, type: 3}
+    - {fileID: 8300000, guid: 035e0ca935199224c8ebebd87b922e7f, type: 3}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: dd11d6de40ff75d468c7bee91ffe61b7, type: 3}
+    - {fileID: 8300000, guid: 46bfa1639b1115c4085f6944c9698a3d, type: 3}
+    - {fileID: 8300000, guid: 574d40ab3d0207848bd44e90f5b052da, type: 3}
+    - {fileID: 8300000, guid: dee66271ae796d34aacc5c1e48e7c36c, type: 3}
   - segmentName: Injection
     dialogueLines:
     - By the way, you should also know that from time to time, and after procedures,
