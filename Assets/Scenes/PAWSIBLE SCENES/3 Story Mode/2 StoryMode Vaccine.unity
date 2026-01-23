@@ -81846,16 +81846,17 @@ MonoBehaviour:
   - segmentName: Vaccine Prep
     dialogueLines:
     - Head to the vaccine workstations to see more.
-    - You can check on the name of each vial by pointing at them.
+    - Here, you can check on the name of each vial by pointing at them.
     - "For now, we\u2019ll work with DHPP and Sterile Diluent"
     - It's the one with the white DHPP label with a dog icon. Also, we'll mix it
       with the sterile diluent so pick it up as well, and place them on the tray
       on the table.
-    - Pick up the syringe and draw up the entire liquid from the sterile diluent
+    - Now, pick up the syringe and draw up the entire liquid from the sterile diluent
       vial.
     - For best practice, we have to replace the needle of our syringe every single
       use.
-    - First, remove the needle while the cap is on and put it in the hazards bin.
+    - To do that, remove the needle along with the cap and put it in the hazards
+      bin.
     - Now, to replace it, take a new cap with a syringe from the tray on the work
       station and put it on your syringe.
     - "Now we\u2019re ready to mix it."
@@ -81866,18 +81867,18 @@ MonoBehaviour:
     - This allows us to avoid clumps, and mix the compounds thoroughly before we
       draw up the mixture again.
     voiceClips:
+    - {fileID: 8300000, guid: 8071e92e7b66a274885ab5779ac2da24, type: 3}
+    - {fileID: 8300000, guid: 94cd40bb66392a24eb786179e271b0ab, type: 3}
+    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
+    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
+    - {fileID: 8300000, guid: 1d8459b2fa19e434e94f40559baf33fb, type: 3}
+    - {fileID: 8300000, guid: ee967789e1488da4daee057f537474de, type: 3}
+    - {fileID: 8300000, guid: 035e0ca935199224c8ebebd87b922e7f, type: 3}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: dd11d6de40ff75d468c7bee91ffe61b7, type: 3}
+    - {fileID: 8300000, guid: 46bfa1639b1115c4085f6944c9698a3d, type: 3}
+    - {fileID: 8300000, guid: 574d40ab3d0207848bd44e90f5b052da, type: 3}
+    - {fileID: 8300000, guid: dee66271ae796d34aacc5c1e48e7c36c, type: 3}
   - segmentName: Injection
     dialogueLines:
     - By the way, you should also know that from time to time, and after procedures,
