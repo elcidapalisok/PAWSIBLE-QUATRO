@@ -81870,11 +81870,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8071e92e7b66a274885ab5779ac2da24, type: 3}
     - {fileID: 8300000, guid: 94cd40bb66392a24eb786179e271b0ab, type: 3}
     - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
-    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
     - {fileID: 8300000, guid: 1d8459b2fa19e434e94f40559baf33fb, type: 3}
     - {fileID: 8300000, guid: ee967789e1488da4daee057f537474de, type: 3}
     - {fileID: 8300000, guid: 035e0ca935199224c8ebebd87b922e7f, type: 3}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 48652619a0aa08f4280c0744386d4d86, type: 3}
+    - {fileID: 8300000, guid: a1782aa5070054648b5b3c9fd608ee78, type: 3}
     - {fileID: 8300000, guid: dd11d6de40ff75d468c7bee91ffe61b7, type: 3}
     - {fileID: 8300000, guid: 46bfa1639b1115c4085f6944c9698a3d, type: 3}
     - {fileID: 8300000, guid: 574d40ab3d0207848bd44e90f5b052da, type: 3}
@@ -81902,26 +81902,26 @@ MonoBehaviour:
     - Amazing! You're a natural at this and our fur baby was so brave! It seems he's
       able to relax with you.
     voiceClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 5b2083c0e70ac8c4095b21eb4600555d, type: 3}
+    - {fileID: 8300000, guid: 0a0ca54766e83f6428d62ac6fc699de9, type: 3}
+    - {fileID: 8300000, guid: d031711145c3a114382eb266d066d6b3, type: 3}
+    - {fileID: 8300000, guid: b82b9acedad7717469c8a764309d02f7, type: 3}
+    - {fileID: 8300000, guid: 27d25764e6f1a104690b3fa3ab62dc6f, type: 3}
+    - {fileID: 8300000, guid: 3cbe76ba58e6024459cb2ab0bf5bebfb, type: 3}
+    - {fileID: 8300000, guid: 52de191ecfd024c4c90cc5d563a108ec, type: 3}
+    - {fileID: 8300000, guid: 9e06199ae2e93c442bce7fa7182bdc4a, type: 3}
+    - {fileID: 8300000, guid: 9e2d5d60d98e0f540a060c3e586ec030, type: 3}
+    - {fileID: 8300000, guid: 8443aa5cee7a5b947b9f852bc5e926c9, type: 3}
+    - {fileID: 8300000, guid: e0663abfe36fada4d85a4188bfb4642a, type: 3}
   - segmentName: Hallway
     dialogueLines:
     - If you want to explore more, you can now proceed to the next module. The Wound
       Treatment
     - Or if you want, you can also choose a new task and try to administer a different
-      vaccine. Just talk to me and ask about it.
+      vaccine. You can talk to me and choose on the list of vaccines.
     voiceClips:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: dc0c97378faf66246afbcb09288c715a, type: 3}
+    - {fileID: 8300000, guid: cecb1061b5411964ab7ee3520b95bc1c, type: 3}
   voiceSource: {fileID: 1493787921}
   audioFolderPath: Audio/Vaccination_StoryMode
   typingSpeed: 0.03
