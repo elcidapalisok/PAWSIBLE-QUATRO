@@ -27,13 +27,17 @@ public class WDialogueManager : MonoBehaviour
     [Header("Audio Settings")]
     public AudioSource voiceSource;
 
-    [Tooltip("Optional fallback: Relative path inside Resources folder (e.g. 'Audio/Vaccination_StoryMode')")]
-    public string audioFolderPath = "Audio/Vaccination_StoryMode";
+    [Tooltip("Optional fallback: Relative path inside Resources folder (e.g. 'Audio/Wound_StoryMode')")]
+    public string audioFolderPath = "Audio/Wound_StoryMode";
 
     [Header("Typewriter Settings")]
     public float typingSpeed = 0.03f;
 
+    // (segmentKey, lineIndex) -> requires trigger
     private HashSet<(string, int)> triggerRequiredLines = new HashSet<(string, int)>();
+
+    // (segmentKey, lineIndex) -> label from spreadsheet ("Trigger to proceed")
+    private Dictionary<(string, int), string> triggerLabels = new Dictionary<(string, int), string>();
 
     [System.Serializable]
     public class DialogueSegment
@@ -58,7 +62,7 @@ public class WDialogueManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogWarning("Multiple DialogueManager instances found. Keeping the first instance.");
+            Debug.LogWarning("Multiple WDialogueManager instances found. Keeping the first instance.");
             return;
         }
         Instance = this;
@@ -76,7 +80,7 @@ public class WDialogueManager : MonoBehaviour
         if (prevButton != null) prevButton.onClick.AddListener(PrevDialogue);
         if (skipButton != null) skipButton.onClick.AddListener(SkipDialogue);
 
-        RegisterTriggerRequiredLines();
+        RegisterTriggerRequiredLines_FromSpreadsheetMapping();
         EnsureVoiceClipListSizes();
 
         if (dialogueSegments.Count > 0)
@@ -91,7 +95,7 @@ public class WDialogueManager : MonoBehaviour
     public static string NormalizeSegmentKey(string input)
     {
         if (string.IsNullOrWhiteSpace(input)) return string.Empty;
-        // Lowercase + trim + remove spaces for stable matching across scripts, audio keys, and triggers.
+        // Match spreadsheet style: lowercase + trim + remove spaces only (keep underscores)
         return input.Trim().ToLowerInvariant().Replace(" ", "");
     }
 
@@ -128,33 +132,65 @@ public class WDialogueManager : MonoBehaviour
         }
     }
 
-    void RegisterTriggerRequiredLines()
+    /// <summary>
+    /// This list is generated from your spreadsheet file "Wound - Dialogue Scripts.xlsx" (Sheet1):
+    /// Any row where "Trigger to proceed" != "Nothing" becomes a trigger-required line.
+    /// </summary>
+    void RegisterTriggerRequiredLines_FromSpreadsheetMapping()
     {
         triggerRequiredLines.Clear();
+        triggerLabels.Clear();
 
-        // Use normalized keys here (spaces removed) to match NormalizeSegmentKey behavior.
-        triggerRequiredLines.Add(("handwashing", 2));
-        triggerRequiredLines.Add(("handwashing", 3));
-        triggerRequiredLines.Add(("handwashing", 4));
-        triggerRequiredLines.Add(("handwashing", 5));
-        triggerRequiredLines.Add(("handwashing", 6));
-        triggerRequiredLines.Add(("handwashing", 7));
+        // HANDWASHING (Trigger to proceed != Nothing)
+        AddTrigger("handwashing", 2, "Use Faucet");
+        AddTrigger("handwashing", 3, "Use soap");
+        AddTrigger("handwashing", 4, "Use Faucet");
+        AddTrigger("handwashing", 5, "Use Towel");
+        AddTrigger("handwashing", 6, "Place towel inside trash bin");
+        AddTrigger("handwashing", 7, "Press sanitizer");
 
-        triggerRequiredLines.Add(("glovescoat", 0));
-        triggerRequiredLines.Add(("glovescoat", 1));
+        // GLOVES + COAT
+        AddTrigger("glovescoat", 0, "Select Gloves");
+        AddTrigger("glovescoat", 1, "Select a Lab Coat");
 
-        triggerRequiredLines.Add(("vaccineprep", 0));
-        triggerRequiredLines.Add(("vaccineprep", 3));
-        triggerRequiredLines.Add(("vaccineprep", 4));
-        triggerRequiredLines.Add(("vaccineprep", 6));
-        triggerRequiredLines.Add(("vaccineprep", 7));
-        triggerRequiredLines.Add(("vaccineprep", 9));
-        triggerRequiredLines.Add(("vaccineprep", 10));
+        // WOUND STABILIZATION PREP
+        AddTrigger("woundstabilizationprep", 0, "Navigate beside the patient");
+        AddTrigger("woundstabilizationprep", 2, "Navigate the cabinet tool");
+        AddTrigger("woundstabilizationprep", 3, "Place object on tray");
 
-        triggerRequiredLines.Add(("injection", 3));
-        triggerRequiredLines.Add(("injection", 5));
-        triggerRequiredLines.Add(("injection", 7));
-        triggerRequiredLines.Add(("injection", 9));
+        // WOUND STABILIZATION - CLEANING
+        AddTrigger("woundstabilization_cleaning", 0, "Select Cotton");
+        AddTrigger("woundstabilization_cleaning", 1, "Use Disinfectant on Cotton");
+        AddTrigger("woundstabilization_cleaning", 2, "Use Cotton on Wound");
+
+        // WOUND STABILIZATION - PRIMARY DRESSING
+        AddTrigger("woundstabilization_primarydressing", 0, "Select Bandage Pad");
+        AddTrigger("woundstabilization_primarydressing", 1, "Place Bandage Pad on Wound");
+
+        // WOUND STABILIZATION - TERTIARY LAYER
+        AddTrigger("woundstabilization_tertiarylayer", 0, "Select Cohesive Bandage");
+        AddTrigger("woundstabilization_tertiarylayer", 1, "Wrap Cohesive Bandage");
+    }
+
+    void AddTrigger(string segmentKey, int lineIndex, string label)
+    {
+        segmentKey = NormalizeSegmentKey(segmentKey);
+        triggerRequiredLines.Add((segmentKey, lineIndex));
+        triggerLabels[(segmentKey, lineIndex)] = label;
+    }
+
+    public bool CurrentLineRequiresTrigger()
+    {
+        string segKey = NormalizeSegmentKey(GetCurrentSegmentName());
+        return triggerRequiredLines.Contains((segKey, currentDialogueIndex));
+    }
+
+    public string GetCurrentTriggerLabel()
+    {
+        string segKey = NormalizeSegmentKey(GetCurrentSegmentName());
+        if (triggerLabels.TryGetValue((segKey, currentDialogueIndex), out string label))
+            return label;
+        return "";
     }
 
     void ShowCurrentDialogue()
@@ -174,11 +210,23 @@ public class WDialogueManager : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeText(currentLine));
 
         if (prevButton != null) prevButton.interactable = currentDialogueIndex > 0;
-        if (nextButton != null) nextButton.interactable = currentDialogueIndex < segment.dialogueLines.Count - 1;
+
+        // Disable Next if this line is trigger-gated (prevents skipping the required action)
+        bool requiresTrigger = CurrentLineRequiresTrigger();
+        if (nextButton != null) nextButton.interactable = !requiresTrigger && currentDialogueIndex < segment.dialogueLines.Count - 1;
 
         Debug.Log($"Showing dialogue [{GetCurrentSegmentName()}:{currentDialogueIndex}] — \"{currentLine}\"");
 
         PlayVoiceForCurrentLine();
+
+        if (requiresTrigger)
+        {
+            string label = GetCurrentTriggerLabel();
+            if (!string.IsNullOrEmpty(label))
+                Debug.Log($"This line REQUIRES trigger to proceed: ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex}) -> {label}");
+            else
+                Debug.Log($"This line REQUIRES trigger to proceed: ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex})");
+        }
     }
 
     void StopTyping()
@@ -219,19 +267,17 @@ public class WDialogueManager : MonoBehaviour
 
         canProceed = true;
 
-        string segKey = NormalizeSegmentKey(GetCurrentSegmentName());
-        bool requiresTrigger = triggerRequiredLines.Contains((segKey, currentDialogueIndex));
-
-        if (requiresTrigger)
+        // If trigger required, STOP here and wait for external trigger to call AdvanceDialogue()
+        if (CurrentLineRequiresTrigger())
         {
-            Debug.Log($"Dialogue paused — waiting for trigger ({segKey}:{currentDialogueIndex})");
+            Debug.Log($"Dialogue paused — waiting for trigger ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex})");
             yield break;
         }
 
+        // otherwise auto-advance after voice finishes
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
 
         SetTalking(false);
-
         yield return new WaitForSeconds(0.5f);
         AdvanceDialogue();
     }
@@ -277,6 +323,13 @@ public class WDialogueManager : MonoBehaviour
 
     void NextDialogue()
     {
+        // Prevent manual skipping past trigger-gated lines
+        if (CurrentLineRequiresTrigger())
+        {
+            Debug.Log($"Next blocked: trigger required ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex}) -> {GetCurrentTriggerLabel()}");
+            return;
+        }
+
         var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
         if (lines == null) return;
 
@@ -303,6 +356,13 @@ public class WDialogueManager : MonoBehaviour
 
     void SkipDialogue()
     {
+        // You can decide whether skipping is allowed. For safety, block if current line requires a trigger.
+        if (CurrentLineRequiresTrigger())
+        {
+            Debug.Log($"Skip blocked: trigger required ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex}) -> {GetCurrentTriggerLabel()}");
+            return;
+        }
+
         var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
         if (lines == null || lines.Count == 0) return;
 
@@ -320,29 +380,21 @@ public class WDialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Call this from your trigger scripts when the user completes the required action.
+    /// Example: WDialogueManager.Instance.AdvanceDialogue();
+    /// </summary>
     public void AdvanceDialogue()
     {
         Debug.Log($"Advancing dialogue externally ({GetCurrentSegmentName()}:{currentDialogueIndex})");
 
-        string segmentKey = NormalizeSegmentKey(GetCurrentSegmentName());
-        int line = currentDialogueIndex;
-
-        if (ChecklistManager.Instance != null)
-        {
-            if (segmentKey == "handwashing" && line == 5)
-                DialogueChecklist.Instance?.CompleteTask("Sanitize");
-
-            if (segmentKey == "glovescoat" && line == 1)
-                DialogueChecklist.Instance?.CompleteTask("Wear PPE");
-
-            if (segmentKey == "vaccineprep" && line == 10)
-                DialogueChecklist.Instance?.CompleteTask("Prepare Vaccine");
-
-            if (segmentKey == "injection" && line == 9)
-                DialogueChecklist.Instance?.CompleteTask("Vaccinate the dog");
-        }
-
         SetTalking(false);
+
+        // After the trigger is satisfied, allow next line
+        var seg = dialogueSegments[currentSegmentIndex];
+        if (nextButton != null)
+            nextButton.interactable = currentDialogueIndex < seg.dialogueLines.Count - 1;
+
         NextDialogue();
     }
 
