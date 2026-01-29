@@ -65,6 +65,7 @@ TagManager:
   - QDSUIBackplateGradient
   - CinemachineTarget
   - SamplesInfoPanel
+  - dog
   layers:
   - Default
   - TransparentFX
