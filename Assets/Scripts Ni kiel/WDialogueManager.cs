@@ -142,12 +142,13 @@ public class WDialogueManager : MonoBehaviour
         triggerLabels.Clear();
 
         // HANDWASHING (Trigger to proceed != Nothing)
-        AddTrigger("handwashing", 2, "Use Faucet");
-        AddTrigger("handwashing", 3, "Use soap");
-        AddTrigger("handwashing", 4, "Use Faucet");
-        AddTrigger("handwashing", 5, "Use Towel");
-        AddTrigger("handwashing", 6, "Place towel inside trash bin");
-        AddTrigger("handwashing", 7, "Press sanitizer");
+        // If you don't have labels for these yet, the overload below will mark them as gated without a label.
+        AddTrigger("handwashing", 2);
+        AddTrigger("handwashing", 3);
+        AddTrigger("handwashing", 4);
+        AddTrigger("handwashing", 5);
+        AddTrigger("handwashing", 6);
+        AddTrigger("handwashing", 7);
 
         // GLOVES + COAT
         AddTrigger("glovescoat", 0, "Select Gloves");
@@ -172,11 +173,19 @@ public class WDialogueManager : MonoBehaviour
         AddTrigger("woundstabilization_tertiarylayer", 1, "Wrap Cohesive Bandage");
     }
 
+    // Overload: allow trigger-gated lines without a label
+    void AddTrigger(string segmentKey, int lineIndex)
+    {
+        AddTrigger(segmentKey, lineIndex, "");
+    }
+
     void AddTrigger(string segmentKey, int lineIndex, string label)
     {
         segmentKey = NormalizeSegmentKey(segmentKey);
         triggerRequiredLines.Add((segmentKey, lineIndex));
-        triggerLabels[(segmentKey, lineIndex)] = label;
+
+        // Store label only if you want; empty label is fine.
+        triggerLabels[(segmentKey, lineIndex)] = label ?? "";
     }
 
     public bool CurrentLineRequiresTrigger()
@@ -211,9 +220,10 @@ public class WDialogueManager : MonoBehaviour
 
         if (prevButton != null) prevButton.interactable = currentDialogueIndex > 0;
 
-        // Disable Next if this line is trigger-gated (prevents skipping the required action)
         bool requiresTrigger = CurrentLineRequiresTrigger();
-        if (nextButton != null) nextButton.interactable = !requiresTrigger && currentDialogueIndex < segment.dialogueLines.Count - 1;
+        bool hasNextLine = currentDialogueIndex < segment.dialogueLines.Count - 1;
+
+        if (nextButton != null) nextButton.interactable = !requiresTrigger && hasNextLine;
 
         Debug.Log($"Showing dialogue [{GetCurrentSegmentName()}:{currentDialogueIndex}] — \"{currentLine}\"");
 
@@ -274,7 +284,7 @@ public class WDialogueManager : MonoBehaviour
             yield break;
         }
 
-        // otherwise auto-advance after voice finishes
+        // otherwise auto-advance after voice finishes (safe even if voiceSource is null)
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
 
         SetTalking(false);
@@ -356,7 +366,7 @@ public class WDialogueManager : MonoBehaviour
 
     void SkipDialogue()
     {
-        // You can decide whether skipping is allowed. For safety, block if current line requires a trigger.
+        // For safety, block if current line requires a trigger.
         if (CurrentLineRequiresTrigger())
         {
             Debug.Log($"Skip blocked: trigger required ({NormalizeSegmentKey(GetCurrentSegmentName())}:{currentDialogueIndex}) -> {GetCurrentTriggerLabel()}");
@@ -390,10 +400,11 @@ public class WDialogueManager : MonoBehaviour
 
         SetTalking(false);
 
-        // After the trigger is satisfied, allow next line
         var seg = dialogueSegments[currentSegmentIndex];
+        bool hasNextLine = currentDialogueIndex < seg.dialogueLines.Count - 1;
+
         if (nextButton != null)
-            nextButton.interactable = currentDialogueIndex < seg.dialogueLines.Count - 1;
+            nextButton.interactable = hasNextLine && !CurrentLineRequiresTrigger();
 
         NextDialogue();
     }

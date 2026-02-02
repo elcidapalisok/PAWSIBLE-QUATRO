@@ -66,6 +66,7 @@ TagManager:
   - CinemachineTarget
   - SamplesInfoPanel
   - dog
+  - BandagePad
   layers:
   - Default
   - TransparentFX
