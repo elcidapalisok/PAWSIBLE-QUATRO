@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LibraryBookController : MonoBehaviour
+public class VisceralLibraryController : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private Image organImage;
@@ -96,7 +96,6 @@ public class LibraryBookController : MonoBehaviour
         if (organs == null || organs.Count == 0) return;
         if (currentIndex >= organs.Count - 1) return;
 
-        // Only allow UI + animation if book is actually open-flat on the podium
         if (bookController != null && !bookController.CanTurnPage) return;
 
         StartCoroutine(ChangePageWithFade(currentIndex + 1, isNext: true));
@@ -108,7 +107,6 @@ public class LibraryBookController : MonoBehaviour
         if (organs == null || organs.Count == 0) return;
         if (currentIndex <= 0) return;
 
-        // Only allow UI + animation if book is actually open-flat on the podium
         if (bookController != null && !bookController.CanTurnPage) return;
 
         StartCoroutine(ChangePageWithFade(currentIndex - 1, isNext: false));
@@ -119,7 +117,6 @@ public class LibraryBookController : MonoBehaviour
         isChangingPage = true;
         UpdateButtons();
 
-        // Trigger page flip animation first
         if (bookController != null)
         {
             if (isNext) bookController.NextPage();
@@ -129,7 +126,6 @@ public class LibraryBookController : MonoBehaviour
         if (uiSwapDelayAfterFlipTrigger > 0f)
             yield return new WaitForSeconds(uiSwapDelayAfterFlipTrigger);
 
-        // Fade out
         float t = 0f;
         float startAlpha = (canvasGroup != null) ? canvasGroup.alpha : 1f;
 
@@ -144,10 +140,8 @@ public class LibraryBookController : MonoBehaviour
         if (canvasGroup != null)
             canvasGroup.alpha = 0f;
 
-        // Swap content
         ShowPage(newIndex);
 
-        // Fade in
         t = 0f;
         while (t < fadeDuration)
         {
