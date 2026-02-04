@@ -33,6 +33,7 @@ public class WoundDialogueManager : MonoBehaviour
     [Header("Typewriter Settings")]
     public float typingSpeed = 0.03f;
 
+    // These are the lines that must be advanced by triggers (faucet/soap/sanitizer/etc.)
     private HashSet<(string, int)> triggerRequiredLines = new HashSet<(string, int)>();
 
     [System.Serializable]
@@ -80,12 +81,12 @@ public class WoundDialogueManager : MonoBehaviour
             ShowCurrentDialogue();
     }
 
-    void OnValidate()
+    private void OnValidate()
     {
         EnsureVoiceClipListSizes();
     }
 
-    void SetTalking(bool talking)
+    private void SetTalking(bool talking)
     {
         if (npcAnimator == null) return;
         npcAnimator.SetBool(isTalkingParam, talking);
@@ -104,7 +105,7 @@ public class WoundDialogueManager : MonoBehaviour
         return currentSeg == targetSeg && currentDialogueIndex == lineIndex;
     }
 
-    void EnsureVoiceClipListSizes()
+    private void EnsureVoiceClipListSizes()
     {
         if (dialogueSegments == null) return;
 
@@ -126,7 +127,8 @@ public class WoundDialogueManager : MonoBehaviour
         }
     }
 
-    void RegisterTriggerRequiredLines()
+    // ✅ Add any “pause until trigger” lines here.
+    private void RegisterTriggerRequiredLines()
     {
         triggerRequiredLines.Clear();
 
@@ -136,14 +138,19 @@ public class WoundDialogueManager : MonoBehaviour
         triggerRequiredLines.Add(("handwashing", 5));
         triggerRequiredLines.Add(("handwashing", 6));
         triggerRequiredLines.Add(("handwashing", 7));
+
+        triggerRequiredLines.Add(("glovescoat", 0));
+        triggerRequiredLines.Add(("glovescoat", 1));
     }
 
-    void ShowCurrentDialogue()
+    private void ShowCurrentDialogue()
     {
-        if (dialogueSegments.Count == 0) return;
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
+        if (currentSegmentIndex < 0 || currentSegmentIndex >= dialogueSegments.Count) return;
 
         var segment = dialogueSegments[currentSegmentIndex];
-        if (segment.dialogueLines.Count == 0) return;
+        if (segment == null || segment.dialogueLines == null || segment.dialogueLines.Count == 0) return;
+        if (currentDialogueIndex < 0 || currentDialogueIndex >= segment.dialogueLines.Count) return;
 
         StopTyping();
         StopVoice();
@@ -152,63 +159,90 @@ public class WoundDialogueManager : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeText(line));
 
         if (prevButton) prevButton.interactable = currentDialogueIndex > 0;
+
+        // nextButton only moves within the segment; end-of-segment is advanced by triggers/auto
         if (nextButton) nextButton.interactable = currentDialogueIndex < segment.dialogueLines.Count - 1;
 
         Debug.Log($"📢 Showing [{segment.segmentName}:{currentDialogueIndex}] {line}");
     }
 
-    IEnumerator TypeText(string line)
+    private IEnumerator TypeText(string line)
     {
         canProceed = false;
-        dialogueText.text = "";
+
+        if (dialogueText != null)
+            dialogueText.text = "";
 
         SetTalking(true);
 
-        foreach (char c in line)
+        if (!string.IsNullOrEmpty(line))
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(typingSpeed);
+            foreach (char c in line)
+            {
+                if (dialogueText != null)
+                    dialogueText.text += c;
+
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
 
         canProceed = true;
 
+        // ✅ If this line requires a trigger, STOP here and wait for an external call to AdvanceDialogue().
         string key = NormalizeSegmentKey(GetCurrentSegmentName());
         if (triggerRequiredLines.Contains((key, currentDialogueIndex)))
             yield break;
 
+        // Optional wait for voice if you use it (safe even if voiceSource is null)
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
 
         SetTalking(false);
         yield return new WaitForSeconds(0.5f);
 
+        // Auto-advance for non-trigger lines
         AdvanceDialogue();
     }
 
-    void StopTyping()
+    private void StopTyping()
     {
         if (typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+        canProceed = true;
     }
 
-    void StopVoice()
+    private void StopVoice()
     {
         if (voiceSource != null && voiceSource.isPlaying)
             voiceSource.Stop();
     }
 
-    void NextDialogue()
+    // ✅ FIXED: this now moves to the next segment if you are at the last line
+    private void NextDialogue()
     {
-        var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
 
-        if (currentDialogueIndex < lines.Count - 1)
+        var segment = dialogueSegments[currentSegmentIndex];
+        if (segment == null || segment.dialogueLines == null) return;
+
+        // Still has next line inside this segment
+        if (currentDialogueIndex < segment.dialogueLines.Count - 1)
         {
             currentDialogueIndex++;
             ShowCurrentDialogue();
+            return;
         }
+
+        // End of segment → go to next segment
+        MoveToNextSegment();
     }
 
-    void PrevDialogue()
+    private void PrevDialogue()
     {
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
+
         if (currentDialogueIndex > 0)
         {
             currentDialogueIndex--;
@@ -216,20 +250,68 @@ public class WoundDialogueManager : MonoBehaviour
         }
     }
 
-    void SkipDialogue()
+    private void SkipDialogue()
     {
-        var lines = dialogueSegments[currentSegmentIndex].dialogueLines;
-        currentDialogueIndex = lines.Count - 1;
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
+
+        var segment = dialogueSegments[currentSegmentIndex];
+        if (segment == null || segment.dialogueLines == null || segment.dialogueLines.Count == 0) return;
+
+        currentDialogueIndex = segment.dialogueLines.Count - 1;
         ShowCurrentDialogue();
     }
 
+    // This is what your faucet/soap/sanitizer triggers should call
     public void AdvanceDialogue()
     {
         NextDialogue();
     }
 
+    private void MoveToNextSegment()
+    {
+        StopTyping();
+        StopVoice();
+
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
+
+        // ✅ CHECKLIST HOOK: mark task when a segment is FINISHED (right before switching)
+        string finishedSegment = NormalizeSegmentKey(GetCurrentSegmentName());
+
+        if (finishedSegment == "handwashing")
+        {
+            if (WoundDialogueChecklist.Instance != null)
+                WoundDialogueChecklist.Instance.CompleteTask("Sanitize");
+            else
+                Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is null (Checklist not in scene?)");
+        }
+        else if (finishedSegment == "glovescoat")
+        {
+            if (WoundDialogueChecklist.Instance != null)
+                WoundDialogueChecklist.Instance.CompleteTask("Wear PPE");
+            else
+                Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is null (Checklist not in scene?)");
+        }
+
+        // Now move to next segment
+        if (currentSegmentIndex < dialogueSegments.Count - 1)
+        {
+            currentSegmentIndex++;
+            currentDialogueIndex = 0;
+
+            Debug.Log($"➡ Moving to next segment: {GetCurrentSegmentName()}");
+            ShowCurrentDialogue();
+        }
+        else
+        {
+            Debug.Log("✅ All Wound dialogue segments completed!");
+            SetTalking(false);
+        }
+    }
+
     public string GetCurrentSegmentName()
     {
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return "";
+        if (currentSegmentIndex < 0 || currentSegmentIndex >= dialogueSegments.Count) return "";
         return dialogueSegments[currentSegmentIndex].segmentName;
     }
 
