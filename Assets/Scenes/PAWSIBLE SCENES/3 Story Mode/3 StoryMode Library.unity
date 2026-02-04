@@ -6814,6 +6814,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5599617037906691126, guid: 87b3c854d53a4194c91cd559788482f5, type: 3}
   m_PrefabInstance: {fileID: 997775635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &39669599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+  m_PrefabInstance: {fileID: 1532856195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &39669600
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39669599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &39794199
 GameObject:
   m_ObjectHideFlags: 0
@@ -8022,6 +8049,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4575446515170267489, guid: e88748965fbaf0e459e6bd855bb8c45c, type: 3}
       insertIndex: 9
       addedObject: {fileID: 767342744}
+    - targetCorrespondingSourceObject: {fileID: 4575446515170267489, guid: e88748965fbaf0e459e6bd855bb8c45c, type: 3}
+      insertIndex: 11
+      addedObject: {fileID: 1814050189}
     - targetCorrespondingSourceObject: {fileID: 7284396501909740546, guid: e88748965fbaf0e459e6bd855bb8c45c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 727130736}
@@ -11473,6 +11503,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 128484521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &142489866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 273370897}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2218675185337591727, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002454092
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_Name
+      value: Anatomy_book
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 654073289}
+  m_SourcePrefab: {fileID: 100100000, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
 --- !u!1 &144158252
 GameObject:
   m_ObjectHideFlags: 0
@@ -14103,6 +14213,89 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1001 &210042320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 273370897}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3242978
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_Name
+      value: O_Anatomy_book
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852549336988689283, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28394
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1242467321}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1101017882}
+  m_SourcePrefab: {fileID: 100100000, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
 --- !u!1 &212448059
 GameObject:
   m_ObjectHideFlags: 0
@@ -15229,9 +15422,9 @@ RectTransform:
   - {fileID: 1829424318}
   m_Father: {fileID: 1513091483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 185.45001, y: -75}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &229199858
@@ -17610,6 +17803,240 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271473396}
   m_Mesh: {fileID: -221054177172841479, guid: 62b745396a42dc843af74ffdd1289040, type: 3}
+--- !u!1 &273370892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273370897}
+  - component: {fileID: 273370896}
+  - component: {fileID: 273370895}
+  - component: {fileID: 273370894}
+  - component: {fileID: 273370893}
+  m_Layer: 0
+  m_Name: Visceral Anatomy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273370893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273370892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc06f46ba85a9c45b623c6deca5135c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anatomyBookClosed: {fileID: 654073288}
+  anatomyBookOpenFlat: {fileID: 1101017881}
+  closedAnimator: {fileID: 654073289}
+  openFlatAnimator: {fileID: 1101017882}
+  openTrigger: Open
+  closeTrigger: Close
+  nextTrigger: Next
+  prevTrigger: Prev
+  swapDelay: 0.5
+  grab: {fileID: 273370895}
+  rb: {fileID: 273370896}
+  snapPoint: {fileID: 1956004590}
+  snapDistance: 0.35
+  playCloseWhenGrabbed: 1
+  logActions: 1
+--- !u!65 &273370894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273370892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3795147, y: 0.15066314, z: 0.6546402}
+  m_Center: {x: -0.16692448, y: 0.08734071, z: -0.0015640259}
+--- !u!114 &273370895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273370892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 0}
+  m_UseDynamicAttach: 0
+  m_MatchAttachPosition: 1
+  m_MatchAttachRotation: 1
+  m_SnapToColliderVolume: 1
+  m_ReinitializeDynamicAttachEverySingleGrab: 1
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 1
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
+  m_TrackScale: 1
+  m_SmoothScale: 0
+  m_SmoothScaleAmount: 8
+  m_TightenScale: 0.1
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
+  m_FarAttachMode: 0
+--- !u!54 &273370896
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273370892}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!4 &273370897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273370892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.732, y: 3.355, z: 40.589}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 654073290}
+  - {fileID: 1101017883}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276954746
 GameObject:
   m_ObjectHideFlags: 0
@@ -27713,197 +28140,189 @@ MonoBehaviour:
   bookController: {fileID: 1809891516}
   uiSwapDelayAfterFlipTrigger: 0.05
   organs:
-  - organName: Skeletal Anatomy
-    organSprite: {fileID: 0}
-    description: The skeletal anatomy of the dog is the framework of the body made
-      up of bones, cartilage, and joints. It gives the dog shape and support and
-      allows the body to stand, move, and function properly. The skeleton protects
-      important organs such as the brain, spinal cord, heart, and lungs. It also
-      helps with movement by providing attachment points for muscles, stores minerals
-      like calcium and phosphorus, and produces blood cells in the bone marrow.
   - organName: Skull
     organSprite: {fileID: 21300000, guid: 81474bc1261200a4e869447d39e2c76e, type: 3}
-    description: "The skull is the bone that protects the dog\u2019s brain.\nIt gives
-      shape to the dog\u2019s head and face.\nThe skull holds the eyes in place inside
-      eye sockets.\nIt also supports the nose and helps with breathing and smelling.\nThe
-      teeth are attached to parts of the skull.\nThe skull connects to the neck at
-      the back of the head.\nIt is made of many small bones joined together.\nThe
-      skull is very strong to protect important organs."
+    description: "The skull is the bone that protects the dog\u2019s brain. It gives
+      shape to the dog\u2019s head and face. The skull holds the eyes in place inside
+      eye sockets. It also supports the nose and helps with breathing and smelling.
+      The teeth are attached to parts of the skull. The skull connects to the neck
+      at the back of the head. It is made of many small bones joined together. The
+      skull is very strong to protect important organs. The skull also helps protect
+      the ears inside the head. It allows the dog to chew without hurting the brain.
+      The skull has openings for nerves to pass through. These nerves help with seeing,
+      hearing, and smelling. The skull supports muscles used for biting. It helps
+      keep the head balanced. "
   - organName: Jaw
     organSprite: {fileID: 21300000, guid: dd3db47404784a34680fbb43ada67756, type: 3}
-    description: 'The jaw helps the dog open and close its mouth.
-
-      It holds
-      the lower teeth used for biting and chewing.
-
-      The jaw moves up and down
-      and slightly side to side.
-
-      Strong muscles attach to the jaw to give
-      biting power.
-
-      The jaw works together with the skull.
-
-      It helps
-      the dog eat food and carry objects.
-
-      The jaw also helps with barking
-      and other sounds.
-
-      It is one of the strongest bones in the body.'
+    description: 'The jaw helps the dog open and close its mouth. It holds the lower
+      teeth used for biting and chewing. The jaw moves up and down and slightly side
+      to side. Strong muscles attach to the jaw to give biting power. The jaw works
+      together with the skull. It helps the dog eat food and carry objects. The jaw
+      also helps with barking and other sounds. It is one of the strongest bones
+      in the body. The jaw allows the dog to tear food. It helps grind food into
+      smaller pieces. The jaw must be strong to break hard food. It supports the
+      tongue inside the mouth. The jaw helps protect the teeth. It moves smoothly
+      at the jaw joint. This joint allows controlled movement. A healthy jaw is important
+      for eating. '
   - organName: 'Neck '
     organSprite: {fileID: 21300000, guid: f320e212a64f41844bfb23106cf16510, type: 3}
-    description: 'The neck is made of small bones called vertebrae.
-
-      These
-      bones support the head and allow movement.
-
-      The neck lets the dog turn
-      its head left and right.
-
-      It also allows the head to move up and down.
-
-      The
-      neck protects the spinal cord inside it.
-
-      Muscles attach to the neck
-      bones for strength.
-
-      The neck helps with balance and posture.
-
-      It
-      connects the skull to the rest of the body.'
+    description: 'The neck is made of small bones called vertebrae. These bones support
+      the head and allow movement. The neck lets the dog turn its head left and right.
+      It also allows the head to move up and down. The neck protects the spinal cord
+      inside it. Muscles attach to the neck bones for strength. The neck helps with
+      balance and posture. It connects the skull to the rest of the body. The neck
+      allows the dog to look around easily. It helps the dog stay alert. The neck
+      supports the weight of the head. Blood vessels pass through the neck. These
+      vessels carry blood to the brain. Nerves also pass through the neck. '
   - organName: Scapula
     organSprite: {fileID: 21300000, guid: 43c72301fa4263545bdafc2c6443cc26, type: 3}
-    description: 'The scapula is also called the shoulder blade.
-
-      It connects
-      the front leg to the body.
-
-      The scapula is flat and wide in shape.
-
-      Many
-      muscles attach to it for movement.
-
-      It helps the dog lift and move the
-      front leg.
-
-      The scapula allows smooth walking and running.
-
-      It
-      is not directly attached to other bones by joints.
-
-      Instead, muscles
-      hold it in place.'
+    description: The scapula is also called the shoulder blade. It connects the front
+      leg to the body. The scapula is flat and wide in shape. Many muscles attach
+      to it for movement. It helps the dog lift and move the front leg. The scapula
+      allows smooth walking and running. It is not directly attached to other bones
+      by joints. Instead, muscles hold it in place. The scapula helps absorb shock
+      when moving. It allows long steps while running. It helps control front leg
+      movement. The scapula supports strong muscles. These muscles move the leg forward
+      and backward. The bone helps with jumping. It gives flexibility to the shoulder
+      area. The scapula helps with balance. It plays a role in speed.
   - organName: Humerus
     organSprite: {fileID: 21300000, guid: c7415a716c577a542ae18c7d36d8f188, type: 3}
     description: "The humerus is the upper bone of the front leg. It connects the
       shoulder to the elbow. This bone is thick and strong. Muscles attach to it
       to move the leg. The humerus helps support the dog\u2019s weight. It allows
       bending and straightening of the leg. The bone works with the radius and ulna.
-      It is important for running and jumping."
+      It is important for running and jumping. The humerus helps absorb impact. It
+      allows powerful movement. The bone supports the chest area. It helps control
+      leg direction. The humerus protects nearby joints. It allows smooth arm movement.
+      This bone is longer than the lower leg bones. It helps with climbing and digging.
+      A strong humerus improves movement."
   - organName: Radius
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The radius is one of the lower front leg bones. It runs from the
       elbow to the wrist. The radius helps support body weight. It works together
       with the ulna. This bone helps control leg movement. It keeps the leg stable
       while walking. The radius is straighter than the ulna. It plays a big role
-      in balance.
+      in balance. The radius helps the dog stand properly. It carries much of the
+      weight in the front legs. The bone helps absorb shock from movement. It supports
+      smooth walking and running. The radius helps control speed. Muscles attach
+      near the radius for movement. It helps the leg stay straight. A strong radius
+      prevents injury. It is important for daily movement.
   - organName: Ulna
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
-    description: 'The ulna is the second lower front leg bone.
-
-      It runs alongside
-      the radius.
-
-      The ulna forms part of the elbow joint.
-
-      It helps
-      the leg bend and straighten.
-
-      Muscles attach to the ulna for movement.
-
-      It
-      gives strength to the front leg.
-
-      The ulna helps absorb shock when running.
-
-      It
-      works closely with the radius.'
+    description: The ulna is the second lower front leg bone. It runs alongside the
+      radius. The ulna forms part of the elbow joint. It helps the leg bend and straighten.
+      Muscles attach to the ulna for movement. It gives strength to the front leg.
+      The ulna helps absorb shock when running. It works closely with the radius.
+      The ulna helps control elbow movement. It supports the upper part of the leg.
+      The bone helps with jumping and landing. It adds stability to the front leg.
+      The ulna helps protect the elbow joint. It allows smooth leg motion. The ulna
+      supports muscle power. It helps with balance. Damage to the ulna affects movement.
   - organName: Wrist
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The wrist is made of small bones called carpals. It connects the
       lower leg to the paw. The wrist allows the paw to bend. It helps the dog walk
       smoothly. The wrist absorbs shock from movement. It supports weight when standing.
       Strong ligaments hold the wrist bones together. It helps with quick movements
-      and turns.
+      and turns. The wrist helps control paw position. It allows flexibility in the
+      leg. The wrist helps the dog stop safely. It supports jumping and landing.
+      The bones work together as a group. The wrist protects the paw joints. It helps
+      prevent injury. A healthy wrist improves balance. It is important for fast
+      movement.
   - organName: 'Hind Legs '
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The hind legs are the back legs of the dog. They provide most of
       the power for movement. Hind legs help the dog run and jump. They push the
       body forward. Strong muscles attach to these bones. The hind legs support balance
       and speed. They work together with the pelvis. They are very important for
-      strength.
+      strength. Hind legs help the dog climb. They allow quick changes in direction.
+      The bones are thick and strong. Hind legs support body weight when moving.
+      They help with standing up. The joints allow bending and stretching. Hind legs
+      help with endurance. Strong hind legs prevent falls. They are key for movement.
   - organName: 'Knuckles '
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: Knuckles are the joints in the paw. They connect the paw bones together.
       Knuckles allow the toes to bend. They help the dog grip the ground. Knuckles
       absorb shock when walking. They help with balance and control. Ligaments keep
-      the knuckles stable. They are important for smooth movement.
+      the knuckles stable. They are important for smooth movement. Knuckles help
+      the dog turn easily. They support body weight during movement. The joints allow
+      flexibility. Knuckles help prevent slipping. They protect the paw bones. Healthy
+      knuckles reduce injury. They help with running and stopping. Knuckles support
+      fast movement. They are small but important.
   - organName: Toes
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The toes are at the end of the paws. They help the dog walk and
       run. Each toe has small bones inside. Toes help with balance and grip. Claws
       grow from the toes. They help the dog dig and hold objects. Toes also help
-      with turning and stopping. They are flexible and strong.
+      with turning and stopping. They are flexible and strong. Toes help sense the
+      ground. They allow quick movement changes. The bones work together smoothly.
+      Toes help absorb shock. They support weight while standing. Toes protect the
+      paw. They help with climbing. Strong toes improve movement. They are important
+      for control.
   - organName: 'Vertebrae '
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The vertebrae make up the spine. They protect the spinal cord. The
       spine supports the body. Vertebrae allow bending and twisting. They help the
       dog move smoothly. Muscles attach along the spine. The spine runs from the
-      neck to the tail. It is very important for movement.
+      neck to the tail. It is very important for movement. Vertebrae support posture.
+      They help with balance. The spine allows flexibility. Nerves pass through the
+      vertebrae. These nerves control movement. The spine helps absorb shock. Strong
+      vertebrae prevent injury. They help with turning and running. The spine connects
+      the body together.
   - organName: Sternum
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The sternum is the breastbone. It is located in the chest. The sternum
       protects the heart and lungs. Ribs attach to the sternum. It helps keep the
       chest strong. The sternum supports breathing. It gives structure to the chest
-      area. It is a flat and firm bone.
+      area. It is a flat and firm bone. The sternum helps protect organs. It supports
+      the rib cage. It helps the chest expand. The bone keeps the chest stable. Muscles
+      attach near the sternum. It helps with movement of the chest. The sternum supports
+      posture. It plays a role in breathing control. It is important for protection.
   - organName: Pelvis
     organSprite: {fileID: 21300000, guid: 0c2328fdf2f99654dbc3d6039f470d22, type: 3}
     description: The pelvis is the hip bone. It connects the spine to the hind legs.
       The pelvis supports body weight. It protects organs inside the body. Strong
       muscles attach to the pelvis. It helps with walking and running. The pelvis
-      gives stability. It is wide and strong.
-  - organName: Sternum
-    organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
-    description: The sternum is the breastbone. It is located in the chest. The sternum
-      protects the heart and lungs. Ribs attach to the sternum. It helps keep the
-      chest strong. The sternum supports breathing. It gives structure to the chest
-      area. It is a flat and firm bone.
+      gives stability. It is wide and strong. The pelvis helps with balance. It supports
+      jumping movements. It helps control hind leg motion. The pelvis allows smooth
+      movement. It protects the lower body. It supports standing posture. The pelvis
+      connects major bones. A strong pelvis prevents injury. It is key for movement.
   - organName: Femur
     organSprite: {fileID: 21300000, guid: f320e212a64f41844bfb23106cf16510, type: 3}
     description: The femur is the upper hind leg bone. It is the longest bone in
       the body. The femur connects the hip to the knee. It supports a lot of weight.
       Strong muscles attach to it. It helps the dog run and jump. The femur is very
-      strong. It plays a big role in movement.
+      strong. It plays a big role in movement. The femur allows powerful motion.
+      It supports fast running. The bone helps absorb shock. It protects nearby joints.
+      The femur helps with balance. It allows bending at the knee. Strong femurs
+      improve speed. It helps the dog stand upright. It is important for strength.
   - organName: Tail
     organSprite: {fileID: 21300000, guid: f481311e3a877114ebd74a48db121274, type: 3}
     description: The tail is made of small vertebrae. It helps the dog balance. The
       tail shows emotions. Muscles allow the tail to move. It helps with turning
       while running. The tail connects to the spine. It also helps with communication.
-      The tail varies in length by breed.
+      The tail varies in length by breed. The tail helps with balance control. It
+      moves side to side. The tail helps during fast movement. Nerves pass through
+      the tail. Muscles control tail motion. The tail helps with posture. It helps
+      dogs signal feelings. The bones allow flexibility. A healthy tail supports
+      balance. It is part of the spine.
   - organName: Tibia
     organSprite: {fileID: 21300000, guid: 4f23aced195e8754dbfcea6cd1ef208a, type: 3}
     description: The tibia is the larger lower hind leg bone. It runs from the knee
       to the ankle. The tibia supports body weight. It helps the leg move forward.
       Muscles attach to the tibia. It works with the fibula. The tibia is strong
-      and straight. It is important for walking.
-  - organName: Tibia
+      and straight. It is important for walking. The tibia supports jumping. It helps
+      with balance. The bone absorbs shock. It protects the lower leg. The tibia
+      allows bending at joints. It supports running movement. Strong tibias prevent
+      injury. It helps with standing posture. It plays a major role in movement.
+  - organName: Fibula
     organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
     description: The fibula is the thinner hind leg bone. It runs next to the tibia.
       The fibula helps stabilize the leg. It supports muscle attachment. It does
       not carry much weight. The fibula helps control movement. It adds strength
-      to the lower leg. It works closely with the tibia.
+      to the lower leg. It works closely with the tibia. The fibula supports balance.
+      It helps protect the leg. The bone helps guide movement. Muscles use it for
+      support. It helps control ankle motion. The fibula adds flexibility. It supports
+      smooth movement. Damage affects leg control. It is important for stability.
 --- !u!1 &466786118
 GameObject:
   m_ObjectHideFlags: 0
@@ -29683,7 +30102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 28e92200f513bc643a4dfffcdfddc10b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.942335
+      value: -25.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28e92200f513bc643a4dfffcdfddc10b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29691,7 +30110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28e92200f513bc643a4dfffcdfddc10b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.460247
+      value: 40.384
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28e92200f513bc643a4dfffcdfddc10b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30442,7 +30861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &515902496
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33063,6 +33482,98 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599da75eb17d1b64d9a1e602cff41129, type: 3}
+--- !u!1 &548297986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548297990}
+  - component: {fileID: 548297989}
+  - component: {fileID: 548297988}
+  - component: {fileID: 548297987}
+  m_Layer: 0
+  m_Name: BookBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &548297987
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548297986}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &548297988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548297986}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &548297989
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548297986}
+  m_CullTransparentMesh: 1
+--- !u!224 &548297990
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548297986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1322343426}
+  - {fileID: 1472764707}
+  - {fileID: 1657259124}
+  - {fileID: 1807959803}
+  m_Father: {fileID: 1242467321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -143, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &551524876
 GameObject:
   m_ObjectHideFlags: 0
@@ -34512,6 +35023,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6447489188282255246, guid: 5f635d348fad9f742a95c45e8aceda58, type: 3}
   m_PrefabInstance: {fileID: 786471609}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &582945738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582945739}
+  - component: {fileID: 582945741}
+  - component: {fileID: 582945740}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &582945739
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582945738}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1657259124}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &582945740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582945738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Previous
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 9.895958, y: 0, z: 17.864971, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &582945741
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582945738}
+  m_CullTransparentMesh: 1
 --- !u!1 &586603680
 GameObject:
   m_ObjectHideFlags: 0
@@ -37662,6 +38309,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652142218}
   m_Mesh: {fileID: -9028115708954250909, guid: 62b745396a42dc843af74ffdd1289040, type: 3}
+--- !u!1 &654073288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+  m_PrefabInstance: {fileID: 142489866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &654073289
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654073288}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1256e047c7df9674d89ebc8f099810e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &654073290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a75accf03db68284d9e9ea8d8aff32ee, type: 3}
+  m_PrefabInstance: {fileID: 142489866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &655795022
 GameObject:
   m_ObjectHideFlags: 0
@@ -44725,9 +45404,9 @@ RectTransform:
   - {fileID: 1255222566}
   m_Father: {fileID: 1513091483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 325.75, y: -75}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773545158
@@ -44847,9 +45526,9 @@ RectTransform:
   - {fileID: 934286407}
   m_Father: {fileID: 1513091483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45.15, y: -75}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774268392
@@ -55604,6 +56283,144 @@ Transform:
   - {fileID: 179122862}
   m_Father: {fileID: 695389363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &962023616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962023617}
+  - component: {fileID: 962023619}
+  - component: {fileID: 962023618}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &962023617
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962023616}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1807959803}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &962023618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962023616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Next
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 9.895958, y: 0, z: 17.864971, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &962023619
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962023616}
+  m_CullTransparentMesh: 1
 --- !u!1001 &962236039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55742,15 +56559,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.458
+      value: -27.427
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.554
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.787
+      value: 42.635
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64591,6 +65408,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068396378}
   m_Mesh: {fileID: -5648860558019386753, guid: 28786f7a1c39d394a997cefd9dfc4bee, type: 3}
+--- !u!1 &1070875122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070875123}
+  - component: {fileID: 1070875124}
+  - component: {fileID: 1070875125}
+  m_Layer: 0
+  m_Name: OrganImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1070875123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070875122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1.1956233, y: 1.3104365, z: 2.7563164}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322343426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.3, y: -10.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1070875124
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070875122}
+  m_CullTransparentMesh: 1
+--- !u!114 &1070875125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070875122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 72954bde85b651c4dbe360834f05606c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!4 &1072489765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2651188732832306999, guid: 87b3c854d53a4194c91cd559788482f5, type: 3}
@@ -66460,6 +67352,38 @@ Light:
 Transform:
   m_CorrespondingSourceObject: {fileID: -7817547488372269659, guid: 87b3c854d53a4194c91cd559788482f5, type: 3}
   m_PrefabInstance: {fileID: 361824043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1101017881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+  m_PrefabInstance: {fileID: 210042320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1101017882
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101017881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21d37d6806713c94e881ecbc77352d6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1101017883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 946443e192a5a6741a60bead527d71b3, type: 3}
+  m_PrefabInstance: {fileID: 210042320}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101580267
 GameObject:
@@ -69239,6 +70163,227 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137061138}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1137790102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137790103}
+  - component: {fileID: 1137790105}
+  - component: {fileID: 1137790104}
+  m_Layer: 0
+  m_Name: LibraryBook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1137790103
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137790102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242467321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1137790104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137790102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e1ac7673ab36f488600f297f8754ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  organImage: {fileID: 1070875125}
+  organNameText: {fileID: 1710225375}
+  organDescriptionText: {fileID: 1300485196}
+  nextButton: {fileID: 1807959800}
+  prevButton: {fileID: 1657259121}
+  canvasGroup: {fileID: 548297987}
+  fadeDuration: 0.2
+  bookController: {fileID: 273370893}
+  uiSwapDelayAfterFlipTrigger: 0.05
+  organs:
+  - organName: Stomach
+    organSprite: {fileID: 21300000, guid: 07fdf1e2610f3054b874b82647ce49cf, type: 3}
+    description: The stomach is an organ that helps digest food. It is located in
+      the abdomen. The stomach stores food after it is eaten. It mixes food with
+      strong acids. These acids break food into smaller pieces. The stomach muscles
+      move to churn the food. This movement helps digestion. Food stays in the stomach
+      for several hours. The stomach helps kill harmful bacteria. It turns food into
+      a thick liquid. This liquid is called chyme. The stomach slowly sends food
+      to the intestine. It protects itself from strong acids. The stomach expands
+      when full. It shrinks when empty. A healthy stomach helps the body get nutrients.
+      It plays an important role in digestion.
+  - organName: Urinary System
+    organSprite: {fileID: 21300000, guid: 7c5c540bbcad30c48adcc7f30c784148, type: 3}
+    description: The urinary system removes waste from the body. It helps control
+      water levels. This system includes the kidneys and bladder. It filters waste
+      from the blood. Urine is made from this waste. The urinary system helps balance
+      salts. It keeps chemicals at safe levels. It helps control blood pressure.
+      The system removes extra water. It helps keep organs healthy. Urine travels
+      through tubes in the body. These tubes connect organs together. The system
+      prevents harmful buildup. It helps clean the blood. A healthy urinary system
+      prevents illness. It works all day and night. It is important for survival.
+  - organName: Intestine
+    organSprite: {fileID: 21300000, guid: e71df7452f36e704d9737f27b507fa66, type: 3}
+    description: The intestine is a long tube in the body. It continues digestion
+      after the stomach. The intestine absorbs nutrients from food. It sends nutrients
+      into the blood. The intestine has two main parts. These are the small and large
+      intestines. The small intestine absorbs most nutrients. The large intestine
+      absorbs water. The intestine moves food using muscles. This movement is slow
+      and steady. It helps push waste forward. Helpful bacteria live in the intestine.
+      These bacteria help digestion. The intestine forms solid waste. Waste is sent
+      to be removed. A healthy intestine supports energy. It is important for digestion.
+  - organName: Kidney
+    organSprite: {fileID: 21300000, guid: cb5c0758c4c91d646b9b9602d1c91187, type: 3}
+    description: The kidneys filter waste from the blood. They are bean-shaped organs.
+      Kidneys help make urine. They remove extra water from the body. Kidneys balance
+      minerals and salts. They help control blood pressure. The kidneys clean the
+      blood all day. They help keep chemicals balanced. Waste leaves the kidneys
+      as urine. The kidneys help keep bones healthy. They help make hormones. These
+      hormones control body functions. Kidneys protect the body from toxins. They
+      help control fluid levels. Healthy kidneys prevent illness. Damage to kidneys
+      affects the whole body. They are vital organs.
+  - organName: Liver
+    organSprite: {fileID: 21300000, guid: 06ccc25808b04094cb95937b012fed19, type: 3}
+    description: The liver is a large organ in the abdomen. It helps clean the blood.
+      The liver removes toxins from the body. It helps digest fats. The liver makes
+      bile. Bile helps break down fat. The liver stores energy. It stores vitamins
+      and minerals. The liver helps control blood sugar. It makes important proteins.
+      These proteins help blood clot. The liver helps fight infection. It processes
+      nutrients from food. The liver works all the time. It can repair itself. A
+      healthy liver is very important. It supports many body systems.
+  - organName: Lungs
+    organSprite: {fileID: 21300000, guid: 6915ab2b636d27f459d9b336e0025f86, type: 3}
+    description: The lungs help the body breathe. They bring oxygen into the body.
+      Oxygen is needed for energy. The lungs remove carbon dioxide. This gas is waste
+      from the body. The lungs expand when breathing in. They shrink when breathing
+      out. Air travels through tubes to the lungs. The lungs are soft and spongy.
+      They are protected by the rib cage. The lungs work with the heart. They help
+      keep blood healthy. The lungs help control breathing speed. They support physical
+      activity. Healthy lungs improve endurance. Lung damage makes breathing hard.
+      They are essential for life.
+  - organName: Esophagus
+    organSprite: {fileID: 21300000, guid: 700b9272b28908f44a868e707c25da83, type: 3}
+    description: The esophagus is a long tube. It connects the mouth to the stomach.
+      Food travels through the esophagus. Muscles push food downward. This movement
+      is called peristalsis. The esophagus does not digest food. It only moves food.
+      The esophagus works automatically. It helps swallowing. Food moves even when
+      upside down. The esophagus protects the airway. It opens and closes at the
+      right time. It prevents food from going the wrong way. The lining is smooth.
+      This helps food slide easily. A healthy esophagus prevents choking. It plays
+      a key role in digestion.
+--- !u!114 &1137790105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137790102}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebfee8b08fa6cf4b8eae8a96664e44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  organImage: {fileID: 1070875125}
+  organNameText: {fileID: 1710225375}
+  organDescriptionText: {fileID: 1300485196}
+  nextButton: {fileID: 1807959800}
+  prevButton: {fileID: 1657259121}
+  canvasGroup: {fileID: 548297987}
+  fadeDuration: 0.2
+  bookController: {fileID: 273370893}
+  uiSwapDelayAfterFlipTrigger: 0.05
+  organs:
+  - organName: Stomach
+    organSprite: {fileID: 21300000, guid: 07fdf1e2610f3054b874b82647ce49cf, type: 3}
+    description: The stomach is an organ that helps digest food. It is located in
+      the abdomen. The stomach stores food after it is eaten. It mixes food with
+      strong acids. These acids break food into smaller pieces. The stomach muscles
+      move to churn the food. This movement helps digestion. Food stays in the stomach
+      for several hours. The stomach helps kill harmful bacteria. It turns food into
+      a thick liquid. This liquid is called chyme. The stomach slowly sends food
+      to the intestine. It protects itself from strong acids. The stomach expands
+      when full. It shrinks when empty. A healthy stomach helps the body get nutrients.
+      It plays an important role in digestion.
+  - organName: Urinary System
+    organSprite: {fileID: 21300000, guid: 7c5c540bbcad30c48adcc7f30c784148, type: 3}
+    description: The urinary system removes waste from the body. It helps control
+      water levels. This system includes the kidneys and bladder. It filters waste
+      from the blood. Urine is made from this waste. The urinary system helps balance
+      salts. It keeps chemicals at safe levels. It helps control blood pressure.
+      The system removes extra water. It helps keep organs healthy. Urine travels
+      through tubes in the body. These tubes connect organs together. The system
+      prevents harmful buildup. It helps clean the blood. A healthy urinary system
+      prevents illness. It works all day and night. It is important for survival.
+  - organName: Intestine
+    organSprite: {fileID: 21300000, guid: e71df7452f36e704d9737f27b507fa66, type: 3}
+    description: The intestine is a long tube in the body. It continues digestion
+      after the stomach. The intestine absorbs nutrients from food. It sends nutrients
+      into the blood. The intestine has two main parts. These are the small and large
+      intestines. The small intestine absorbs most nutrients. The large intestine
+      absorbs water. The intestine moves food using muscles. This movement is slow
+      and steady. It helps push waste forward. Helpful bacteria live in the intestine.
+      These bacteria help digestion. The intestine forms solid waste. Waste is sent
+      to be removed. A healthy intestine supports energy. It is important for digestion.
+  - organName: Kidney
+    organSprite: {fileID: 21300000, guid: cb5c0758c4c91d646b9b9602d1c91187, type: 3}
+    description: The kidneys filter waste from the blood. They are bean-shaped organs.
+      Kidneys help make urine. They remove extra water from the body. Kidneys balance
+      minerals and salts. They help control blood pressure. The kidneys clean the
+      blood all day. They help keep chemicals balanced. Waste leaves the kidneys
+      as urine. The kidneys help keep bones healthy. They help make hormones. These
+      hormones control body functions. Kidneys protect the body from toxins. They
+      help control fluid levels. Healthy kidneys prevent illness. Damage to kidneys
+      affects the whole body. They are vital organs.
+  - organName: Liver
+    organSprite: {fileID: 21300000, guid: 06ccc25808b04094cb95937b012fed19, type: 3}
+    description: The liver is a large organ in the abdomen. It helps clean the blood.
+      The liver removes toxins from the body. It helps digest fats. The liver makes
+      bile. Bile helps break down fat. The liver stores energy. It stores vitamins
+      and minerals. The liver helps control blood sugar. It makes important proteins.
+      These proteins help blood clot. The liver helps fight infection. It processes
+      nutrients from food. The liver works all the time. It can repair itself. A
+      healthy liver is very important. It supports many body systems.
+  - organName: Lungs
+    organSprite: {fileID: 21300000, guid: 6915ab2b636d27f459d9b336e0025f86, type: 3}
+    description: The lungs help the body breathe. They bring oxygen into the body.
+      Oxygen is needed for energy. The lungs remove carbon dioxide. This gas is waste
+      from the body. The lungs expand when breathing in. They shrink when breathing
+      out. Air travels through tubes to the lungs. The lungs are soft and spongy.
+      They are protected by the rib cage. The lungs work with the heart. They help
+      keep blood healthy. The lungs help control breathing speed. They support physical
+      activity. Healthy lungs improve endurance. Lung damage makes breathing hard.
+      They are essential for life.
+  - organName: Esophagus
+    organSprite: {fileID: 21300000, guid: aebd13b63c0c2874ca9866c7327c07ef, type: 3}
+    description: The esophagus is a long tube. It connects the mouth to the stomach.
+      Food travels through the esophagus. Muscles push food downward. This movement
+      is called peristalsis. The esophagus does not digest food. It only moves food.
+      The esophagus works automatically. It helps swallowing. Food moves even when
+      upside down. The esophagus protects the airway. It opens and closes at the
+      right time. It prevents food from going the wrong way. The lining is smooth.
+      This helps food slide easily. A healthy esophagus prevents choking. It plays
+      a key role in digestion.
 --- !u!1001 &1138526895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74300,6 +75445,109 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5545149646685965750, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
   m_PrefabInstance: {fileID: 1843077609}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1242467320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242467321}
+  - component: {fileID: 1242467324}
+  - component: {fileID: 1242467323}
+  - component: {fileID: 1242467322}
+  m_Layer: 0
+  m_Name: BKCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1242467321
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242467320}
+  m_LocalRotation: {x: 0.000000029802322, y: -0.7071068, z: 0.7071068, w: 0.000000044703484}
+  m_LocalPosition: {x: 0, y: 0, z: 0.25255045}
+  m_LocalScale: {x: 0.0049669384, y: 0.0037970324, z: 0.004103348}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 548297990}
+  - {fileID: 1137790103}
+  m_Father: {fileID: 1101017883}
+  m_LocalEulerAnglesHint: {x: 90, y: -180, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.067, y: 0.3716529}
+  m_SizeDelta: {x: 450, y: 600}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1242467322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242467320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1242467323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242467320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1242467324
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242467320}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1242546007
 GameObject:
   m_ObjectHideFlags: 0
@@ -77552,6 +78800,145 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300453931}
   m_Mesh: {fileID: 4300012, guid: bf1b95fba89fb2e438e098ef4361e389, type: 3}
+--- !u!1 &1300485195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300485198}
+  - component: {fileID: 1300485197}
+  - component: {fileID: 1300485196}
+  m_Layer: 0
+  m_Name: OrganDescriptionText3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1300485196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300485195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "The ankle bone helps connect the dog\u2019s lower leg to the paw. It allows
+    the foot to bend and move while walking or running. This bone helps absorb shock
+    when the dog jumps or lands. It gives stability to the back leg. \n\nThe ankle
+    is important for balance and smooth movement."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 13
+  m_fontSizeBase: 13
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 69.97
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -29.971138, y: -198.88847, z: 30.503262, w: -222.88089}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1300485197
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300485195}
+  m_CullTransparentMesh: 1
+--- !u!224 &1300485198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300485195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.60754, y: 0.65341, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1472764707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 22.5, y: 56.7}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1300611639
 GameObject:
   m_ObjectHideFlags: 0
@@ -78974,6 +80361,52 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1872078342}
   m_SourcePrefab: {fileID: 100100000, guid: 66d21281cb8198243a27bfc99335d986, type: 3}
+--- !u!1 &1322343425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322343426}
+  - component: {fileID: 1322343427}
+  m_Layer: 0
+  m_Name: LeftPage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1322343426
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322343425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.54861}
+  m_LocalScale: {x: 1.5004725, y: 1.4287493, z: 1.4287493}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1070875123}
+  - {fileID: 1710225377}
+  m_Father: {fileID: 548297990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80.63501, y: 19.46443}
+  m_SizeDelta: {x: 133.87001, y: 39.271137}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1322343427
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322343425}
+  m_CullTransparentMesh: 1
 --- !u!1 &1323762255
 GameObject:
   m_ObjectHideFlags: 0
@@ -81490,7 +82923,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -85860,6 +87293,51 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1472764706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472764707}
+  - component: {fileID: 1472764708}
+  m_Layer: 0
+  m_Name: RightPage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1472764707
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472764706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.4}
+  m_LocalScale: {x: 1.5004725, y: 1.4287493, z: 1.4287493}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1300485198}
+  m_Father: {fileID: 548297990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 247.2, y: -0.15097046}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1472764708
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472764706}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1474647386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88399,6 +89877,78 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1001 &1532856195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6511836
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6511836
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6511836
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.255
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.526
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99973893
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.022848275
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.618
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      propertyPath: m_Name
+      value: emptyshelf
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 39669600}
+  m_SourcePrefab: {fileID: 100100000, guid: 928a13ed8478d474e8561ec2ed8c2a03, type: 3}
 --- !u!1 &1534163975
 GameObject:
   m_ObjectHideFlags: 0
@@ -93610,6 +95160,151 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1657259120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657259124}
+  - component: {fileID: 1657259123}
+  - component: {fileID: 1657259122}
+  - component: {fileID: 1657259121}
+  m_Layer: 0
+  m_Name: PrevButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1657259121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657259120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1657259122}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 273370893}
+        m_TargetAssemblyTypeName: BookAnatomyController, Assembly-CSharp
+        m_MethodName: PrevPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137790105}
+        m_TargetAssemblyTypeName: LibraryBookController, Assembly-CSharp
+        m_MethodName: PrevPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1657259122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657259120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1657259123
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657259120}
+  m_CullTransparentMesh: 1
+--- !u!224 &1657259124
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657259120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.58093, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 582945739}
+  m_Father: {fileID: 548297990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19, y: -267}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1658587557
 GameObject:
   m_ObjectHideFlags: 0
@@ -100631,6 +102326,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709075508}
   m_CullTransparentMesh: 1
+--- !u!1 &1710225374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710225377}
+  - component: {fileID: 1710225376}
+  - component: {fileID: 1710225375}
+  m_Layer: 0
+  m_Name: OrganNameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1710225375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710225374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Visceral Anatomy
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: -0.0021610127, z: -23.61626, w: 11.989849}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1710225376
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710225374}
+  m_CullTransparentMesh: 1
+--- !u!224 &1710225377
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710225374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.5147918, y: 0.5401745, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322343426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.1, y: 123.8}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1712325079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120140,6 +121971,151 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807740712}
   m_Mesh: {fileID: 7477690839607240098, guid: 3885c4911dd603246bed92d97691f1df, type: 3}
+--- !u!1 &1807959799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1807959803}
+  - component: {fileID: 1807959802}
+  - component: {fileID: 1807959801}
+  - component: {fileID: 1807959800}
+  m_Layer: 0
+  m_Name: NextButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1807959800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807959799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1807959801}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 273370893}
+        m_TargetAssemblyTypeName: BookAnatomyController, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137790105}
+        m_TargetAssemblyTypeName: LibraryBookController, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1807959801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807959799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1807959802
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807959799}
+  m_CullTransparentMesh: 1
+--- !u!224 &1807959803
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807959799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9999928}
+  m_LocalScale: {x: 0.58093, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 962023617}
+  m_Father: {fileID: 548297990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 247.1, y: -267.00195}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1808859524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120259,7 +122235,7 @@ Transform:
   m_GameObject: {fileID: 1809891514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.574, y: 3.86, z: 40.88}
+  m_LocalPosition: {x: -29.744, y: 3.363, z: 40.557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120950,6 +122926,92 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813991285}
   m_CullTransparentMesh: 1
+--- !u!1 &1814050188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814050189}
+  - component: {fileID: 1814050191}
+  - component: {fileID: 1814050190}
+  m_Layer: 0
+  m_Name: bool_p_1_14 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814050189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814050188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1333, y: 0.19799998, z: -0.0152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 62939852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1814050190
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814050188}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -2845330151154387134, guid: e88748965fbaf0e459e6bd855bb8c45c, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1814050191
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814050188}
+  m_Mesh: {fileID: -7324515135522576235, guid: e88748965fbaf0e459e6bd855bb8c45c, type: 3}
 --- !u!4 &1814484082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c15c78374a851e04ba7c06d2f6287b49, type: 3}
@@ -133831,6 +135893,7 @@ GameObject:
   - component: {fileID: 1984109236}
   - component: {fileID: 1984109235}
   - component: {fileID: 1984109234}
+  - component: {fileID: 1984109238}
   m_Layer: 0
   m_Name: BKCanvas
   m_TagString: Untagged
@@ -133922,6 +135985,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0.067, y: 0.3716529}
   m_SizeDelta: {x: 450, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1984109238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984109233}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &1984761820
 GameObject:
   m_ObjectHideFlags: 0
@@ -137547,7 +139629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2080801802
 RectTransform:
   m_ObjectHideFlags: 0
@@ -138295,7 +140377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ankle
+  m_text: Skeletal Anatomy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -187655,6 +189737,7 @@ SceneRoots:
   - {fileID: 1326784877}
   - {fileID: 1084773237}
   - {fileID: 812074856}
+  - {fileID: 1532856195}
   - {fileID: 646597399}
   - {fileID: 553525733}
   - {fileID: 2122605265}
@@ -187679,6 +189762,7 @@ SceneRoots:
   - {fileID: 741625574}
   - {fileID: 501243500}
   - {fileID: 1809891515}
+  - {fileID: 273370897}
   - {fileID: 2080801802}
   - {fileID: 515902502}
   - {fileID: 962236039}
