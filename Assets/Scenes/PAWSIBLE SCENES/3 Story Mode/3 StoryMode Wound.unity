@@ -16958,10 +16958,7 @@ PrefabInstance:
       addedObject: {fileID: 1967414937}
     - targetCorrespondingSourceObject: {fileID: 4843263358228554029, guid: 76b11e64bce04214494e29984ec1c87a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1967414941}
-    - targetCorrespondingSourceObject: {fileID: 4843263358228554029, guid: 76b11e64bce04214494e29984ec1c87a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1967414938}
+      addedObject: {fileID: 1967414944}
   m_SourcePrefab: {fileID: 100100000, guid: 76b11e64bce04214494e29984ec1c87a, type: 3}
 --- !u!4 &262503830 stripped
 Transform:
@@ -17702,7 +17699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &287377067
 Transform:
   m_ObjectHideFlags: 0
@@ -20640,7 +20637,7 @@ MonoBehaviour:
   holdDurationSeconds: 0.1
   resetTimerOnRelease: 0
   timerCountsOnlyWhileSelected: 0
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!65 &391963489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22031,7 +22028,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!114 &430629025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24694,7 +24691,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!114 &475253411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26481,9 +26478,9 @@ RectTransform:
   - {fileID: 1073680546}
   m_Father: {fileID: 1973703587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45.15, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536729653
@@ -27726,9 +27723,9 @@ RectTransform:
   - {fileID: 1115559209}
   m_Father: {fileID: 1973703587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 185.45001, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581501767
@@ -28694,15 +28691,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.13
+      value: -36.187
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.02
+      value: 3.556
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.13
+      value: 21.735
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60603,7 +60600,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!114 &1475096545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61206,7 +61203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1493787912}
-  - component: {fileID: 1493787920}
+  - component: {fileID: 1493787922}
   - component: {fileID: 1493787915}
   - component: {fileID: 1493787914}
   - component: {fileID: 1493787916}
@@ -61218,7 +61215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1493787912
 Transform:
   m_ObjectHideFlags: 0
@@ -61423,138 +61420,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1493787920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493787911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd0e85c49e7fe545a74704a45195bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1569847720}
-  npcIcon: {fileID: 840515505}
-  nextButton: {fileID: 1545194912}
-  prevButton: {fileID: 536729653}
-  skipButton: {fileID: 581501767}
-  dialogueSegments:
-  - segmentName: Handwashing
-    dialogueLines:
-    - "If you\u2019re ready, let's kick things off."
-    - Before we start, we need to make sure that your hands are clean
-    - Now, head to your right, and turn on the faucet to wash your hands.
-    - Then, use the soap for a thorough cleaning.
-    - Now, remove the bubbles by rinsing off again.
-    - Don't forget to dry your hands, use the sterile towel
-    - You can throw away the towel inside the bin below the table
-    - Now for the final touch, use the sanitizer!
-    voiceClips:
-    - {fileID: 8300000, guid: 252ef468c19195743afb039010e5b1a6, type: 3}
-    - {fileID: 8300000, guid: f2f7f32632369984ea0e88ff8595e61a, type: 3}
-    - {fileID: 8300000, guid: 6450d55bfe50f544fa7de630723cb467, type: 3}
-    - {fileID: 8300000, guid: fa78b483ab7650649b79f346e8568a94, type: 3}
-    - {fileID: 8300000, guid: c06add01430e3c746809947cefcdc941, type: 3}
-    - {fileID: 8300000, guid: a0f75a0f7b576aa4b9450a4b8573cf72, type: 3}
-    - {fileID: 8300000, guid: f3b6b79ed10e8f847859d17aba3cb6cf, type: 3}
-    - {fileID: 8300000, guid: f771158379ba3aa4f9ac2b36c42072c9, type: 3}
-  - segmentName: GlovesCoat
-    dialogueLines:
-    - After cleaning your hands, select the gloves to wear them!
-    - Check out the lab coats that we have as well and take one.
-    - Now you're ready to move on to the vaccinesNow you're ready to move on to the
-      vaccines!
-    voiceClips:
-    - {fileID: 8300000, guid: f2194825c6b63784f8c2e0aa34e54d26, type: 3}
-    - {fileID: 8300000, guid: 6cd6f1c634f991745a2a74a494edabaa, type: 3}
-    - {fileID: 8300000, guid: 651cc2a5bb3e21e4ba2c845739438086, type: 3}
-  - segmentName: Vaccine Prep
-    dialogueLines:
-    - Head to the vaccine workstations to see more.
-    - Here, you can check on the name of each vial by pointing at them.
-    - "For now, we\u2019ll work with DHPP and Sterile Diluent"
-    - It's the one with the white DHPP label with a dog icon. Also, we'll mix it
-      with the sterile diluent so pick it up as well, and place them on the tray
-      on the table.
-    - Now, pick up the syringe and draw up the entire liquid from the sterile diluent
-      vial.
-    - For best practice, we have to replace the needle of our syringe every single
-      use.
-    - To do that, remove the needle along with the cap and put it in the hazards
-      bin.
-    - Now, to replace it, take a new cap with a syringe from the tray on the work
-      station and put it on your syringe.
-    - "Now we\u2019re ready to mix it."
-    - To proceed, mix the sterile diluent inside the vial of DHPP. Since it contains
-      powder only, this will allow the liquid to enter.
-    - Make sure that you don't pull out the injection right away and gently mix the
-      vial by rotating it gently while the syringe is still attached
-    - This allows us to avoid clumps, and mix the compounds thoroughly before we
-      draw up the mixture again.
-    voiceClips:
-    - {fileID: 8300000, guid: 8071e92e7b66a274885ab5779ac2da24, type: 3}
-    - {fileID: 8300000, guid: 94cd40bb66392a24eb786179e271b0ab, type: 3}
-    - {fileID: 8300000, guid: 75c524871643f1948bc8c854a6669e77, type: 3}
-    - {fileID: 8300000, guid: 1d8459b2fa19e434e94f40559baf33fb, type: 3}
-    - {fileID: 8300000, guid: ee967789e1488da4daee057f537474de, type: 3}
-    - {fileID: 8300000, guid: 035e0ca935199224c8ebebd87b922e7f, type: 3}
-    - {fileID: 8300000, guid: 48652619a0aa08f4280c0744386d4d86, type: 3}
-    - {fileID: 8300000, guid: a1782aa5070054648b5b3c9fd608ee78, type: 3}
-    - {fileID: 8300000, guid: dd11d6de40ff75d468c7bee91ffe61b7, type: 3}
-    - {fileID: 8300000, guid: 46bfa1639b1115c4085f6944c9698a3d, type: 3}
-    - {fileID: 8300000, guid: 574d40ab3d0207848bd44e90f5b052da, type: 3}
-    - {fileID: 8300000, guid: dee66271ae796d34aacc5c1e48e7c36c, type: 3}
-  - segmentName: Injection
-    dialogueLines:
-    - By the way, you should also know that from time to time, and after procedures,
-      we should give positive reinforcement to our pups such as treats.
-    - This helps prevent trauma for our pups and think that whenever they enter clinics
-      like these, all they get is pain.
-    - You can get some on our cart and feed it to our pups if you want as it also
-      helps ease their nervousness sometimes.
-    - Now, just like before, we need to replace the needle first.
-    - "Before anything else, you should know that for best practice, we need to check
-      our pup\u2019s temperature. To do that, we need to use the Infrared Thermometer."
-    - "We have one on the other workstation on the left. Take it and scan our brave
-      pup\u2019s temperature"
-    - "It seems we can proceed with this. He doesn\u2019t seem to have a fever"
-    - To proceed, draw up the vaccine and position yourself where you can easily
-      reach for the dog's shoulders.
-    - "The best position to insert the needle is at the center of their shoulders
-      where there\u2019s a lot of skin so it won\u2019t hurt them too much."
-    - Now, try your best to be as gentle as possible to inject it to the designated
-      spot of our gentle fur baby.
-    - Amazing! You're a natural at this and our fur baby was so brave! It seems he's
-      able to relax with you.
-    voiceClips:
-    - {fileID: 8300000, guid: 5b2083c0e70ac8c4095b21eb4600555d, type: 3}
-    - {fileID: 8300000, guid: 0a0ca54766e83f6428d62ac6fc699de9, type: 3}
-    - {fileID: 8300000, guid: d031711145c3a114382eb266d066d6b3, type: 3}
-    - {fileID: 8300000, guid: b82b9acedad7717469c8a764309d02f7, type: 3}
-    - {fileID: 8300000, guid: 27d25764e6f1a104690b3fa3ab62dc6f, type: 3}
-    - {fileID: 8300000, guid: 3cbe76ba58e6024459cb2ab0bf5bebfb, type: 3}
-    - {fileID: 8300000, guid: 52de191ecfd024c4c90cc5d563a108ec, type: 3}
-    - {fileID: 8300000, guid: 9e06199ae2e93c442bce7fa7182bdc4a, type: 3}
-    - {fileID: 8300000, guid: 9e2d5d60d98e0f540a060c3e586ec030, type: 3}
-    - {fileID: 8300000, guid: 8443aa5cee7a5b947b9f852bc5e926c9, type: 3}
-    - {fileID: 8300000, guid: e0663abfe36fada4d85a4188bfb4642a, type: 3}
-  - segmentName: Hallway
-    dialogueLines:
-    - If you want to explore more, you can now proceed to the next module. The Wound
-      Treatment
-    - Or if you want, you can also choose a new task and try to administer a different
-      vaccine. You can talk to me and choose on the list of vaccines.
-    voiceClips:
-    - {fileID: 8300000, guid: dc0c97378faf66246afbcb09288c715a, type: 3}
-    - {fileID: 8300000, guid: cecb1061b5411964ab7ee3520b95bc1c, type: 3}
-  voiceSource: {fileID: 1493787921}
-  audioFolderPath: Audio/Vaccination_StoryMode
-  typingSpeed: 0.03
-  cutsceneMode: 0
-  npcAnimator: {fileID: 0}
-  isTalkingParam: IsTalking
 --- !u!82 &1493787921
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61652,6 +61517,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1493787922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493787911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0240852886389c743a10c43fba03dbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1569847720}
+  npcIcon: {fileID: 840515505}
+  nextButton: {fileID: 1545194912}
+  prevButton: {fileID: 536729653}
+  skipButton: {fileID: 581501767}
+  dialogueSegments:
+  - segmentName: Handwashing
+    dialogueLines:
+    - "Now that everything is set up, let\u2019s begin by preparing your hands."
+    - Before we start, we need to make sure that your hands are clean
+    - Now, head to your right, and turn on the faucet to wash your hands.
+    - Then, use the soap for a thorough cleaning.
+    - Now, remove the bubbles by rinsing off again.
+    - Don't forget to dry your hands, use the sterile towel
+    - You can throw away the towel inside the bin below the table
+    - Now for the final touch, use the sanitizer!
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - segmentName: GlovesCoat
+    dialogueLines:
+    - After cleaning your hands, select the gloves to wear them!
+    - Check out the lab coats that we have as well and take one.
+    - "You\u2019re now ready to begin wound stabilization. Start by checking the
+      dog on the table."
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  voiceSource: {fileID: 1493787921}
+  audioFolderPath: Audio/Vaccination_StoryMode
+  typingSpeed: 0.03
+  cutsceneMode: 0
+  npcAnimator: {fileID: 0}
+  isTalkingParam: IsTalking
 --- !u!4 &1498952458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7a0bf6f1e34a354e8f689bfcea93124, type: 3}
@@ -63766,9 +63684,9 @@ RectTransform:
   - {fileID: 465531148}
   m_Father: {fileID: 1973703587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325.75, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1545194912
@@ -63882,7 +63800,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!64 &1549357538
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67885,7 +67803,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 0
   timerCountsOnlyWhileSelected: 0
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!114 &1747203881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68453,7 +68371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1769373266
 Transform:
   m_ObjectHideFlags: 0
@@ -69038,7 +68956,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 0
   timerCountsOnlyWhileSelected: 0
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!114 &1786615358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70347,7 +70265,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!82 &1826428829
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72015,7 +71933,7 @@ MonoBehaviour:
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
   wrongFeedbackCooldown: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
   waterTap: {fileID: 475253405}
 --- !u!65 &1883774613
 BoxCollider:
@@ -73275,7 +73193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1932448497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74496,7 +74414,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.06, y: 0.42, z: -0.91}
   m_Center: {x: 0.014026651, y: -0.040374465, z: -0.47}
---- !u!114 &1967414938
+--- !u!114 &1967414944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74505,7 +74423,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967414935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf9b619296ee754ea59a66896547289, type: 3}
+  m_Script: {fileID: 11500000, guid: e9ab6112625ed574eb95cfff7a6c66cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allowedStages:
@@ -74521,20 +74439,8 @@ MonoBehaviour:
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
   wrongFeedbackCooldown: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 1493787922}
   waterTap: {fileID: 1826428830}
---- !u!114 &1967414941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967414935}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35db4fb5ecf2524a8da5c4e137d7443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1968048957
 GameObject:
   m_ObjectHideFlags: 0
@@ -81483,7 +81389,7 @@ MonoBehaviour:
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
   wrongFeedbackCooldown: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
   waterTap: {fileID: 1475096541}
 --- !u!65 &2060613219
 BoxCollider:
@@ -82728,7 +82634,7 @@ MonoBehaviour:
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 1493787920}
+  dialogueManager: {fileID: 0}
 --- !u!1 &2097576317
 GameObject:
   m_ObjectHideFlags: 0
