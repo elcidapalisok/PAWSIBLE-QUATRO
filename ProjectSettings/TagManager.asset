@@ -67,6 +67,7 @@ TagManager:
   - SamplesInfoPanel
   - dog
   - BandagePad
+  - NeedleTip
   layers:
   - Default
   - TransparentFX
@@ -76,7 +77,7 @@ TagManager:
   - UI
   - Hands
   - Needle
-  - 
+  - NeedleCap
   - 
   - 
   - 
