@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.IO;
 
 public class WoundDialogueManager : MonoBehaviour
 {
@@ -22,12 +21,11 @@ public class WoundDialogueManager : MonoBehaviour
     private int currentSegmentIndex = 0;
     private int currentDialogueIndex = 0;
     private Coroutine typingCoroutine;
-    private bool canProceed = true;
 
     [Header("Audio Settings")]
     public AudioSource voiceSource;
 
-    [Tooltip("Optional fallback: Relative path inside Resources folder (e.g. 'Audio/Vaccination_StoryMode')")]
+    [Tooltip("Not used unless you implement Resources.Load audio auto-loading.")]
     public string audioFolderPath = "Audio/Vaccination_StoryMode";
 
     [Header("Typewriter Settings")]
@@ -156,7 +154,10 @@ public class WoundDialogueManager : MonoBehaviour
         StopVoice();
 
         string line = segment.dialogueLines[currentDialogueIndex];
+
+        // ✅ Start typing + play voice for this line
         typingCoroutine = StartCoroutine(TypeText(line));
+        PlayVoiceForCurrentLine();
 
         if (prevButton) prevButton.interactable = currentDialogueIndex > 0;
 
@@ -168,8 +169,6 @@ public class WoundDialogueManager : MonoBehaviour
 
     private IEnumerator TypeText(string line)
     {
-        canProceed = false;
-
         if (dialogueText != null)
             dialogueText.text = "";
 
@@ -186,18 +185,16 @@ public class WoundDialogueManager : MonoBehaviour
             }
         }
 
-        canProceed = true;
-
-        // ✅ If this line requires a trigger, STOP here and wait for an external call to AdvanceDialogue().
+        // ✅ If this line requires a trigger, STOP here and wait for AdvanceDialogue()
         string key = NormalizeSegmentKey(GetCurrentSegmentName());
         if (triggerRequiredLines.Contains((key, currentDialogueIndex)))
             yield break;
 
-        // Optional wait for voice if you use it (safe even if voiceSource is null)
+        // ✅ Wait for voice to finish (if any) before auto-advance
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
 
         SetTalking(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         // Auto-advance for non-trigger lines
         AdvanceDialogue();
@@ -210,13 +207,49 @@ public class WoundDialogueManager : MonoBehaviour
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
         }
-        canProceed = true;
     }
 
     private void StopVoice()
     {
         if (voiceSource != null && voiceSource.isPlaying)
             voiceSource.Stop();
+    }
+
+    // ✅ Plays the correct voice clip for the current segment+line
+    private void PlayVoiceForCurrentLine()
+    {
+        if (voiceSource == null)
+        {
+            Debug.LogWarning("⚠️ VoiceSource is NULL. Assign an AudioSource in the Inspector.");
+            return;
+        }
+
+        if (dialogueSegments == null || dialogueSegments.Count == 0) return;
+
+        var segment = dialogueSegments[currentSegmentIndex];
+        if (segment == null || segment.voiceClips == null) return;
+
+        if (currentDialogueIndex < 0 || currentDialogueIndex >= segment.voiceClips.Count)
+        {
+            Debug.LogWarning($"⚠️ Voice clip index out of range: {currentDialogueIndex}/{segment.voiceClips.Count}");
+            return;
+        }
+
+        AudioClip clip = segment.voiceClips[currentDialogueIndex];
+        if (clip == null)
+        {
+            Debug.LogWarning($"⚠️ No voice clip assigned for [{segment.segmentName}:{currentDialogueIndex}]");
+            return;
+        }
+
+        // Recommended: UI/dialogue voice should be 2D
+        voiceSource.spatialBlend = 0f;
+
+        voiceSource.Stop();
+        voiceSource.clip = clip;
+        voiceSource.Play();
+
+        Debug.Log($"🔊 Playing voice: {clip.name} for [{segment.segmentName}:{currentDialogueIndex}]");
     }
 
     // ✅ FIXED: this now moves to the next segment if you are at the last line
@@ -280,7 +313,7 @@ public class WoundDialogueManager : MonoBehaviour
         if (finishedSegment == "handwashing")
         {
             if (WoundDialogueChecklist.Instance != null)
-                WoundDialogueChecklist.Instance.CompleteTask("Sanitize");
+                WoundDialogueChecklist.Instance.CompleteTask("Sanitize Hands");
             else
                 Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is null (Checklist not in scene?)");
         }
