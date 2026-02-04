@@ -19,15 +19,38 @@ public class HazardBinController : MonoBehaviour
     [Tooltip("Assign a larger trigger collider around the bin to auto-open when the user enters.")]
     [SerializeField] private Collider proximityTrigger;
 
-    [Header("Dialogue Advancement")]
-    [Tooltip("Tag used to identify towel objects.")]
-    [SerializeField] private string towelTag = "towel";
+    [Header("Feedback")]
+    [Tooltip("Spawn feedback above bin by this offset.")]
+    [SerializeField] private Vector3 feedbackOffset = new Vector3(0f, 0.25f, 0f);
 
-    [Tooltip("If true, placing a towel advances dialogue at Handwashing:6.")]
+    [Header("Content Behavior")]
+    [Tooltip("Destroy objects after the bin closes.")]
+    [SerializeField] private bool destroyContentsOnClose = true;
+
+    [Header("Dialogue: Towel Disposal (Optional)")]
     [SerializeField] private bool advanceDialogueOnTowelDrop = true;
+    [SerializeField] private string towelTag = "towel";
+    [SerializeField] private string towelTargetSegmentName = "Handwashing";
+    [SerializeField] private int towelTargetLineIndex = 6;
 
-    [SerializeField] private string targetSegmentName = "Handwashing";
-    [SerializeField] private int targetLineIndex = 6;
+    [Header("Dialogue: Needle Disposal Steps")]
+    [SerializeField] private bool advanceDialogueOnNeedleDrop = true;
+    [SerializeField] private string needleTag = "Needle";
+
+    [System.Serializable]
+    public class NeedleDisposalStage
+    {
+        public string segmentName;
+        public int lineIndex;
+        [HideInInspector] public bool completed;
+    }
+
+    [SerializeField]
+    private List<NeedleDisposalStage> needleDisposalStages = new List<NeedleDisposalStage>()
+    {
+        new NeedleDisposalStage { segmentName = "Vaccine Prep", lineIndex = 6 },
+        new NeedleDisposalStage { segmentName = "Injection", lineIndex = 3 }
+    };
 
     private Animator animator;
     private XRSimpleInteractable interactable;
@@ -43,25 +66,21 @@ public class HazardBinController : MonoBehaviour
         interactable.hoverEntered.AddListener(OnHoverEnter);
         interactable.hoverExited.AddListener(OnHoverExit);
 
-        // Safety checks
         if (contentsTrigger == null)
         {
-            Debug.LogWarning($"{name}: ContentsTrigger is not assigned. Bin will not detect dropped objects.");
+            Debug.LogWarning(name + ": ContentsTrigger is not assigned. Bin will not detect dropped objects.");
         }
         else if (!contentsTrigger.isTrigger)
         {
-            Debug.LogWarning($"{name}: ContentsTrigger should be set as IsTrigger.");
+            Debug.LogWarning(name + ": ContentsTrigger should be set as IsTrigger.");
         }
 
         if (proximityTrigger != null && !proximityTrigger.isTrigger)
         {
-            Debug.LogWarning($"{name}: ProximityTrigger should be set as IsTrigger.");
+            Debug.LogWarning(name + ": ProximityTrigger should be set as IsTrigger.");
         }
     }
 
-    // -------------------------
-    // XR HOVER EVENTS (existing behavior)
-    // -------------------------
     private void OnHoverEnter(HoverEnterEventArgs args)
     {
         SetOpen(true);
@@ -70,12 +89,11 @@ public class HazardBinController : MonoBehaviour
     private void OnHoverExit(HoverExitEventArgs args)
     {
         SetOpen(false);
-        Invoke(nameof(DestroyContents), destroyDelay);
+
+        if (destroyContentsOnClose)
+            Invoke(nameof(DestroyContents), destroyDelay);
     }
 
-    // -------------------------
-    // TRIGGER ROUTING
-    // -------------------------
     private void OnTriggerEnter(Collider other)
     {
         HandleContentsEnter(other);
@@ -86,51 +104,90 @@ public class HazardBinController : MonoBehaviour
         HandleContentsExit(other);
     }
 
-    // -------------------------
-    // CONTENT HANDLING
-    // -------------------------
     private void HandleContentsEnter(Collider other)
     {
         if (other == null) return;
 
-        if (!contents.Contains(other.gameObject))
+        GameObject obj = other.gameObject;
+
+        if (!contents.Contains(obj))
+            contents.Add(obj);
+
+        if (advanceDialogueOnTowelDrop && !towelStepCompleted && obj.CompareTag(towelTag))
         {
-            contents.Add(other.gameObject);
+            TryCompleteTowelStep();
         }
 
-        // Dialogue advancement: towel dropped
-        if (advanceDialogueOnTowelDrop && !towelStepCompleted && other.CompareTag(towelTag))
+        if (advanceDialogueOnNeedleDrop && obj.CompareTag(needleTag))
         {
-            DialogueManager dm = DialogueManager.Instance;
-            if (dm != null && dm.IsAtStage(targetSegmentName, targetLineIndex))
+            TryCompleteNeedleStep();
+        }
+    }
+
+    private void TryCompleteTowelStep()
+    {
+        DialogueManager dm = DialogueManager.Instance;
+        if (dm == null) return;
+
+        if (dm.IsAtStage(towelTargetSegmentName, towelTargetLineIndex))
+        {
+            towelStepCompleted = true;
+
+            ScoreManager.Instance?.RegisterCorrect(towelTargetSegmentName, towelTargetLineIndex);
+            FeedbackManager.Instance?.ReportCorrect(GetFeedbackSpawnPosition());
+
+            dm.AdvanceDialogue();
+
+            Debug.Log(name + ": Towel detected in bin. Advanced dialogue (" + towelTargetSegmentName + ":" + towelTargetLineIndex + ").");
+        }
+        else
+        {
+            FeedbackManager.Instance?.ReportWrong(GetFeedbackSpawnPosition());
+
+            ScoreManager.Instance?.RegisterMistake(
+                dm.GetCurrentSegmentName(),
+                dm.GetCurrentLineIndex(),
+                "Towel dropped in bin at wrong stage"
+            );
+
+            Debug.Log(name + ": Towel detected but not at correct stage. No advance.");
+        }
+    }
+
+    private void TryCompleteNeedleStep()
+    {
+        DialogueManager dm = DialogueManager.Instance;
+        if (dm == null) return;
+
+        for (int i = 0; i < needleDisposalStages.Count; i++)
+        {
+            NeedleDisposalStage stage = needleDisposalStages[i];
+            if (stage == null) continue;
+            if (stage.completed) continue;
+
+            if (dm.IsAtStage(stage.segmentName, stage.lineIndex))
             {
-                towelStepCompleted = true;
+                stage.completed = true;
 
-                // --- SCORE: correct completion of this step ---
-                ScoreManager.Instance?.RegisterCorrect(targetSegmentName, targetLineIndex);
-
+                ScoreManager.Instance?.RegisterCorrect(stage.segmentName, stage.lineIndex);
                 FeedbackManager.Instance?.ReportCorrect(GetFeedbackSpawnPosition());
+
                 dm.AdvanceDialogue();
 
-                Debug.Log($"{name}: Towel detected in bin. Advanced dialogue ({targetSegmentName}:{targetLineIndex}).");
-            }
-            else
-            {
-                // Wrong feedback + scoring
-                FeedbackManager.Instance?.ReportWrong(GetFeedbackSpawnPosition());
-
-                if (dm != null)
-                {
-                    ScoreManager.Instance?.RegisterMistake(
-                        dm.GetCurrentSegmentName(),
-                        dm.GetCurrentLineIndex(),
-                        "Towel dropped in bin at wrong stage"
-                    );
-                }
-
-                Debug.Log($"{name}: Towel detected but not at correct stage. No advance.");
+                Debug.Log(name + ": Needle detected in bin. Advanced dialogue (" + stage.segmentName + ":" + stage.lineIndex + ").");
+                return;
             }
         }
+
+        FeedbackManager.Instance?.ReportWrong(GetFeedbackSpawnPosition());
+
+        ScoreManager.Instance?.RegisterMistake(
+            dm.GetCurrentSegmentName(),
+            dm.GetCurrentLineIndex(),
+            "Needle dropped in hazards bin at wrong stage"
+        );
+
+        Debug.Log(name + ": Needle detected but not at a valid stage. No advance.");
     }
 
     private void HandleContentsExit(Collider other)
@@ -144,17 +201,12 @@ public class HazardBinController : MonoBehaviour
         foreach (GameObject obj in contents)
         {
             if (obj != null)
-            {
                 Destroy(obj);
-            }
         }
 
         contents.Clear();
     }
 
-    // -------------------------
-    // OPEN/CLOSE HELPERS
-    // -------------------------
     private void SetOpen(bool open)
     {
         if (animator == null) return;
@@ -163,21 +215,23 @@ public class HazardBinController : MonoBehaviour
 
     private Vector3 GetFeedbackSpawnPosition()
     {
-        // Spawn feedback above bin
-        return transform.position + Vector3.up * 0.25f;
+        return transform.position + feedbackOffset;
     }
 
-    // -------------------------
-    // PUBLIC API (optional)
-    // -------------------------
     public void ResetTowelStep()
     {
         towelStepCompleted = false;
     }
 
-    // -------------------------
-    // SAFETY
-    // -------------------------
+    public void ResetNeedleSteps()
+    {
+        for (int i = 0; i < needleDisposalStages.Count; i++)
+        {
+            if (needleDisposalStages[i] != null)
+                needleDisposalStages[i].completed = false;
+        }
+    }
+
     private void OnDestroy()
     {
         if (interactable != null)

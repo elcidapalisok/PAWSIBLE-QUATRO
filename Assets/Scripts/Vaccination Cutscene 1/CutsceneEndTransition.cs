@@ -5,7 +5,7 @@ public class CutsceneEndTransition : MonoBehaviour
 {
     [Header("Scene Transition")]
     [Tooltip("Exact name of the scene to load after the cutscene ends")]
-    public string nextSceneName = "StoryMode Vaccine";
+    public string nextSceneName = "2 StoryMode Vaccine";
 
     // This method will be called by the Signal Receiver
     public void OnCutsceneEndSignal()

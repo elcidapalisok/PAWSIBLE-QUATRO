@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
         triggerRequiredLines.Add(("vaccineprep", 6));
         triggerRequiredLines.Add(("vaccineprep", 7));
         triggerRequiredLines.Add(("vaccineprep", 9));
-        triggerRequiredLines.Add(("vaccineprep", 10));
+
 
         triggerRequiredLines.Add(("injection", 3));
         triggerRequiredLines.Add(("injection", 5));
