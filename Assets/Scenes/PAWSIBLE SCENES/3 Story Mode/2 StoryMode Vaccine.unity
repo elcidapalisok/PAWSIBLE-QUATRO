@@ -8096,11 +8096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d04c00dc5d2e8446a647b6ded93067c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.624
+      value: 3.246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d04c00dc5d2e8446a647b6ded93067c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.312
+      value: 43.702
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d04c00dc5d2e8446a647b6ded93067c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27862,27 +27862,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.378
+      value: -45.352
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.391
+      value: 3.086
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.909
+      value: 40.611
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32919,7 +32919,7 @@ GameObject:
   - component: {fileID: 285049717}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (9)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36417,27 +36417,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.72
+      value: 0.53210884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.72
+      value: 0.53210884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.72
+      value: 0.53210884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.369
+      value: -45.346
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.395
+      value: 3.089
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.882
+      value: 43.547
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124377e0e5b127f4a83b162e8644514c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48680,7 +48680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 149bd6460e068a24a9c18666df52e1a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1155624
+      value: -5.1989975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 149bd6460e068a24a9c18666df52e1a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -59745,7 +59745,7 @@ GameObject:
   - component: {fileID: 555627134}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (3)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65164,7 +65164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.6
+      value: -50.91
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -65172,11 +65172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.12
+      value: 41.15
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9193706
+      value: 0.21850443
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -65184,7 +65184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.39339247
+      value: 0.975836
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -65196,7 +65196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 313.668
+      value: 154.758
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -75608,6 +75608,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eacd27fcdf34a2b44bca69cb4af2d088, type: 3}
       propertyPath: m_Name
       value: 5in1_vial
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eacd27fcdf34a2b44bca69cb4af2d088, type: 3}
+      propertyPath: m_TagString
+      value: 5in1
       objectReference: {fileID: 0}
     - target: {fileID: 4123656739576337771, guid: eacd27fcdf34a2b44bca69cb4af2d088, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -94076,7 +94080,7 @@ GameObject:
   - component: {fileID: 848429502}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (8)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97168,7 +97172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ca1528f314a02d4e99c736457b5367c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1095657
+      value: -5.193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ca1528f314a02d4e99c736457b5367c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -105714,27 +105718,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.71
+      value: 0.5247184
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.378
+      value: -45.352
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.391
+      value: 3.086
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.889
+      value: 42.075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -125134,7 +125138,7 @@ GameObject:
   - component: {fileID: 1146760756}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (4)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143242,7 +143246,7 @@ GameObject:
   - component: {fileID: 1282559711}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (6)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150250,7 +150254,7 @@ GameObject:
   - component: {fileID: 1345283515}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (5)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157991,7 +157995,7 @@ Transform:
   m_GameObject: {fileID: 1419859624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.59559, y: 2.18484, z: 42.54309}
+  m_LocalPosition: {x: -39.59559, y: 1.81, z: 41.939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -180424,7 +180428,7 @@ GameObject:
   - component: {fileID: 1617379465}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (10)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195458,7 +195462,7 @@ GameObject:
   - component: {fileID: 1791812769}
   m_Layer: 0
   m_Name: BreakableVial_Diluent (7)
-  m_TagString: 5in1
+  m_TagString: DiluentVial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196183,7 +196187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalScale.x
