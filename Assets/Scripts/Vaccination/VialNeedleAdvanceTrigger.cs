@@ -8,8 +8,18 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
     public int targetLineIndex = 4;
 
     [Header("Needle Detection")]
-    [Tooltip("Tag used on the needle tip collider (recommended).")]
     public string needleTipTag = "NeedleTip";
+
+    [Header("Syringe Animation (Optional)")]
+    public SyringePlungerAnimator syringeAnimator;
+    public PlungerAction actionOnSuccess = PlungerAction.None;
+
+    public enum PlungerAction
+    {
+        None,
+        Pull,
+        Push
+    }
 
     [Header("Feedback Spawn")]
     public Transform feedbackAnchor;
@@ -45,11 +55,9 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
         if (triggerOnce && fired) return;
         if (dialogueManager == null) return;
 
-        // Only react to the needle tip
         if (!other.CompareTag(needleTipTag))
             return;
 
-        // Success path: correct stage + trigger met
         if (dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
         {
             fired = true;
@@ -57,14 +65,20 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportCorrect(spawnPos);
 
-            // SCORE: correct completion of this stage
             ScoreManager.Instance?.RegisterCorrect(targetSegmentName, targetLineIndex);
+
+            if (syringeAnimator != null)
+            {
+                if (actionOnSuccess == PlungerAction.Pull)
+                    syringeAnimator.PlayPull();
+                else if (actionOnSuccess == PlungerAction.Push)
+                    syringeAnimator.PlayPush();
+            }
 
             dialogueManager.AdvanceDialogue();
             return;
         }
 
-        // Wrong-stage path (optional)
         if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
         {
             lastWrongTime = Time.time;
@@ -72,7 +86,6 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
             Vector3 spawnPos = GetFeedbackSpawnPosition();
             FeedbackManager.Instance?.ReportWrong(spawnPos);
 
-            // SCORE: mistake registered on actual current stage
             ScoreManager.Instance?.RegisterMistake(
                 dialogueManager.GetCurrentSegmentName(),
                 dialogueManager.GetCurrentLineIndex(),
