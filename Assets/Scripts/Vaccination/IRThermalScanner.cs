@@ -32,21 +32,28 @@ public class IRThermalScannerTrigger : MonoBehaviour
     [SerializeField] private string dialogueSegmentName = "Injection";
     [SerializeField] private int dialogueLineIndex = 5;
 
+    [Header("Feedback Spawn")]
+    public Transform feedbackAnchor;
+    public Vector3 feedbackOffset = new Vector3(0f, 0.15f, 0f);
+
+    [Header("Wrong Feedback")]
+    public bool showWrongFeedbackWhenNotAtStage = true;
+    [Min(0f)] public float wrongFeedbackCooldown = 1.0f;
+
     [Header("Scan Behavior")]
     [SerializeField] private bool oneScanPerEnter = true;
 
     private bool hasScannedThisEnter = false;
+    private float lastWrongTime = -999f;
 
     private void Awake()
     {
-        // Auto-assign scan collider to THIS object's collider if not set
         if (scanVolumeCollider == null)
             scanVolumeCollider = GetComponent<Collider>();
 
-        // Enforce: scan volume must be trigger
         if (scanVolumeCollider != null && !scanVolumeCollider.isTrigger)
         {
-            Debug.LogWarning($"[IRThermalScannerTrigger] '{scanVolumeCollider.name}' was not a trigger. Setting isTrigger = true.");
+            Debug.LogWarning("[IRThermalScannerTrigger] '" + scanVolumeCollider.name + "' was not a trigger. Setting isTrigger = true.");
             scanVolumeCollider.isTrigger = true;
         }
     }
@@ -54,17 +61,40 @@ public class IRThermalScannerTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (oneScanPerEnter && hasScannedThisEnter) return;
-
-        // If a specific scan volume collider is assigned, ensure THIS script is on that same object.
-        // (Unity doesn't tell us which collider on this object fired the trigger.)
         if (!IsDogMatch(other)) return;
 
         DoScanAndUIUpdate();
 
-        if (DialogueManager.Instance != null &&
-            DialogueManager.Instance.IsAtStage(dialogueSegmentName, dialogueLineIndex))
+        DialogueManager dm = DialogueManager.Instance;
+        if (dm == null) return;
+
+        if (dm.IsAtStage(dialogueSegmentName, dialogueLineIndex))
         {
-            DialogueManager.Instance.AdvanceDialogue();
+            Vector3 spawnPos = GetFeedbackSpawnPosition();
+            FeedbackManager.Instance?.ReportCorrect(spawnPos);
+
+            ScoreManager.Instance?.RegisterCorrect(dialogueSegmentName, dialogueLineIndex);
+
+            dm.AdvanceDialogue();
+
+            if (oneScanPerEnter)
+                hasScannedThisEnter = true;
+
+            return;
+        }
+
+        if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
+        {
+            lastWrongTime = Time.time;
+
+            Vector3 spawnPos = GetFeedbackSpawnPosition();
+            FeedbackManager.Instance?.ReportWrong(spawnPos);
+
+            ScoreManager.Instance?.RegisterMistake(
+                dm.GetCurrentSegmentName(),
+                dm.GetCurrentLineIndex(),
+                "Dog scanned with IR scanner at wrong stage"
+            );
         }
 
         if (oneScanPerEnter)
@@ -79,11 +109,9 @@ public class IRThermalScannerTrigger : MonoBehaviour
 
     private bool IsDogMatch(Collider other)
     {
-        // Primary: exact collider match
         if (dogTargetCollider != null)
             return other == dogTargetCollider;
 
-        // Fallback: layer + tag filters
         bool layerOk = (dogLayers.value & (1 << other.gameObject.layer)) != 0;
 
         bool tagOk = true;
@@ -99,11 +127,20 @@ public class IRThermalScannerTrigger : MonoBehaviour
         float f = (c * 9f / 5f) + 32f;
 
         if (celsiusText != null)
-            celsiusText.text = c.ToString($"F{decimalPlaces}") + celsiusSuffix;
+            celsiusText.text = c.ToString("F" + decimalPlaces) + celsiusSuffix;
 
         if (fahrenheitText != null)
-            fahrenheitText.text = f.ToString($"F{decimalPlaces}") + fahrenheitSuffix;
+            fahrenheitText.text = f.ToString("F" + decimalPlaces) + fahrenheitSuffix;
 
-        Debug.Log($"[IRThermalScannerTrigger] Scan: {celsiusText?.text} / {fahrenheitText?.text}");
+        Debug.Log("[IRThermalScannerTrigger] Scan: " +
+                  (celsiusText != null ? celsiusText.text : "null") +
+                  " / " +
+                  (fahrenheitText != null ? fahrenheitText.text : "null"));
+    }
+
+    private Vector3 GetFeedbackSpawnPosition()
+    {
+        Transform anchor = feedbackAnchor != null ? feedbackAnchor : transform;
+        return anchor.position + feedbackOffset;
     }
 }

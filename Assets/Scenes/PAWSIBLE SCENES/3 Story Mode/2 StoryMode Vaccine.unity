@@ -5721,8 +5721,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 1279813679}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -10528,6 +10528,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1716636801}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 747890187}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
@@ -10750,6 +10753,10 @@ MonoBehaviour:
   fahrenheitSuffix: "\xB0F"
   dialogueSegmentName: Injection
   dialogueLineIndex: 5
+  feedbackAnchor: {fileID: 0}
+  feedbackOffset: {x: 0, y: 0.15, z: 0}
+  showWrongFeedbackWhenNotAtStage: 1
+  wrongFeedbackCooldown: 1
   oneScanPerEnter: 1
 --- !u!64 &98125916
 MeshCollider:
@@ -11611,8 +11618,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 980431921}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -12982,8 +12989,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 2018769638}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -13452,6 +13459,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 17070505}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554223884}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
@@ -13503,6 +13513,10 @@ MonoBehaviour:
   fahrenheitSuffix: "\xB0F"
   dialogueSegmentName: Injection
   dialogueLineIndex: 5
+  feedbackAnchor: {fileID: 554223884}
+  feedbackOffset: {x: 0, y: 0.15, z: 0}
+  showWrongFeedbackWhenNotAtStage: 1
+  wrongFeedbackCooldown: 1
   oneScanPerEnter: 1
 --- !u!114 &124801631
 MonoBehaviour:
@@ -30742,6 +30756,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -31663,8 +31681,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 601291833}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -32939,8 +32957,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1747676977}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -35728,6 +35746,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43229,8 +43251,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 381030344}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -47708,6 +47730,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7a0bf6f1e34a354e8f689bfcea93124, type: 3}
   m_PrefabInstance: {fileID: 14366772}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &434262279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434262280}
+  m_Layer: 0
+  m_Name: FeedbackAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &434262280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434262279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1234399442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434486047
 GameObject:
   m_ObjectHideFlags: 0
@@ -51267,6 +51320,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -51640,7 +51697,7 @@ GameObject:
   - component: {fileID: 476240134}
   - component: {fileID: 476240133}
   m_Layer: 0
-  m_Name: Button (4)
+  m_Name: Btn Sit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54416,8 +54473,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 94902182}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -59525,8 +59582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 553875824}
-  pullTrigger: DoPull
-  pushTrigger: DoPush
+  fillStateName: fill
+  emptyStateName: empty
 --- !u!95 &553875824
 Animator:
   serializedVersion: 7
@@ -59726,6 +59783,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 185ecb9d882fdc9459d1752f8e919d43, type: 3}
   m_PrefabInstance: {fileID: 1966219524}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &554223883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554223884}
+  m_Layer: 0
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554223884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554223883}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08, y: -2.36, z: 3.52}
+  m_LocalScale: {x: 1.0000305, y: 1.0000306, z: 1.0000305}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 124801629}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &555627133
 GameObject:
   m_ObjectHideFlags: 0
@@ -59765,8 +59853,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1060671955}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -60563,6 +60651,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65164,7 +65256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.91
+      value: -60.44
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -65172,11 +65264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.15
+      value: 42.27
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.21850443
+      value: -0.8713965
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -65184,7 +65276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.975836
+      value: 0.4905794
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -65196,7 +65288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 154.758
+      value: 301.243
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -65412,7 +65504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572639160743945884, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.276
+      value: -0.397
       objectReference: {fileID: 0}
     - target: {fileID: 3572639160743945884, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -65420,7 +65512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572639160743945884, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.089
+      value: -1.628
       objectReference: {fileID: 0}
     - target: {fileID: 3572639160743945884, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -71390,8 +71482,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 1925200420}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -72905,8 +72997,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 850078305}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -74591,8 +74683,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 472267889}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -75239,7 +75331,7 @@ MonoBehaviour:
   towelTargetSegmentName: Handwashing
   towelTargetLineIndex: 6
   advanceDialogueOnNeedleDrop: 1
-  needleTag: Needle
+  needleTag: NeedleTip
   needleDisposalStages:
   - segmentName: Vaccine Prep
     lineIndex: 6
@@ -79112,6 +79204,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746513319}
   m_CullTransparentMesh: 1
+--- !u!1 &747890186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747890187}
+  m_Layer: 0
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747890187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747890186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -2.757, z: 3.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 97062206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748112148
 GameObject:
   m_ObjectHideFlags: 0
@@ -80113,8 +80236,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 10484913}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -80879,7 +81002,7 @@ GameObject:
   - component: {fileID: 764781465}
   - component: {fileID: 764781464}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: Btn Lay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83437,6 +83560,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89649,6 +89776,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -92431,8 +92562,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 228803581}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -94100,8 +94231,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1159986073}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -97132,7 +97263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2ce5fb853e36cd641a3af6762b9e79fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -98909,6 +99040,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8378086827668977535, guid: ee46b984660e6cc41aa643737d105907, type: 3}
+--- !u!1 &903879797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903879798}
+  m_Layer: 0
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903879798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903879797}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0646, z: -0.1179}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1234399442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904928851
 GameObject:
   m_ObjectHideFlags: 0
@@ -103979,8 +104141,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 181963908}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -105508,6 +105670,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110981,7 +111147,7 @@ GameObject:
   - component: {fileID: 1055349604}
   - component: {fileID: 1055349603}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: Btn Cancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111101,7 +111267,7 @@ GameObject:
   - component: {fileID: 1055835707}
   - component: {fileID: 1055835706}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Btn Carry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119464,8 +119630,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 1059363968}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -125158,8 +125324,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 179799077}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -128345,6 +128511,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -129517,7 +129687,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801553567}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -130960,7 +131130,7 @@ MonoBehaviour:
   towelTargetSegmentName: Handwashing
   towelTargetLineIndex: 6
   advanceDialogueOnNeedleDrop: 1
-  needleTag: Needle
+  needleTag: NeedleTip
   needleDisposalStages:
   - segmentName: Vaccine Prep
     lineIndex: 6
@@ -131516,6 +131686,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1182591367}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1951666866}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 35be021629ef1514d8e29d5502db1efc, type: 3}
       insertIndex: -1
@@ -131567,6 +131740,10 @@ MonoBehaviour:
   fahrenheitSuffix: "\xB0F"
   dialogueSegmentName: Injection
   dialogueLineIndex: 5
+  feedbackAnchor: {fileID: 1951666866}
+  feedbackOffset: {x: 0, y: 0.15, z: 0}
+  showWrongFeedbackWhenNotAtStage: 1
+  wrongFeedbackCooldown: 1
   oneScanPerEnter: 1
 --- !u!114 &1217466405
 MonoBehaviour:
@@ -132898,6 +133075,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -134056,6 +134237,132 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1740450406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1234399441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234399442}
+  - component: {fileID: 1234399444}
+  - component: {fileID: 1234399443}
+  - component: {fileID: 1234399445}
+  m_Layer: 0
+  m_Name: InjectionTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234399442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234399441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000007827526, y: 0.6108001, z: -0.11170035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 903879798}
+  - {fileID: 434262280}
+  m_Father: {fileID: 1329333245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234399443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234399441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 4294967295
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 903879798}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &1234399444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234399441}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09896453, y: 0.070828326, z: 0.07821803}
+  m_Center: {x: 0.0007565958, y: -0.043870393, z: -0.1309866}
+--- !u!114 &1234399445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234399441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ebc0118710c2a4a9831a2fbfec514b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSegmentName: Injection
+  targetLineIndex: 9
+  needleTipTag: NeedleTip
+  playSyringeAnimation: 1
+  animationMode: 1
+  feedbackAnchor: {fileID: 434262280}
+  feedbackOffset: {x: 0, y: 0.15, z: 0}
+  showWrongFeedbackWhenNotAtStage: 1
+  wrongFeedbackCooldown: 1
+  triggerOnce: 1
+  dialogueManager: {fileID: 1493787920}
 --- !u!54 &1235222849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142612,8 +142919,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 949254608}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -143266,8 +143573,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 300677390}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -144256,6 +144563,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -144819,8 +145130,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 926340640}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -145432,8 +145743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1296626108}
-  pullTrigger: DoPull
-  pushTrigger: DoPush
+  fillStateName: fill
+  emptyStateName: empty
 --- !u!95 &1296626108
 Animator:
   serializedVersion: 7
@@ -148555,6 +148866,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: af8cd02d040fda24f8505b8f36a57a72, type: 3}
       insertIndex: -1
       addedObject: {fileID: 281892276}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: af8cd02d040fda24f8505b8f36a57a72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234399442}
     - targetCorrespondingSourceObject: {fileID: -4933276741945886876, guid: af8cd02d040fda24f8505b8f36a57a72, type: 3}
       insertIndex: -1
       addedObject: {fileID: 621725123}
@@ -150060,8 +150374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1340328070}
-  pullTrigger: DoPull
-  pushTrigger: DoPush
+  fillStateName: fill
+  emptyStateName: empty
 --- !u!1 &1342408042
 GameObject:
   m_ObjectHideFlags: 0
@@ -150274,8 +150588,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 444634884}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -155515,8 +155829,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 963742302}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -158954,8 +159268,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 1757584699}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -164608,8 +164922,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481918817}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.68687075, z: -0, w: 0.7267796}
-  m_LocalPosition: {x: 4.2529526, y: -0.0020000935, z: 0.26721573}
+  m_LocalRotation: {x: -0, y: -0.7271209, z: -0, w: -0.68650955}
+  m_LocalPosition: {x: 4.2556953, y: -0.0020000935, z: 0.26929092}
   m_LocalScale: {x: 0.043382388, y: 0.04338239, z: 0.043382388}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -164617,7 +164931,7 @@ Transform:
   - {fileID: 154485121}
   - {fileID: 1824893789}
   m_Father: {fileID: 227282636}
-  m_LocalEulerAnglesHint: {x: 0, y: -86.766, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -266.70898, z: 0}
 --- !u!114 &1481918826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164633,8 +164947,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 1824893789}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -169138,7 +169452,7 @@ GameObject:
   - component: {fileID: 1512601596}
   - component: {fileID: 1512601595}
   m_Layer: 0
-  m_Name: Button (3)
+  m_Name: Btn Paw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169284,8 +169598,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 1
   feedbackAnchor: {fileID: 644773477}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -173220,8 +173534,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1744358577}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -175598,6 +175912,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -178054,6 +178372,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -180448,8 +180770,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1968194270}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -183446,8 +183768,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1153313521}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -191630,8 +191952,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1736145723}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -194636,8 +194958,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1260659162}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -195482,8 +195804,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 4
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 1340328071}
-  actionOnSuccess: 1
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 2121261822}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -196187,7 +196509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalScale.x
@@ -200063,8 +200385,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 727777260}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -204679,6 +205001,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -208985,6 +209311,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
+--- !u!1 &1951666865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951666866}
+  m_Layer: 0
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1951666866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951666865}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01447738, y: -2.4182382, z: 3.5157847}
+  m_LocalScale: {x: 1.0000305, y: 1.0000306, z: 1.0000305}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1217466403}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1952092423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209306,8 +209663,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 324910833}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -213327,8 +213684,8 @@ MonoBehaviour:
   targetSegmentName: Vaccine Prep
   targetLineIndex: 9
   needleTipTag: NeedleTip
-  syringeAnimator: {fileID: 0}
-  actionOnSuccess: 0
+  playSyringeAnimation: 1
+  animationMode: 0
   feedbackAnchor: {fileID: 1115681511}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -221696,6 +222053,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -224256,6 +224617,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bd7edaa1533d994e8767b3dc908bbf7, type: 3}
+      propertyPath: m_TagString
+      value: NeedleTip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

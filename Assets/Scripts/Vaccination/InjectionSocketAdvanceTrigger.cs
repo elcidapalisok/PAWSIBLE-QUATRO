@@ -4,11 +4,11 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [RequireComponent(typeof(Collider))]
-public class VialNeedleAdvanceTrigger : MonoBehaviour
+public class InjectionAdvanceTrigger : MonoBehaviour
 {
     [Header("Dialogue Gate")]
-    public string targetSegmentName = "Vaccine Prep";
-    public int targetLineIndex = 4;
+    public string targetSegmentName = "Injection";
+    public int targetLineIndex = 9;
 
     [Header("Needle Detection")]
     [Tooltip("Tag used on the needle tip collider.")]
@@ -17,8 +17,8 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
     [Header("Optional Syringe Animation")]
     public bool playSyringeAnimation = true;
 
-    [Tooltip("At this dialogue line, should the syringe do Fill (pull) or Empty (push)?")]
-    public SyringeAnimMode animationMode = SyringeAnimMode.Fill;
+    [Tooltip("Injection should usually be Empty (push).")]
+    public SyringeAnimMode animationMode = SyringeAnimMode.Empty;
 
     public enum SyringeAnimMode
     {
@@ -54,7 +54,6 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
         if (dialogueManager == null)
             dialogueManager = DialogueManager.Instance;
 
-        // Safety: ensure trigger
         var col = GetComponent<Collider>();
         if (col != null)
             col.isTrigger = true;
@@ -64,14 +63,12 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
     {
         if (triggerOnce && fired) return;
         if (dialogueManager == null) return;
-
         if (other == null) return;
 
-        // Only react to the needle tip collider
         if (!other.CompareTag(needleTipTag))
             return;
 
-        // Correct stage -> success
+        // Correct stage
         if (dialogueManager.IsAtStage(targetSegmentName, targetLineIndex))
         {
             fired = true;
@@ -87,7 +84,7 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
             return;
         }
 
-        // Wrong stage -> feedback + scoring
+        // Wrong stage feedback
         if (showWrongFeedbackWhenNotAtStage && Time.time - lastWrongTime >= wrongFeedbackCooldown)
         {
             lastWrongTime = Time.time;
@@ -98,7 +95,7 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
             ScoreManager.Instance?.RegisterMistake(
                 dialogueManager.GetCurrentSegmentName(),
                 dialogueManager.GetCurrentLineIndex(),
-                "Needle entered vial trigger at wrong stage"
+                "Needle entered dog injection trigger at wrong stage"
             );
         }
     }
@@ -107,22 +104,20 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
     {
         if (needleTip == null) return;
 
-        // Needle is a separate object. We find the needle's XRGrabInteractable,
-        // then check which interactor is selecting it (socket when attached).
+        // Find the needle XRGrabInteractable
         XRGrabInteractable needleGrab = needleTip.GetComponentInParent<XRGrabInteractable>();
         if (needleGrab == null)
             return;
 
-        // If the needle is socketed into the syringe, the selecting interactor is the socket.
+        // If needle is attached, selecting interactor is a socket
         XRSocketInteractor socket = needleGrab.firstInteractorSelecting as XRSocketInteractor;
         if (socket == null)
         {
-            // Needle tip hit the vial, but the needle is not currently socketed.
-            // If you want animation even when not socketed, you could add a fallback here.
+            // Needle touched injection trigger but is not currently socketed into a syringe
             return;
         }
 
-        // Socket should be under syringe_body, so we can climb up to find the syringe animator script.
+        // Socket should live under syringe_body hierarchy
         SyringePlungerAnimator plunger = socket.GetComponentInParent<SyringePlungerAnimator>();
         if (plunger != null)
         {
@@ -131,7 +126,7 @@ public class VialNeedleAdvanceTrigger : MonoBehaviour
             return;
         }
 
-        // Fallback: try Animator directly on syringe side
+        // Fallback: try Animator
         Animator anim = socket.GetComponentInParent<Animator>();
         if (anim != null)
         {
