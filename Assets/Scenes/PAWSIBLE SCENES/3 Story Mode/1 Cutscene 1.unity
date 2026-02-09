@@ -26052,80 +26052,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355169484}
   m_Mesh: {fileID: 142147015796975548, guid: 3885c4911dd603246bed92d97691f1df, type: 3}
---- !u!1001 &356097458
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.7453
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.7453
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.7453
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -148.87
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.31092
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 26.24348
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_Name
-      value: 3D Eave Assembly Rubens Corrections
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151388028547126963, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.354
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8164078558771037576, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab626a41a9466994490f0c4489ad2ca0, type: 3}
 --- !u!4 &357545509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5545149646685965750, guid: 283fe20ffc8ff164080c612ba8cb7b86, type: 3}
@@ -133202,6 +133128,8 @@ Transform:
   - {fileID: 3535377534537382667}
   - {fileID: 633998013}
   - {fileID: 926644294}
+  - {fileID: 4018178216821025662}
+  - {fileID: 2833649495134174913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058167943
@@ -156019,13 +155947,13 @@ Transform:
   m_GameObject: {fileID: 3177559601664992379}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.6913289, z: -0, w: 0.72254026}
-  m_LocalPosition: {x: -152.00076, y: 0.47000003, z: 59.6}
+  m_LocalPosition: {x: -57.906204, y: -0.051099956, z: 26.407307}
   m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2251332666440177164}
   - {fileID: 8783537639712196275}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2053934164}
   m_LocalEulerAnglesHint: {x: 0, y: -87.471, z: 0}
 --- !u!4 &2834644561711664902
 Transform:
@@ -163582,13 +163510,13 @@ Transform:
   m_GameObject: {fileID: 4361946658471424452}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6842738, y: -0.17823996, z: -0.17823996, w: 0.6842738}
-  m_LocalPosition: {x: -109.78, y: 0.5799999, z: 61.558216}
-  m_LocalScale: {x: 4.81827, y: 4.81827, z: 4.81827}
+  m_LocalPosition: {x: -15.68544, y: 0.05889994, z: 28.365524}
+  m_LocalScale: {x: 4.8182707, y: 4.8182697, z: 4.81827}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5686963684346107529}
   - {fileID: 538621469}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2053934164}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -29.2}
 --- !u!4 &4018924009010943089
 Transform:
@@ -177858,8 +177786,19 @@ MonoBehaviour:
     sternum. It forms the rib cage, which protects vital organs like the heart and
     lungs. Each rib connects to a thoracic vertebra at the back and most connect
     to the sternum at the front.
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!4 &6089599857058905826
 Transform:
   m_ObjectHideFlags: 0
@@ -182034,8 +181973,19 @@ MonoBehaviour:
   boneInfo: The ulna lies beside the radius and forms the point of the elbow. In
     dogs, it helps with joint movement and provides attachment for strong muscles
     that extend the forelimb.
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!4 &6724657538674856880
 Transform:
   m_ObjectHideFlags: 0
@@ -184228,8 +184178,19 @@ MonoBehaviour:
   boneInfo: "The tibia is the main weight-bearing bone of the dog\u2019s lower hindlimb,
     running from the knee to the hock. It provides strength, stability, and support
     for movement like running and jumping."
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!114 &7004155197426948227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189530,8 +189491,19 @@ MonoBehaviour:
   boneInfo: "The radius is the main weight-bearing bone of the dog\u2019s forelimb,
     running from the elbow to the carpus (wrist). It works with the ulna to allow
     movement and stability of the foreleg."
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!114 &7765228423524742809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196882,8 +196854,19 @@ MonoBehaviour:
     sternum. It forms the rib cage, which protects vital organs like the heart and
     lungs. Each rib connects to a thoracic vertebra at the back and most connect
     to the sternum at the front.
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!4 &8855644339748156919
 Transform:
   m_ObjectHideFlags: 0
@@ -198173,8 +198156,19 @@ MonoBehaviour:
   boneInfo: "The humerus is the long bone of the dog\u2019s upper forelimb, running
     from the shoulder to the elbow. It helps support body weight, absorbs impact
     during movement, and provides attachment for major forelimb muscles."
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!114 &9025893067266479405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199342,8 +199336,19 @@ MonoBehaviour:
   boneInfo: The femur is the large thigh bone of the dog, connecting the hip to the
     knee. It supports body weight, aids in powerful movements like running and jumping,
     and provides attachment for major hindlimb muscles.
+  boneTitleTagalog: 
+  boneInfoTagalog: 
   titleText: {fileID: 267909145}
   descriptionText: {fileID: 1828952118}
+  defaultTitleEnglish: Skeletal structure
+  defaultMessageEnglish: Welcome to PAWSIBLE! This is the skeletal system of the
+    dog. The skeleton provides structure, protects vital organs, and supports movement.
+    Explore each bone to learn its name, location, and function
+  defaultTitleTagalog: Estruktura ng Kalansay
+  defaultMessageTagalog: Maligayang pagdating sa PAWSIBLE! Ito ang skeletal system
+    ng aso. Ang kalansay ay nagbibigay ng istruktura, nangangalaga ng mga mahalagang
+    organo, at sumusuporta sa pagkilos. Tuklasin ang bawat buto upang malaman ang
+    pangalan, lokasyon, at tungkulin nito
 --- !u!114 &9195074151864682459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199653,6 +199658,3 @@ SceneRoots:
   - {fileID: 1653502909}
   - {fileID: 4802904811951470756}
   - {fileID: 360876826}
-  - {fileID: 356097458}
-  - {fileID: 4018178216821025662}
-  - {fileID: 2833649495134174913}
