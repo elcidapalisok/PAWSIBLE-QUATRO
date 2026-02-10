@@ -68,6 +68,8 @@ TagManager:
   - dog
   - BandagePad
   - NeedleTip
+  - Controller_R
+  - Controller_L
   layers:
   - Default
   - TransparentFX
