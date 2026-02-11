@@ -68727,7 +68727,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needleTipTag: NeedleTip
-  gates: []
+  gates:
+  - targetSegmentName: Vaccine Prep
+    targetLineIndex: 9
+    playSyringeAnimation: 1
+    animationMode: 1
+    triggerOnceForThisGate: 1
+  - targetSegmentName: Injection
+    targetLineIndex: 7
+    playSyringeAnimation: 1
+    animationMode: 0
+    triggerOnceForThisGate: 1
   feedbackAnchor: {fileID: 850078305}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -93520,8 +93530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903879797}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0646, z: -0.1179}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0041998886, y: -0.06459999, z: -0.18470126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151887,7 +151897,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needleTipTag: NeedleTip
-  gates: []
+  gates:
+  - targetSegmentName: Vaccine Prep
+    targetLineIndex: 9
+    playSyringeAnimation: 1
+    animationMode: 1
+    triggerOnceForThisGate: 1
+  - targetSegmentName: Injection
+    targetLineIndex: 7
+    playSyringeAnimation: 1
+    animationMode: 0
+    triggerOnceForThisGate: 1
   feedbackAnchor: {fileID: 1757584699}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
@@ -162460,7 +162480,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needleTipTag: NeedleTip
-  gates: []
+  gates:
+  - targetSegmentName: Vaccine Prep
+    targetLineIndex: 9
+    playSyringeAnimation: 1
+    animationMode: 1
+    triggerOnceForThisGate: 1
+  - targetSegmentName: Injection
+    targetLineIndex: 7
+    playSyringeAnimation: 1
+    animationMode: 0
+    triggerOnceForThisGate: 1
   feedbackAnchor: {fileID: 644773477}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   showWrongFeedbackWhenNotAtStage: 1
