@@ -70,6 +70,7 @@ TagManager:
   - NeedleTip
   - Controller_R
   - Controller_L
+  - IodineTip
   layers:
   - Default
   - TransparentFX
@@ -80,8 +81,8 @@ TagManager:
   - Hands
   - Needle
   - NeedleCap
-  - 
-  - 
+  - Wound
+  - WoundPaintable
   - 
   - 
   - 
