@@ -52095,7 +52095,7 @@ MonoBehaviour:
   typingSpeed: 0.03
   autoAdvanceDelay: 0.3
   dialogueLines: []
-  nextSceneName: StoryMode_Vaccine
+  nextSceneName: 2_StoryMode_Vaccine
 --- !u!1001 &517815458
 PrefabInstance:
   m_ObjectHideFlags: 0

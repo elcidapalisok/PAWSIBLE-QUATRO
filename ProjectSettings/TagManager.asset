@@ -68,6 +68,7 @@ TagManager:
   - dog
   - BandagePad
   - NeedleTip
+  - IodineTip
   layers:
   - Default
   - TransparentFX
@@ -78,8 +79,8 @@ TagManager:
   - Hands
   - Needle
   - NeedleCap
-  - 
-  - 
+  - Wound
+  - WoundPaintable
   - 
   - 
   - 

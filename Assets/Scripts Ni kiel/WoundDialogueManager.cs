@@ -52,11 +52,16 @@ public class WoundDialogueManager : MonoBehaviour
     public Animator npcAnimator;
     public string isTalkingParam = "IsTalking";
 
+    // ✅ Checklist task names (MUST match your checklist taskName exactly)
+    private const string TASK_SANITIZE = "Sanitize";   // ✅ FIXED
+    private const string TASK_PPE = "Wear PPE";
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
             Debug.LogWarning("Multiple WoundDialogueManager instances found. Keeping the first instance.");
+            Destroy(gameObject);
             return;
         }
         Instance = this;
@@ -155,13 +160,10 @@ public class WoundDialogueManager : MonoBehaviour
 
         string line = segment.dialogueLines[currentDialogueIndex];
 
-        // ✅ Start typing + play voice for this line
         typingCoroutine = StartCoroutine(TypeText(line));
         PlayVoiceForCurrentLine();
 
         if (prevButton) prevButton.interactable = currentDialogueIndex > 0;
-
-        // nextButton only moves within the segment; end-of-segment is advanced by triggers/auto
         if (nextButton) nextButton.interactable = currentDialogueIndex < segment.dialogueLines.Count - 1;
 
         Debug.Log($"📢 Showing [{segment.segmentName}:{currentDialogueIndex}] {line}");
@@ -190,13 +192,12 @@ public class WoundDialogueManager : MonoBehaviour
         if (triggerRequiredLines.Contains((key, currentDialogueIndex)))
             yield break;
 
-        // ✅ Wait for voice to finish (if any) before auto-advance
+        // ✅ Wait for voice to finish before auto-advance
         yield return new WaitUntil(() => voiceSource == null || !voiceSource.isPlaying);
 
         SetTalking(false);
         yield return new WaitForSeconds(0.25f);
 
-        // Auto-advance for non-trigger lines
         AdvanceDialogue();
     }
 
@@ -215,7 +216,6 @@ public class WoundDialogueManager : MonoBehaviour
             voiceSource.Stop();
     }
 
-    // ✅ Plays the correct voice clip for the current segment+line
     private void PlayVoiceForCurrentLine()
     {
         if (voiceSource == null)
@@ -242,9 +242,7 @@ public class WoundDialogueManager : MonoBehaviour
             return;
         }
 
-        // Recommended: UI/dialogue voice should be 2D
-        voiceSource.spatialBlend = 0f;
-
+        voiceSource.spatialBlend = 0f; // 2D voice
         voiceSource.Stop();
         voiceSource.clip = clip;
         voiceSource.Play();
@@ -252,7 +250,6 @@ public class WoundDialogueManager : MonoBehaviour
         Debug.Log($"🔊 Playing voice: {clip.name} for [{segment.segmentName}:{currentDialogueIndex}]");
     }
 
-    // ✅ FIXED: this now moves to the next segment if you are at the last line
     private void NextDialogue()
     {
         if (dialogueSegments == null || dialogueSegments.Count == 0) return;
@@ -260,7 +257,6 @@ public class WoundDialogueManager : MonoBehaviour
         var segment = dialogueSegments[currentSegmentIndex];
         if (segment == null || segment.dialogueLines == null) return;
 
-        // Still has next line inside this segment
         if (currentDialogueIndex < segment.dialogueLines.Count - 1)
         {
             currentDialogueIndex++;
@@ -268,7 +264,6 @@ public class WoundDialogueManager : MonoBehaviour
             return;
         }
 
-        // End of segment → go to next segment
         MoveToNextSegment();
     }
 
@@ -294,7 +289,6 @@ public class WoundDialogueManager : MonoBehaviour
         ShowCurrentDialogue();
     }
 
-    // This is what your faucet/soap/sanitizer triggers should call
     public void AdvanceDialogue()
     {
         NextDialogue();
@@ -307,25 +301,27 @@ public class WoundDialogueManager : MonoBehaviour
 
         if (dialogueSegments == null || dialogueSegments.Count == 0) return;
 
-        // ✅ CHECKLIST HOOK: mark task when a segment is FINISHED (right before switching)
         string finishedSegment = NormalizeSegmentKey(GetCurrentSegmentName());
+        Debug.Log($"✅ Finished segment = '{finishedSegment}'");
 
-        if (finishedSegment == "handwashing")
+        if (WoundDialogueChecklist.Instance == null)
         {
-            if (WoundDialogueChecklist.Instance != null)
-                WoundDialogueChecklist.Instance.CompleteTask("Sanitize Hands");
-            else
-                Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is null (Checklist not in scene?)");
+            Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is NULL. Checklist object missing or disabled in scene.");
         }
-        else if (finishedSegment == "glovescoat")
+        else
         {
-            if (WoundDialogueChecklist.Instance != null)
-                WoundDialogueChecklist.Instance.CompleteTask("Wear PPE");
-            else
-                Debug.LogWarning("⚠️ WoundDialogueChecklist.Instance is null (Checklist not in scene?)");
+            if (finishedSegment == "handwashing")
+            {
+                Debug.Log($"🧾 Completing checklist task: {TASK_SANITIZE}");
+                WoundDialogueChecklist.Instance.CompleteTask(TASK_SANITIZE);
+            }
+            else if (finishedSegment == "glovescoat")
+            {
+                Debug.Log($"🧾 Completing checklist task: {TASK_PPE}");
+                WoundDialogueChecklist.Instance.CompleteTask(TASK_PPE);
+            }
         }
 
-        // Now move to next segment
         if (currentSegmentIndex < dialogueSegments.Count - 1)
         {
             currentSegmentIndex++;
