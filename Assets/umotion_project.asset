@@ -36,11 +36,11 @@ MonoBehaviour:
     TimelineViewMode:
       valueInternal: 0
     FramesScrollPosition:
-      valueInternal: -27.34109
+      valueInternal: -40
     FramesZoom:
       valueInternal: 0.046345733
     PropertiesScrollPosition:
-      valueInternal: 440
+      valueInternal: 0
     PropertiesZoom:
       valueInternal: 1
     CurveYScrollPosition:

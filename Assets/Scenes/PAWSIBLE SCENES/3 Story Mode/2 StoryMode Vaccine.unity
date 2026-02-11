@@ -5406,7 +5406,7 @@ MonoBehaviour:
     targetLineIndex: 9
     playSyringeAnimation: 1
     animationMode: 1
-    triggerOnceForThisGate: 0
+    triggerOnceForThisGate: 1
   - targetSegmentName: Injection
     targetLineIndex: 7
     playSyringeAnimation: 1
@@ -26415,13 +26415,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1634024209}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1634024215}
     - targetCorrespondingSourceObject: {fileID: 8329214613909693691, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1499535105}
+    - targetCorrespondingSourceObject: {fileID: 8329214613909693691, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1499535107}
   m_SourcePrefab: {fileID: 100100000, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
 --- !u!1001 &225629330
 PrefabInstance:
@@ -30980,7 +30980,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 1747676977}
@@ -43488,28 +43488,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
   m_PrefabInstance: {fileID: 990686616}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &421945085
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421945084}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5732116066439270058, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
 --- !u!65 &421945089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43529,8 +43507,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7882152, y: 1.9999999, z: 1.4978771}
-  m_Center: {x: -0.0061900513, y: -0.6872304, z: -0.5278929}
+  m_Size: {x: 2.788215, y: 1.9999999, z: 1.0752991}
+  m_Center: {x: -0.0061900965, y: -0.6872304, z: -0.73918194}
 --- !u!1001 &422207662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56068,7 +56046,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 1060671955}
@@ -61690,15 +61668,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Height
-      value: 1.5
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Radius
-      value: 0.18
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Center.y
-      value: 0.21
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 6426628215106730248, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Layer
@@ -61922,14 +61904,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.19
+  m_Radius: 0.0868508
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.003879906, y: 0, z: 0.0009024741}
 --- !u!1 &605215383
 GameObject:
   m_ObjectHideFlags: 0
@@ -67315,7 +67297,7 @@ MonoBehaviour:
     targetLineIndex: 9
     playSyringeAnimation: 1
     animationMode: 1
-    triggerOnceForThisGate: 0
+    triggerOnceForThisGate: 1
   - targetSegmentName: Injection
     targetLineIndex: 7
     playSyringeAnimation: 1
@@ -88888,7 +88870,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 1159986073}
@@ -96637,11 +96619,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5117099190326286239, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
+--- !u!65 &947392882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947392878}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8586098, y: 0.5568326, z: 0.7820336}
+  m_Center: {x: -2.3506575e-15, y: 0.03435358, z: -0.31807995}
 --- !u!1001 &948629319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98545,7 +98548,7 @@ MonoBehaviour:
     targetLineIndex: 9
     playSyringeAnimation: 1
     animationMode: 1
-    triggerOnceForThisGate: 0
+    triggerOnceForThisGate: 1
   - targetSegmentName: Injection
     targetLineIndex: 7
     playSyringeAnimation: 1
@@ -100045,13 +100048,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 421945085}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 421945089}
     - targetCorrespondingSourceObject: {fileID: 8329214613909693691, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 947392880}
+    - targetCorrespondingSourceObject: {fileID: 8329214613909693691, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 947392882}
   m_SourcePrefab: {fileID: 100100000, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
 --- !u!1 &991173525
 GameObject:
@@ -118886,7 +118889,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 179799077}
@@ -143564,7 +143567,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 444634884}
@@ -148726,7 +148729,7 @@ MonoBehaviour:
     targetLineIndex: 9
     playSyringeAnimation: 1
     animationMode: 1
-    triggerOnceForThisGate: 0
+    triggerOnceForThisGate: 1
   - targetSegmentName: Injection
     targetLineIndex: 7
     playSyringeAnimation: 1
@@ -158918,11 +158921,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5117099190326286239, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
+--- !u!65 &1499535107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499535103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8586098, y: 0.5568326, z: 0.9174527}
+  m_Center: {x: -3.1369865e-16, y: 0.03435358, z: -0.25037035}
 --- !u!1 &1500224092
 GameObject:
   m_ObjectHideFlags: 0
@@ -173290,7 +173314,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 1968194270}
@@ -174954,28 +174978,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
   m_PrefabInstance: {fileID: 224088794}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1634024209
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634024208}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5732116066439270058, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
 --- !u!4 &1634024212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 09bc0f37d2521744da225cf9fc81ad5e, type: 3}
@@ -175000,8 +175002,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8005962, y: 1.9999998, z: 1.2952415}
-  m_Center: {x: 2.6129679e-15, y: -0.6872304, z: -0.629211}
+  m_Size: {x: 2.800596, y: 1.9999999, z: 1.0240445}
+  m_Center: {x: -3.4876023e-15, y: -0.6872304, z: -0.7648096}
 --- !u!1001 &1636128355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186211,17 +186213,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Tray
   advanceDialogueOnUse: 1
-  targetSegmentName: 
-  targetLineIndex: 0
+  targetSegmentName: Vaccine Prep
+  targetLineIndex: 3
   showWrongFeedbackWhenNotAtStage: 1
   wrongFeedbackCooldown: 1
-  feedbackAnchor: {fileID: 0}
+  feedbackAnchor: {fileID: 108602686}
   feedbackOffset: {x: 0, y: 0.15, z: 0}
   useHoldTimer: 0
   holdDurationSeconds: 6
   resetTimerOnRelease: 1
   timerCountsOnlyWhileSelected: 1
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1493787920}
 --- !u!64 &1788261252
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -186964,7 +186966,7 @@ MonoBehaviour:
   gates:
   - targetSegmentName: Vaccine Prep
     targetLineIndex: 4
-    playSyringeAnimation: 0
+    playSyringeAnimation: 1
     animationMode: 0
     triggerOnceForThisGate: 0
   feedbackAnchor: {fileID: 2121261822}
@@ -187669,7 +187671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalScale.x
