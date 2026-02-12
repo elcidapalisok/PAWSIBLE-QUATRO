@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using TMPro; 
 
 public class QuizSummaryDetector : MonoBehaviour
 {
@@ -11,10 +11,10 @@ public class QuizSummaryDetector : MonoBehaviour
 
     [Header("UI Elements")]
     public GameObject summaryPanel;
-
     [Header("World Output Texts")]
     public TMP_Text summaryTitleText;
     public TMP_Text scoreText;
+
     public TMP_Text correctText;
     public TMP_Text wrongText;
     public TMP_Text breakdownTitleText;
@@ -35,10 +35,13 @@ public class QuizSummaryDetector : MonoBehaviour
     // Reference to your timer
     public AssessmentTimer timer;
 
-    private List<string> correctTags = new List<string>() { "Humerus", "Pelvic", "Vertaebrae", "Liver", "Penis", "Heart" };
+    private List<string> correctTags = new List<string>()
+    {
+       "Humerus", "Pelvic", "Vertaebrae", "Liver", "Penis", "Heart"
+    };
+
     private List<string> detectedTags = new List<string>();
     private List<string> wrongTags = new List<string>(); // Track wrong objects
-
     private int score = 0;
     private int timeBasedScore = 0;
     private int finalScore = 0;
@@ -46,7 +49,6 @@ public class QuizSummaryDetector : MonoBehaviour
     void Start()
     {
         Debug.Log("=== QUIZ DETECTOR STARTED ===");
-
         if (summaryPanel != null)
         {
             summaryPanel.SetActive(false);
@@ -62,7 +64,7 @@ public class QuizSummaryDetector : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log($"TRIGGER ENTERED: {other.gameObject.name} (Tag: {other.tag})");
-
+        
         // Skip if tag is Untagged
         if (other.tag == "Untagged")
         {
@@ -77,10 +79,10 @@ public class QuizSummaryDetector : MonoBehaviour
                 detectedTags.Add(other.tag);
                 score += pointsPerCorrect;
                 Debug.Log($"✅ CORRECT: {other.tag} +{pointsPerCorrect}pts - Total: {detectedTags.Count}/{correctTags.Count} - Score: {score}");
-
+                
                 // Update accuracy progress bar in real-time
                 UpdateAccuracyProgressBar();
-
+                
                 if (detectedTags.Count >= correctTags.Count)
                 {
                     if (timer != null)
@@ -101,7 +103,7 @@ public class QuizSummaryDetector : MonoBehaviour
                 wrongTags.Add(other.tag);
                 score += pointsPerWrong;
                 Debug.Log($"❌ WRONG: {other.tag} {pointsPerWrong}pts - Score: {score}");
-
+                
                 // Update accuracy progress bar in real-time
                 UpdateAccuracyProgressBar();
             }
@@ -121,8 +123,9 @@ public class QuizSummaryDetector : MonoBehaviour
                 ((float)wrongTags.Count / correctTags.Count) * 50f,
                 0f, 100f
             );
+            
             accuracyProgressBar.fillAmount = accuracy / 100f;
-
+            
             if (accuracyPercentageText != null)
                 accuracyPercentageText.text = $"{accuracy:F1}%";
         }
@@ -130,13 +133,14 @@ public class QuizSummaryDetector : MonoBehaviour
 
     int CalculateTimeBasedScore()
     {
-        if (timer == null)
-            return maxTimeScore;
-
+        if (timer == null) return maxTimeScore;
+        
         float elapsedTime = timer.GetElapsedTime();
+        
         // Example: More time = lower score, but never below 0
         // You can adjust this formula based on your needs
         float timeScore = Mathf.Max(0, maxTimeScore - (elapsedTime / 60f) * 10f);
+        
         return Mathf.RoundToInt(timeScore);
     }
 
@@ -146,7 +150,7 @@ public class QuizSummaryDetector : MonoBehaviour
         {
             float normalizedScore = (float)timeScore / maxTimeScore;
             timeScoreProgressBar.fillAmount = normalizedScore;
-
+            
             if (timeScorePercentageText != null)
                 timeScorePercentageText.text = $"{timeScore} pts";
         }
@@ -157,11 +161,12 @@ public class QuizSummaryDetector : MonoBehaviour
         // Show Objects if they were hidden
         summaryTitleText.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(true);
+ 
         correctText.gameObject.SetActive(true);
         wrongText.gameObject.SetActive(true);
         breakdownTitleText.gameObject.SetActive(true);
         breakdownDetailsText.gameObject.SetActive(true);
-
+        
         if (summaryPanel != null)
             summaryPanel.SetActive(true);
 
@@ -173,15 +178,17 @@ public class QuizSummaryDetector : MonoBehaviour
         );
 
         timeBasedScore = CalculateTimeBasedScore();
-
+        
         // Calculate final score (combination of accuracy and time)
         finalScore = Mathf.RoundToInt(
-            (score * (1f - timeWeight)) + (timeBasedScore * timeWeight)
+            (score * (1f - timeWeight)) + 
+            (timeBasedScore * timeWeight)
         );
 
         // Update UI
         summaryTitleText.text = "Mastery Evaluation";
         scoreText.text = $"Final Score: {finalScore} pts";
+      
 
         // ✅ Show item names for correct
         string correctList = string.Join(", ", detectedTags);
@@ -199,10 +206,12 @@ public class QuizSummaryDetector : MonoBehaviour
         }
 
         breakdownTitleText.text = "Summary:";
+
         string details = $"+{detectedTags.Count * pointsPerCorrect} correct points\n";
         details += $"+{timeBasedScore} time bonus\n";
         if (wrongTags.Count > 0)
             details += $"{wrongTags.Count * pointsPerWrong} penalty\n";
+
         breakdownDetailsText.text = details;
 
         // Update progress bars
@@ -228,21 +237,21 @@ public class QuizSummaryDetector : MonoBehaviour
         score = 0;
         timeBasedScore = 0;
         finalScore = 0;
-
+        
         if (summaryPanel != null)
             summaryPanel.SetActive(false);
-
+            
         if (accuracyProgressBar != null)
             accuracyProgressBar.fillAmount = 0f;
         if (timeScoreProgressBar != null)
             timeScoreProgressBar.fillAmount = 0f;
-
+            
         if (timer != null)
         {
             timer.ResetTimer();
             timer.StartTimer();
         }
-
+        
         Debug.Log("Quiz reset!");
     }
 

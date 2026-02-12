@@ -4,17 +4,17 @@ using TMPro;
 using System.Collections.Generic;
 
 /// <summary>
-/// Simple checklist UI for the wound module.
-/// Call: WoundDialogueChecklist.Instance.CompleteTask("Task Name");
+/// Handles checklist UI updates triggered by the DialogueManager.
+/// Keeps Taskboard visuals but uses simple CompleteTask() logic.
 /// </summary>
 public class WoundDialogueChecklist : MonoBehaviour
 {
     [System.Serializable]
     public class TaskItem
     {
-        public string taskName;            // Must match the string you pass to CompleteTask()
-        public TextMeshProUGUI taskLabel;  // Label text on the canvas
-        public Toggle taskToggle;          // Optional checkbox toggle
+        public string taskName;                  // e.g. "Sanitize"
+        public TextMeshProUGUI taskLabel;        // UI label for this task
+        public Toggle taskToggle;                // UI toggle if your Taskboard uses one
         [HideInInspector] public bool isDone = false;
     }
 
@@ -23,114 +23,65 @@ public class WoundDialogueChecklist : MonoBehaviour
 
     public static WoundDialogueChecklist Instance;
 
-    private void Awake()
+    void Awake()
     {
-        // Safe singleton (prevents Instance being overwritten by duplicates)
-        if (Instance != null && Instance != this)
-        {
-            Debug.LogWarning("⚠️ Multiple WoundDialogueChecklist instances found. Destroying duplicate.");
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
 
         // Initialize UI
-        for (int i = 0; i < tasks.Count; i++)
+        foreach (var task in tasks)
         {
-            var task = tasks[i];
-            if (task == null) continue;
-
-            task.isDone = false;
-
             if (task.taskLabel != null)
                 task.taskLabel.text = task.taskName;
 
             if (task.taskToggle != null)
                 task.taskToggle.isOn = false;
+
+            task.isDone = false;
         }
-
-        Debug.Log($"📋 WoundDialogueChecklist ready. Tasks count: {tasks.Count}");
-    }
-
-    // Normalize strings so matching is stable (case/spacing/symbols won't break it)
-    private static string Normalize(string s)
-    {
-        if (string.IsNullOrWhiteSpace(s)) return "";
-        s = s.ToLowerInvariant().Trim();
-
-        // Remove common formatting differences
-        s = s.Replace("☑", "");
-        s = s.Replace("✅", "");
-        s = s.Replace("\n", "");
-        s = s.Replace("\r", "");
-        s = s.Replace("\t", "");
-        s = s.Replace("_", "");
-        s = s.Replace("-", "");
-        s = s.Replace(" ", "");
-
-        return s;
     }
 
     /// <summary>
-    /// Mark a task complete by name.
-    /// The match is case-insensitive and ignores spaces/underscores/dashes.
+    /// Called externally (e.g., from DialogueManager) when a task should be marked complete.
     /// </summary>
     public void CompleteTask(string taskName)
     {
         if (string.IsNullOrWhiteSpace(taskName)) return;
 
-        string target = Normalize(taskName);
+        // Normalize name for matching
+        string normalized = taskName.ToLower().Trim();
+        var task = tasks.Find(t => t.taskName.ToLower().Trim() == normalized);
 
-        TaskItem found = null;
-        for (int i = 0; i < tasks.Count; i++)
+        if (task == null)
         {
-            var t = tasks[i];
-            if (t == null) continue;
-
-            if (Normalize(t.taskName) == target)
-            {
-                found = t;
-                break;
-            }
-        }
-
-        if (found == null)
-        {
-            Debug.LogWarning($"⚠️ WoundDialogueChecklist: Task '{taskName}' not found. " +
-                             $"Make sure your Inspector taskName matches what you call.");
-            Debug.Log("📋 Available taskNames:");
-            foreach (var t in tasks)
-                if (t != null) Debug.Log(" - " + t.taskName);
+            Debug.LogWarning($"⚠️ WoundDialogueChecklist: Task '{taskName}' not found in UI list.");
             return;
         }
 
-        if (found.isDone)
+        if (task.isDone)
         {
-            Debug.Log($"✔️ Task '{found.taskName}' already completed.");
+            Debug.Log($"✔️ Task '{task.taskName}' already completed.");
             return;
         }
 
-        found.isDone = true;
+        // Mark completed
+        task.isDone = true;
 
-        if (found.taskLabel != null)
-            found.taskLabel.text = $"☑ {found.taskName}";
+        if (task.taskLabel != null)
+            task.taskLabel.text = $"☑ {task.taskName}";
 
-        if (found.taskToggle != null)
-            found.taskToggle.isOn = true;
+        if (task.taskToggle != null)
+            task.taskToggle.isOn = true;
 
-        Debug.Log($"✅ WoundDialogueChecklist: Completed task '{found.taskName}'");
+        Debug.Log($"✅ WoundDialogueChecklist: Completed task '{task.taskName}'");
     }
 
     /// <summary>
-    /// Reset all tasks (optional for replay/testing).
+    /// Reset all tasks (optional — for testing or replaying scene).
     /// </summary>
     public void ResetChecklist()
     {
         foreach (var task in tasks)
         {
-            if (task == null) continue;
-
             task.isDone = false;
 
             if (task.taskLabel != null)
@@ -141,21 +92,5 @@ public class WoundDialogueChecklist : MonoBehaviour
         }
 
         Debug.Log("🔁 WoundDialogueChecklist reset.");
-    }
-
-    /// <summary>
-    /// Optional helper for debugging.
-    /// </summary>
-    public bool IsTaskDone(string taskName)
-    {
-        if (string.IsNullOrWhiteSpace(taskName)) return false;
-        string target = Normalize(taskName);
-
-        foreach (var t in tasks)
-        {
-            if (t == null) continue;
-            if (Normalize(t.taskName) == target) return t.isDone;
-        }
-        return false;
     }
 }
